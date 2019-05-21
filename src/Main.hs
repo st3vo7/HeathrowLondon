@@ -1,3 +1,5 @@
+module Main where
+
 import System.IO
 import Data.List
 
@@ -18,7 +20,7 @@ pocistiZaSobom :: String -> String
 pocistiZaSobom fajl = unlines $ init $ lines fajl
 
 main = do
-    contents <- readFile "ulaz.txt"
+    contents <- readFile "src/ulaz.txt"
     --let threes =  groupsOf 3 (map read $ lines contents)
     --let threes = map (read (lines contents)) :: Int
     let niz = (map read $  lines contents) :: [Int]
