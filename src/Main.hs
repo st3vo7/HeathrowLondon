@@ -41,14 +41,14 @@ main = do
     
     --ideja mi je da kad završi sa radom obriše poslednju liniju u Config-u (kako bi ok radilo i za novi ulaz)
     --to radi tako što u cicsenje upiše sadržaj Config-a ...
-    ciscenje <- readFile "Config.hs"
+  --  ciscenje <- readFile "Config.hs"
     
     
     -- ... i pozove f-ju koja pretvori sve u listu po novim redovima, i vrati sve osim poslenjeg reda ...
-    let nf = pocistiZaSobom ciscenje
+ --   let nf = pocistiZaSobom ciscenje
     
     -- ... i zatim sve to overwrite-uje novim fajlom Config.hs
-    writeFile "Config.hs" (show nf)
+--    writeFile "Config.hs" (show nf)
     
     --putStrLn threes
     

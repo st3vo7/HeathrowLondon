@@ -2,16 +2,14 @@ module Config where
 
 windowSize = (600,600) :: (Int,Int)
 
-blockSize = 32 :: Float
+blockSize = 32.0
 
-boardHeight = length boardData
+--boardHeight = length boardData
 
-boardWidth = length $ boardData !! 0
+--boardWidth = length $ boardData !! 0
 
 
-boardOffsetVertical   = - blockSize / 2.0 *
-                        (fromIntegral boardHeight)
-boardOffsetHorizontal = - blockSize / 2.0 *
-                        (fromIntegral boardWidth)
+--boardOffsetVertical   = - blockSize / 2.0 * (fromIntegral boardHeight)
+--boardOffsetHorizontal = - blockSize / 2.0 * (fromIntegral boardWidth)
 
-boardData =
+--boardData 
