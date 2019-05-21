@@ -2,7 +2,7 @@ module Config where
 
 windowSize = (600,600) :: (Int,Int)
 
-blockSize = 32.0
+blockSize = 32
 
 --boardHeight = length boardData
 
