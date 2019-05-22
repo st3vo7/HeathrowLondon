@@ -8,23 +8,26 @@ import Graphics.Gloss
 import Data.Maybe
 import Data.List
 
-data Field = Road | Blank | Node deriving (Show, Eq)
+data Field = RoadH | RoadV | BlankF | Node deriving (Show, Eq)
 
 -- Funkcije za prikaz na tabli
 
 fieldForChar :: Char -> Field
-fieldForChar '#' = Road
-fieldForChar '*' = Road
-fieldForChar 'o' - Node
-fieldForChar  _  = Blank
+fieldForChar '#' = RoadH
+fieldForChar '*' = RoadV
+fieldForChar 'o' = Node
+fieldForChar  _  = BlankF
 
 
---mapira karaktere iz tabele u tipove
+--mapira redove karaktera iz tabele u tipove
 boardFields = [ map fieldForChar row
                 | row <- Config.boardData ]
+
 --mapira tipove u slike
-fieldPicture Road = Pictures.road
-fieldPicture Blank = Pictures.blank
+fieldPicture RoadH = Pictures.roadH
+fieldPicture RoadV = Pictures.roadV
+fieldPicture Node = Pictures.node
+fieldPicture BlankF = Pictures.blank
 
 rowPicture :: [Field] -> Picture
 rowPicture fields =

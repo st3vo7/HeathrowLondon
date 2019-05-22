@@ -2,9 +2,11 @@ module Main where
 
 import System.IO
 import Data.List
+import Graphics.Gloss
 
 import qualified Config
 import qualified ShortestPath
+import qualified Board
 
 {-# LANGUAGE BlockArguments #-}
 
@@ -14,15 +16,15 @@ groupsOf _ [] = []
 groupsOf n xs = take n xs : groupsOf n (drop n xs)
 
 
-boardDataAB :: Int -> [Char]
-boardDataAB n = concat $ take n $ repeat "###o"
+--boardDataAB :: Int -> [Char]
+--boardDataAB n = concat $ take n $ repeat "###o"
 
-boardDataC :: Int -> [Char]
-boardDataC n = concat $ take n $ repeat "___*"
+--boardDataC :: Int -> [Char]
+--boardDataC n = concat $ take n $ repeat "___*"
 
 
-pocistiZaSobom :: String -> String
-pocistiZaSobom fajl = unlines $ init $ lines fajl
+--pocistiZaSobom :: String -> String
+--pocistiZaSobom fajl = unlines $ init $ lines fajl
 
 main = do
     contents <- readFile "src/ulaz.txt"
@@ -36,6 +38,14 @@ main = do
     --print $ length threes
 	
     print Config.boardData 
+    let size = Config.windowSize
+        positon = Config.windowPosition
+        background = white
+        window = InWindow "From Heathrow to London" size positon
+        drawing = circle 80
+        
+        in display window background drawing
+        
     
     
     
