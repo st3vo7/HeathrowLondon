@@ -5,6 +5,8 @@ import Data.List
 
 import qualified Config
 
+{-# LANGUAGE BlockArguments #-}
+
 groupsOf :: Int -> [a] -> [[a]]
 groupsOf 0 _ = undefined
 groupsOf _ [] = []
@@ -27,21 +29,16 @@ main = do
     --let threes = map (read (lines contents)) :: Int
     let niz = (map read $  lines contents) :: [Int]
     print niz
+	
     let threes = groupsOf 3 niz
-    print threes
+    print threes 
     --print $ length threes
+	
+    print Config.boardData 
     
-    let boardData = [boardDataAB $ length threes,
-                     boardDataC $ length threes,
-                     boardDataC $ length threes,
-                     boardDataC $ length threes,
-                     boardDataAB $ length threes
-                         ]
-     print Config.boardData
     
     
     --ovde će da, kao poslednju liniju  u Config.hs, doda boardData
-    appendFile "src/Config.hs" (show boardData)
     
     --ideja mi je da kad završi sa radom obriše poslednju liniju u Config-u (kako bi ok radilo i za novi ulaz)
     --to radi tako što u cicsenje upiše sadržaj Config-a ...

@@ -8,13 +8,16 @@ import Graphics.Gloss
 import Data.Maybe
 import Data.List
 
-data Field = Road | Blank deriving (Show, Eq)
+data Field = Road | Blank | Node deriving (Show, Eq)
 
 -- Funkcije za prikaz na tabli
 
 fieldForChar :: Char -> Field
 fieldForChar '#' = Road
+fieldForChar '*' = Road
+fieldForChar 'o' - Node
 fieldForChar  _  = Blank
+
 
 --mapira karaktere iz tabele u tipove
 boardFields = [ map fieldForChar row

@@ -13,4 +13,8 @@ blockSize = 32
 --boardOffsetHorizontal = - blockSize / 2.0 * (fromIntegral boardWidth)
 
 
-boardData = ["###o###o###o###o","___*___*___*___*","___*___*___*___*","___*___*___*___*","###o###o###o###o"]
+boardData = ["###o###o###o###o",
+			 "___*___*___*___*",
+			 "___*___*___*___*",
+			 "___*___*___*___*",
+			 "###o###o###o###o"]
