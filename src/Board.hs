@@ -1,4 +1,4 @@
-  
+module Board where
   
 import qualified Config
 import qualified Pictures

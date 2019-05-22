@@ -3,6 +3,8 @@ module Main where
 import System.IO
 import Data.List
 
+import qualified Config
+
 groupsOf :: Int -> [a] -> [[a]]
 groupsOf 0 _ = undefined
 groupsOf _ [] = []
@@ -35,7 +37,7 @@ main = do
                      boardDataC $ length threes,
                      boardDataAB $ length threes
                          ]
-    print boardData
+     print Config.boardData
     
     
     --ovde će da, kao poslednju liniju  u Config.hs, doda boardData
