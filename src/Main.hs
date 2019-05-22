@@ -4,6 +4,7 @@ import System.IO
 import Data.List
 
 import qualified Config
+import qualified ShortestPath
 
 {-# LANGUAGE BlockArguments #-}
 
