@@ -5,8 +5,9 @@ import Data.List
 import Graphics.Gloss
 
 import qualified Config
-import qualified ShortestPath
+import qualified ShortestPath as SP
 import qualified Board
+import qualified Colored as Cld
 
 {-# LANGUAGE BlockArguments #-}
 
@@ -26,18 +27,40 @@ groupsOf n xs = take n xs : groupsOf n (drop n xs)
 --pocistiZaSobom :: String -> String
 --pocistiZaSobom fajl = unlines $ init $ lines fajl
 
+
+--changeChar :: [String] -> String -> [String]
+--changeChar tabela (x:xs)
+--    | x == 'B' = last 
+
+
+
+
 main = do
     contents <- readFile "src/ulaz.txt"
     --let threes =  groupsOf 3 (map read $ lines contents)
     --let threes = map (read (lines contents)) :: Int
     let niz = (map read $  lines contents) :: [Int]
     print niz
-	
+    
     let threes = groupsOf 3 niz
-    print threes 
+    --print threes 
     --print $ length threes
-	
+        roadSystem = map (\[a,b,c] -> SP.Section a b c) threes
+        path = SP.optimalPath roadSystem
+        pathString = concat $ map (show . fst ) path
+        pathPrice = sum $ map snd path
+        colored_path = Cld.napravi_novu Cld.inic_tabela pathString
+        
+        
+        
+    putStrLn $ "Najbolja putanja je: " ++ pathString
+    putStrLn $ "i njena cena je: " ++ show pathPrice
+    
+    
     print Config.boardData 
+    --putStrLn $ "Obojena tablica je: " ++ colored_path
+    print colored_path
+    
     let size = Config.windowSize
         positon = Config.windowPosition
         background = white

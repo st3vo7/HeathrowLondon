@@ -6,10 +6,19 @@ import Graphics.Gloss.Data.Picture
 --import Codec.Picture.Png
 --import Graphics.Gloss.Game
 
-roadH = png "data/roadH.png"
-roadV = png "data/roadV.png"
-node =  png "data/node.png"
-blank = png "data/blank.png"
+------------------------------------------------------------------------------------------------------------------------
+--ovi sa glos gejmom
 
+--roadH = png "data/roadH.png"
+--roadV = png "data/roadV.png"
+--node =  png "data/node.png"
+--blank = png "data/blank.png"
 
---itemPicture what = pictures [ color white $ rectangleWire 32 32, png ("data/" ++ what ++ "-001.png") ]
+---------------------------------------------------------------------------------------------------------------------------
+--ovi u medjuvremenu 
+
+roadH =  "data/roadH.png"
+roadV =  "data/roadV.png"
+node =   "data/node.png"
+blank =  "data/blank.png"
+

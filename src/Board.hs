@@ -29,13 +29,18 @@ fieldPicture RoadV = Pictures.roadV
 fieldPicture Node = Pictures.node
 fieldPicture BlankF = Pictures.blank
 
-rowPicture :: [Field] -> Picture
-rowPicture fields =
-    let combine = \ current previous -> pictures [
-                translate Config.blockSize 0 previous,
-                current ]
-    in  foldr1 combine $ map fieldPicture fields
+--------------------------------------------------------------------------------------------------------------
+--tek kad proradi png od gloss gejma
 
-picture :: Picture
-picture = let combine = \ current previous -> pictures [ translate 0 Config.blockSize previous, current ]
-          in  foldl1 (flip combine) $ map rowPicture boardFields
+--rowPicture :: [Field] -> Picture
+--rowPicture fields =
+--    let combine = \ current previous -> pictures [
+--                translate Config.blockSize 0 previous,
+--                current ]
+--    in  foldr1 combine $ map fieldPicture fields
+
+--picture :: Picture
+--picture = let combine = \ current previous -> pictures [ translate 0 Config.blockSize previous, current ]
+--          in  foldl1 (flip combine) $ map rowPicture boardFields
+
+---------------------------------------------------------------------------------------------------------------
