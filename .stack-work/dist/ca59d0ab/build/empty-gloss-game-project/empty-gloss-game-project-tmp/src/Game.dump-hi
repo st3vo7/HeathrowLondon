@@ -1,0 +1,670 @@
+
+==================== FINAL INTERFACE ====================
+2019-06-06 12:16:54.9782944 UTC
+
+interface main@main:Game 8002
+  interface hash: 3f026390f84b42b29057b792f0d76d4f
+  ABI hash: 1f70f383f9b8c08e5cc84240ffbc6aee
+  export-list hash: db2776ee595a995468f95f5ca15dccd9
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d93cfd24061840c70a60adfbcfce182c
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Game.handleEvent
+  Game.initialState
+  Game.ItemState{Game.ItemState position speed}
+  Game.Mode{Game.ModeIsShort Game.ModeNotShort}
+  Game.State{Game.State contentScale mode windowSize}
+module dependencies: Board Config Pictures
+package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-8mjdaTrY6fT50flhL8375P
+                      GLUT-2.7.0.12@GLUT-2.7.0.12-1hjRN2wjD0V7bd3QjOEugK
+                      JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx
+                      ObjectName-1.1.0.1@ObjectName-1.1.0.1-EiFOWjUQWWuLyOhtrmuIWX
+                      OpenGL-3.0.2.0@OpenGL-3.0.2.0-AneXe1zSg4KAYwAAwF6c1
+                      OpenGLRaw-3.2.5.0@OpenGLRaw-3.2.5.0-FVpt3IkfQZvCtyIC3Snu0R
+                      StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bmp-1.2.6.3@bmp-1.2.6.3-43OLkH0uuwm831pBFpx2PZ
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      fixed-0.2.1.1@fixed-0.2.1.1-8Jr82l0kss5Gr4nEevmXlZ ghc-prim-0.5.0.0
+                      gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT
+                      gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm
+                      gloss-juicy-0.2.2@gloss-juicy-0.2.2-BjcwtPSfHt1HGYiOTiDZ6y
+                      gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo
+                      half-0.2.2.3@half-0.2.2.3-GHJ372Ls7FBA3PAGtGHfOR
+                      integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
+                      transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG
+                      zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Show
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+family instance modules: JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx:Codec.Picture.Tga
+                         JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx:Codec.Picture.Tiff
+                         JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx:Codec.Picture.Types
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity base-4.9.1.0:Data.List.NonEmpty
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Semigroup
+                         base-4.9.1.0:Data.Type.Equality base-4.9.1.0:Data.Version
+                         base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.1.0:Debug.Trace 5d15fa13ecafd28bc71693cbbe158c3e
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Internals.Interface.Event 2454ef6c8bc46b1c6b6436aae0e5c0fd
+import  -/  gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm:Graphics.Gloss.Game 2977878a8467958ef2383763937d1e1b
+import  -/  Board c3a49a65cbb1ff11476a008fc23da71b
+  exports: 6d2688adf706b82a0624af9deffcd63a
+  Position 341d5e17c803e1a1e7952481203092f8
+import  -/  Config 4a2c35a0baca4833c9e3272b3f027e48
+  exports: a9bf9bfe1deb5051a5f2921c768dd23f
+  windowSize 871197070b2c00d6a9062c6364531cd6
+773421684031ab3abaae8cbdc0be4d8e
+  $fEqMode :: GHC.Classes.Eq Game.Mode
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Game.Mode Game.$fEqMode_$c== Game.$fEqMode_$c/= -}
+773421684031ab3abaae8cbdc0be4d8e
+  $fEqMode_$c/= :: Game.Mode -> Game.Mode -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (a :: Game.Mode) (b :: Game.Mode) ->
+                 case a of wild {
+                   Game.ModeIsShort
+                   -> case b of wild1 {
+                        Game.ModeIsShort -> GHC.Types.False
+                        Game.ModeNotShort -> GHC.Types.True }
+                   Game.ModeNotShort
+                   -> case b of wild1 {
+                        Game.ModeIsShort -> GHC.Types.True
+                        Game.ModeNotShort -> GHC.Types.False } }) -}
+773421684031ab3abaae8cbdc0be4d8e
+  $fEqMode_$c== :: Game.Mode -> Game.Mode -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Game.Mode) (ds1 :: Game.Mode) ->
+                 case ds of wild {
+                   Game.ModeIsShort
+                   -> case ds1 of wild1 {
+                        Game.ModeIsShort -> GHC.Types.True
+                        Game.ModeNotShort -> GHC.Types.False }
+                   Game.ModeNotShort
+                   -> case ds1 of wild1 {
+                        Game.ModeIsShort -> GHC.Types.False
+                        Game.ModeNotShort -> GHC.Types.True } }) -}
+9dae8d1c0a72fcbfe51063a7ca315358
+  $fShowItemState :: GHC.Show.Show Game.ItemState
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Game.ItemState
+                  Game.$fShowItemState_$cshowsPrec
+                  Game.$fShowItemState_$cshow
+                  Game.$fShowItemState_$cshowList -}
+9dae8d1c0a72fcbfe51063a7ca315358
+  $fShowItemState1 :: Game.ItemState -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (\ (w :: Game.ItemState) (w1 :: GHC.Base.String) ->
+                 case w of ww { Game.ItemState ww1 ww2 ->
+                 Game.$w$cshowsPrec 0# ww1 ww2 w1 }) -}
+a1e80e69eba721071d1e1f110cef7d43
+  $fShowItemState2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "}"#) -}
+1c0ea5830c110fc712776e4ee8395b47
+  $fShowItemState3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "speed = "#) -}
+0cc0892217925cde120a84f81b608126
+  $fShowItemState4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# ", "#) -}
+9bda9badb63237d5bcdfe563003fe6ff
+  $fShowItemState5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "position = "#) -}
+cf9498c0b9dae1e63df34b28d0325802
+  $fShowItemState6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ItemState {"#) -}
+9dae8d1c0a72fcbfe51063a7ca315358
+  $fShowItemState_$cshow :: Game.ItemState -> GHC.Base.String
+  {- Arity: 1,
+     Strictness: <S,1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Game.ItemState) ->
+                 Game.$fShowItemState_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+9dae8d1c0a72fcbfe51063a7ca315358
+  $fShowItemState_$cshowList :: [Game.ItemState] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Game.ItemState
+                   Game.$fShowItemState1) -}
+9dae8d1c0a72fcbfe51063a7ca315358
+  $fShowItemState_$cshowsPrec ::
+    GHC.Types.Int -> Game.ItemState -> GHC.Show.ShowS
+  {- Arity: 3,
+     Strictness: <S(S),1*U(U)><S,1*U(1*U(1*U(U),1*U(U)),1*U(1*U(U),1*U(U)))><L,U>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, False)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Game.ItemState)
+                   (w2 :: GHC.Base.String) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Game.ItemState ww3 ww4 ->
+                 Game.$w$cshowsPrec ww1 ww3 ww4 w2 } }) -}
+773421684031ab3abaae8cbdc0be4d8e
+  $fShowMode :: GHC.Show.Show Game.Mode
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Game.Mode
+                  Game.$fShowMode_$cshowsPrec
+                  Game.$fShowMode_$cshow
+                  Game.$fShowMode_$cshowList -}
+773421684031ab3abaae8cbdc0be4d8e
+  $fShowMode1 :: Game.Mode -> GHC.Show.ShowS
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (ds :: Game.Mode) (eta :: GHC.Base.String) ->
+                 case ds of wild {
+                   Game.ModeIsShort
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Game.$fShowMode3)
+                        eta
+                   Game.ModeNotShort
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Game.$fShowMode2)
+                        eta }) -}
+f6cab29fca607a96043cb113496c0f99
+  $fShowMode2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ModeNotShort"#) -}
+8a625780a3ca6ce24c004225c80eda34
+  $fShowMode3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "ModeIsShort"#) -}
+773421684031ab3abaae8cbdc0be4d8e
+  $fShowMode_$cshow :: Game.Mode -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Game.Mode) ->
+                 case x of wild {
+                   Game.ModeIsShort -> Game.$fShowMode3
+                   Game.ModeNotShort -> Game.$fShowMode2 }) -}
+773421684031ab3abaae8cbdc0be4d8e
+  $fShowMode_$cshowList :: [Game.Mode] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Game.Mode Game.$fShowMode1) -}
+773421684031ab3abaae8cbdc0be4d8e
+  $fShowMode_$cshowsPrec ::
+    GHC.Types.Int -> Game.Mode -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>,
+     Unfolding: InlineRule (3, True, False)
+                (\ (ds :: GHC.Types.Int)
+                   (ds1 :: Game.Mode)
+                   (eta :: GHC.Base.String) ->
+                 case ds1 of wild {
+                   Game.ModeIsShort
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Game.$fShowMode3)
+                        eta
+                   Game.ModeNotShort
+                   -> GHC.Base.augment
+                        @ GHC.Types.Char
+                        (\ @ b
+                           (c :: GHC.Types.Char -> b -> b)[OneShot]
+                           (n :: b)[OneShot] ->
+                         GHC.Base.foldr @ GHC.Types.Char @ b c n Game.$fShowMode2)
+                        eta }) -}
+d43cdc148633e438a3acb484eafa635f
+  $fShowState :: GHC.Show.Show Game.State
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Game.State
+                  Game.$fShowState_$cshowsPrec
+                  Game.$fShowState_$cshow
+                  Game.$fShowState_$cshowList -}
+d43cdc148633e438a3acb484eafa635f
+  $fShowState1 :: Game.State -> GHC.Show.ShowS
+  {- Arity: 1,
+     Unfolding: (\ (w :: Game.State) ->
+                 case w of ww { Game.State ww1 ww2 ww3 ->
+                 Game.$w$cshowsPrec1 0# ww1 ww2 ww3 }) -}
+06f2001a0f9b409991b4b43c6df34867
+  $fShowState2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "State {"#) -}
+495452cd9d73c021ca1b3c80d22a6eec
+  $fShowState3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "mode = "#) -}
+8fbbbed83ef27bcb37af7641b6d11629
+  $fShowState4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "contentScale = "#) -}
+32e116d2862d217b6b296f07f05b36a5
+  $fShowState5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "windowSize = "#) -}
+7f8ab7af8033c56d843e834403fb7dec
+  $fShowState6 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 0#) -}
+d43cdc148633e438a3acb484eafa635f
+  $fShowState_$cshow :: Game.State -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U(U,U(U(U),U(U)),1*U(U))>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Game.State) ->
+                 Game.$fShowState_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+d43cdc148633e438a3acb484eafa635f
+  $fShowState_$cshowList :: [Game.State] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__ @ Game.State Game.$fShowState1) -}
+d43cdc148633e438a3acb484eafa635f
+  $fShowState_$cshowsPrec ::
+    GHC.Types.Int -> Game.State -> GHC.Show.ShowS
+  {- Arity: 2,
+     Strictness: <S(S),1*U(U)><S,1*U(U,U(U(U),U(U)),1*U(U))>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: GHC.Types.Int) (w1 :: Game.State) ->
+                 case w of ww { GHC.Types.I# ww1 ->
+                 case w1 of ww2 { Game.State ww3 ww4 ww5 ->
+                 Game.$w$cshowsPrec1 ww1 ww3 ww4 ww5 } }) -}
+e97f58d063e832623ffe89d4de99ec89
+  $tc'ItemState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   2634425631069013785##
+                   15678207242635333758##
+                   Game.$trModule
+                   Game.$tc'ItemState1) -}
+d914e4a002ef8ca32980977eb2ee2a05
+  $tc'ItemState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ItemState"#) -}
+1fbe3f7936a43cece7db0c16110c0276
+  $tc'ModeIsShort :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   16550242700793931832##
+                   13013231891532310973##
+                   Game.$trModule
+                   Game.$tc'ModeIsShort1) -}
+fb675b76f125b87d7dea49e56a4dc6bf
+  $tc'ModeIsShort1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ModeIsShort"#) -}
+873b3ad958aabb7d19a461d05f443cd6
+  $tc'ModeNotShort :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   7337343155327735227##
+                   10630378682148547158##
+                   Game.$trModule
+                   Game.$tc'ModeNotShort1) -}
+be5fb2627d1c6a0ce2ba9f3e9467ed38
+  $tc'ModeNotShort1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'ModeNotShort"#) -}
+1e195390a47bb83c75e7a8569978c02c
+  $tc'State :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15316811764301273498##
+                   14301965037990408381##
+                   Game.$trModule
+                   Game.$tc'State1) -}
+0b7116823e9ad60c635a833cbfa72521
+  $tc'State1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'State"#) -}
+920f06a3b7586eb074b4de85d34103cc
+  $tcItemState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   5207753673674397055##
+                   17706174296008109769##
+                   Game.$trModule
+                   Game.$tcItemState1) -}
+f199773fa6db387ae066f0351d0f1cf3
+  $tcItemState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "ItemState"#) -}
+06356f9f41f7c97d2dab259a1c2fec03
+  $tcMode :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   9644488715116256375##
+                   8556283505257178085##
+                   Game.$trModule
+                   Game.$tcMode1) -}
+cc64566165a607f6f29f241bb4ef82bc
+  $tcMode1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Mode"#) -}
+74f86e606884aaa6946ff177bd2d2884
+  $tcState :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   3965096395309848409##
+                   12771853970897014927##
+                   Game.$trModule
+                   Game.$tcState1) -}
+04a136ceb904023c873e637650c05d32
+  $tcState1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "State"#) -}
+e83626f96954699c59f8808db22ac95a
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Game.$trModule2 Game.$trModule1) -}
+605e50c590694519b5cfcc57ee0a0d21
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Game"#) -}
+bfddda3a7f73c81040d44c90c2e0e17b
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+d876e4186205a8678ee0268b1530736c
+  $w$cshowsPrec ::
+    GHC.Prim.Int#
+    -> Board.Position
+    -> (GHC.Types.Float, GHC.Types.Float)
+    -> GHC.Base.String
+    -> GHC.Base.String
+  {- Arity: 4,
+     Strictness: <S,U><L,1*U(1*U(U),1*U(U))><L,1*U(1*U(U),1*U(U))><L,U>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Board.Position)
+                   (ww2 :: (GHC.Types.Float, GHC.Types.Float))
+                   (w :: GHC.Base.String) ->
+                 let {
+                   p :: GHC.Show.ShowS {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String)[OneShot] ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Game.$fShowItemState6
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Game.$fShowItemState5
+                          (case ww1 of ww3 { (,) ww4 ww5 ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (case ww4 of ww6 { GHC.Types.F# ww7 ->
+                              GHC.Float.$w$sshowSignedFloat1
+                                GHC.Float.$fShowFloat_$sshowFloat
+                                GHC.Show.shows22
+                                ww7
+                                (GHC.Types.:
+                                   @ GHC.Types.Char
+                                   GHC.Show.shows5
+                                   (GHC.Show.$fShow(,)_$sgo
+                                      (GHC.Types.:
+                                         @ GHC.Types.Char
+                                         GHC.Show.shows4
+                                         (GHC.Base.++
+                                            @ GHC.Types.Char
+                                            Game.$fShowItemState4
+                                            (GHC.Base.++
+                                               @ GHC.Types.Char
+                                               Game.$fShowItemState3
+                                               (case ww2 of ww8 { (,) ww9 ww10 ->
+                                                GHC.Types.:
+                                                  @ GHC.Types.Char
+                                                  GHC.Show.shows7
+                                                  (case ww9 of ww11 { GHC.Types.F# ww12 ->
+                                                   GHC.Float.$w$sshowSignedFloat1
+                                                     GHC.Float.$fShowFloat_$sshowFloat
+                                                     GHC.Show.shows22
+                                                     ww12
+                                                     (GHC.Types.:
+                                                        @ GHC.Types.Char
+                                                        GHC.Show.shows5
+                                                        (GHC.Show.$fShow(,)_$sgo
+                                                           (GHC.Types.:
+                                                              @ GHC.Types.Char
+                                                              GHC.Show.shows4
+                                                              (GHC.Base.++
+                                                                 @ GHC.Types.Char
+                                                                 Game.$fShowItemState2
+                                                                 x))
+                                                           (case ww10 of ww13 { GHC.Types.F# ww14 ->
+                                                            GHC.Float.$w$sshowSignedFloat1
+                                                              GHC.Float.$fShowFloat_$sshowFloat
+                                                              GHC.Show.shows22
+                                                              ww14 })
+                                                           (GHC.Types.[]
+                                                              @ GHC.Show.ShowS))) }) }))))
+                                      (case ww5 of ww8 { GHC.Types.F# ww9 ->
+                                       GHC.Float.$w$sshowSignedFloat1
+                                         GHC.Float.$fShowFloat_$sshowFloat
+                                         GHC.Show.shows22
+                                         ww9 })
+                                      (GHC.Types.[] @ GHC.Show.ShowS))) }) }))
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False -> p w
+                   GHC.Types.True
+                   -> GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (p (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 w)) }) -}
+44a3e33d04444d16039a3be3f4b71f2a
+  $w$cshowsPrec1 ::
+    GHC.Prim.Int#
+    -> Game.Mode
+    -> (GHC.Types.Int, GHC.Types.Int)
+    -> GHC.Types.Float
+    -> GHC.Show.ShowS
+  {- Arity: 4, Strictness: <S,U><L,U><L,U(U(U),U(U))><L,1*U(U)>,
+     Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Int#)
+                   (ww1 :: Game.Mode)
+                   (ww2 :: (GHC.Types.Int, GHC.Types.Int))
+                   (ww3 :: GHC.Types.Float) ->
+                 let {
+                   f :: GHC.Base.String -> GHC.Base.String
+                   = case ww3 of ww4 { GHC.Types.F# ww5 ->
+                     GHC.Float.$w$sshowSignedFloat1
+                       GHC.Float.$fShowFloat_$sshowFloat
+                       Game.$fShowState6
+                       ww5 }
+                 } in
+                 let {
+                   g :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Game.$fShowItemState4
+                       (GHC.Base.++
+                          @ GHC.Types.Char
+                          Game.$fShowState5
+                          (case ww2 of ww4 { (,) ww5 ww6 ->
+                           GHC.Types.:
+                             @ GHC.Types.Char
+                             GHC.Show.shows7
+                             (case ww5 of ww7 { GHC.Types.I# ww8 ->
+                              case GHC.Show.$wshowSignedInt
+                                     0#
+                                     ww8
+                                     (GHC.Types.:
+                                        @ GHC.Types.Char
+                                        GHC.Show.shows5
+                                        (GHC.Show.$fShow(,)_$sgo
+                                           (GHC.Types.:
+                                              @ GHC.Types.Char
+                                              GHC.Show.shows4
+                                              (GHC.Base.++
+                                                 @ GHC.Types.Char
+                                                 Game.$fShowItemState4
+                                                 (GHC.Base.++
+                                                    @ GHC.Types.Char
+                                                    Game.$fShowState4
+                                                    (f (GHC.Base.++
+                                                          @ GHC.Types.Char
+                                                          Game.$fShowItemState2
+                                                          x)))))
+                                           (\ (w2 :: GHC.Base.String) ->
+                                            case ww6 of ww9 { GHC.Types.I# ww10 ->
+                                            case GHC.Show.$wshowSignedInt
+                                                   0#
+                                                   ww10
+                                                   w2 of ww11 { (#,#) ww12 ww13 ->
+                                            GHC.Types.: @ GHC.Types.Char ww12 ww13 } })
+                                           (GHC.Types.[]
+                                              @ GHC.Show.ShowS))) of ww9 { (#,#) ww10 ww11 ->
+                              GHC.Types.: @ GHC.Types.Char ww10 ww11 } }) }))
+                 } in
+                 let {
+                   g1 :: GHC.Base.String -> GHC.Base.String
+                     {- Arity: 1, Strictness: <L,1*U> -}
+                   = \ (x :: GHC.Base.String) ->
+                     GHC.Base.++
+                       @ GHC.Types.Char
+                       Game.$fShowState3
+                       (case ww1 of wild {
+                          Game.ModeIsShort
+                          -> GHC.Base.++ @ GHC.Types.Char Game.$fShowMode3 (g x)
+                          Game.ModeNotShort
+                          -> GHC.Base.++ @ GHC.Types.Char Game.$fShowMode2 (g x) })
+                 } in
+                 case GHC.Prim.tagToEnum#
+                        @ GHC.Types.Bool
+                        (GHC.Prim.>=# ww 11#) of wild {
+                   GHC.Types.False
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Base.++ @ GHC.Types.Char Game.$fShowState2 (g1 x)
+                   GHC.Types.True
+                   -> \ (x :: GHC.Base.String) ->
+                      GHC.Types.:
+                        @ GHC.Types.Char
+                        GHC.Show.shows7
+                        (GHC.Base.++
+                           @ GHC.Types.Char
+                           Game.$fShowState2
+                           (g1 (GHC.Types.: @ GHC.Types.Char GHC.Show.shows4 x))) }) -}
+9dae8d1c0a72fcbfe51063a7ca315358
+  data ItemState
+    = ItemState {position :: Board.Position,
+                 speed :: (GHC.Types.Float, GHC.Types.Float)}
+773421684031ab3abaae8cbdc0be4d8e
+  data Mode = ModeIsShort | ModeNotShort
+d43cdc148633e438a3acb484eafa635f
+  data State
+    = State {mode :: Game.Mode,
+             windowSize :: (GHC.Types.Int, GHC.Types.Int),
+             contentScale :: GHC.Types.Float}
+8fc35290ce9c611c9bbd9827f2e16f55
+  contentScale :: Game.State -> GHC.Types.Float
+  RecSel Left Game.State
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LLS),1*U(A,A,1*U(U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Game.State) ->
+                 case ds of wild { Game.State ds1 ds2 ds3 -> ds3 }) -}
+5977d6ddaff241a8a409b4a9b072a544
+  handleEvent ::
+    Graphics.Gloss.Internals.Interface.Event.Event
+    -> Game.State -> Game.State
+  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U(U,U,U)>m,
+     Unfolding: InlineRule (2, True, True)
+                (\ (ds :: Graphics.Gloss.Internals.Interface.Event.Event)
+                   (state :: Game.State) ->
+                 state) -}
+43f0bc02d9d6ea510367a25a10285667
+  initialState :: Game.State
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (Game.State
+                   Game.ModeNotShort
+                   Config.windowSize
+                   Game.initialState1) -}
+c47baa4ad958e704bef0fa613e39d571
+  initialState1 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 1.0#) -}
+d9e652bfca71ea0a25572a0c0fd9fc58
+  mode :: Game.State -> Game.Mode
+  RecSel Left Game.State
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SLL),1*U(1*U,A,A)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Game.State) ->
+                 case ds of wild { Game.State ds1 ds2 ds3 -> ds1 }) -}
+c99916b4380fbbe554540544242cc7bd
+  position :: Game.ItemState -> Board.Position
+  RecSel Left Game.ItemState
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(SL),1*U(1*U(U,U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Game.ItemState) ->
+                 case ds of wild { Game.ItemState ds1 ds2 -> ds1 }) -}
+f28cca8aa9c31efb265e875992637a9f
+  speed :: Game.ItemState -> (GHC.Types.Float, GHC.Types.Float)
+  RecSel Left Game.ItemState
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LS),1*U(A,1*U(U,U))>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Game.ItemState) ->
+                 case ds of wild { Game.ItemState ds1 ds2 -> ds2 }) -}
+6abfaa0da97c92a7bfaae621acca3165
+  windowSize :: Game.State -> (GHC.Types.Int, GHC.Types.Int)
+  RecSel Left Game.State
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(LSL),1*U(A,1*U(U,U),A)>m,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Game.State) ->
+                 case ds of wild { Game.State ds1 ds2 ds3 -> ds2 }) -}
+instance GHC.Classes.Eq [Game.Mode] = Game.$fEqMode
+instance GHC.Show.Show [Game.ItemState] = Game.$fShowItemState
+instance GHC.Show.Show [Game.Mode] = Game.$fShowMode
+instance GHC.Show.Show [Game.State] = Game.$fShowState
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+

@@ -1,0 +1,148 @@
+
+==================== FINAL INTERFACE ====================
+2019-06-05 10:45:35.8868438 UTC
+
+interface main@main:Config 8002
+  interface hash: df3c91e7e49050b4a707b041a34bbba5
+  ABI hash: 4a2c35a0baca4833c9e3272b3f027e48
+  export-list hash: a9bf9bfe1deb5051a5f2921c768dd23f
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d93cfd24061840c70a60adfbcfce182c
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Config.blockSize
+  Config.boardData
+  Config.boardHeight
+  Config.boardOffsetHorizontal
+  Config.boardOffsetVertical
+  Config.boardWidth
+  Config.windowPosition
+  Config.windowSize
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.Foldable 254e836c2d813d34e47feb29bb8d40ed
+import  -/  base-4.9.1.0:GHC.List d11eb227c1c6fbfd89bb781d72eaea0d
+import  -/  base-4.9.1.0:GHC.Num 38b8aac8807c096c7f3ca3c1eff02939
+import  -/  base-4.9.1.0:GHC.Real b88ae4a48c079652623073a5bbf5c9b0
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+d37f8810674809609d24c91cb50d3f24
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Config.$trModule2
+                   Config.$trModule1) -}
+fe6cb10325439635cd563b08eaaecb5d
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Config"#) -}
+530be01acf0f65d5624b09bfc41553ef
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+93459ab17f9236be4d256cf8af7e7657
+  blockSize :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 32.0#) -}
+c1c2546c77bae5af7585c22d5b01e4db
+  boardData :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Config.boardData5
+                   Config.boardData1) -}
+3332dd44aacceebc8cfe15f5ee15ae33
+  boardData1 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Config.boardData6
+                   Config.boardData2) -}
+99dc0d86d1a2a6cd90d071e4aaddecf5
+  boardData2 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Config.boardData6
+                   Config.boardData3) -}
+9c2cffa0f42bf41ecea49170ce0d090a
+  boardData3 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Config.boardData6
+                   Config.boardData4) -}
+fac7e5f6f319129ab9f1c06cf802b1d2
+  boardData4 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Config.boardData5
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+e4d1efd6c871bd684dab94ae8990100c
+  boardData5 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "###o###o###o###o"#) -}
+90925f0f5c348f8fa3355e0722edd56b
+  boardData6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "___*___*___*___*"#) -}
+211c878dbdfe94eb1ea60e6d4473d162
+  boardHeight :: GHC.Types.Int
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ [GHC.Types.Char]
+                        Config.boardData
+                        0# of ww2 { DEFAULT ->
+                 GHC.Types.I# ww2 }) -}
+deb6b3e9349ffde8349bfeeae004ae7f
+  boardOffsetHorizontal :: GHC.Types.Float
+  {- Unfolding: (case Config.boardWidth of wild { GHC.Types.I# i ->
+                 GHC.Types.F#
+                   (GHC.Prim.negateFloat#
+                      (GHC.Prim.timesFloat# 16.0# (GHC.Prim.int2Float# i))) }) -}
+0bc4609a4248a57d939c4af95a2506f5
+  boardOffsetVertical :: GHC.Types.Float
+  {- Unfolding: (case Config.boardHeight of wild { GHC.Types.I# i ->
+                 GHC.Types.F#
+                   (GHC.Prim.negateFloat#
+                      (GHC.Prim.timesFloat# 16.0# (GHC.Prim.int2Float# i))) }) -}
+9081a646905634dcdde7301ea8147883
+  boardWidth :: GHC.Types.Int
+  {- Unfolding: (case GHC.List.$wlenAcc
+                        @ GHC.Types.Char
+                        Config.boardWidth1
+                        0# of ww2 { DEFAULT ->
+                 GHC.Types.I# ww2 }) -}
+abf6d5d3d96e5a034e33cfd138a4cf89
+  boardWidth1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.List.$w!!
+                   @ [GHC.Types.Char]
+                   Config.boardData
+                   0#) -}
+19612144e703778938fb0e9d0432295f
+  windowPosition :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Config.windowPosition1, Config.windowPosition1)) -}
+993fe66367a4ef4e4fad746a720b0f33
+  windowPosition1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 300#) -}
+871197070b2c00d6a9062c6364531cd6
+  windowSize :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: ((Config.windowSize1, Config.windowSize1)) -}
+d6cd6e22da12142a034c9e5d242a0551
+  windowSize1 :: GHC.Types.Int
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 600#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+

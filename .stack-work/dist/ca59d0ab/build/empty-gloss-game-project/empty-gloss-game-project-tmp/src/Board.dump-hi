@@ -1,0 +1,343 @@
+
+==================== FINAL INTERFACE ====================
+2019-06-06 11:43:44.2149686 UTC
+
+interface main@main:Board 8002
+  interface hash: ed905b23b6c8d0bc48404d201777694f
+  ABI hash: c3a49a65cbb1ff11476a008fc23da71b
+  export-list hash: 6d2688adf706b82a0624af9deffcd63a
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: d93cfd24061840c70a60adfbcfce182c
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Board.boardFields
+  Board.fieldForChar
+  Board.fieldPicture
+  Board.picture
+  Board.rowPicture
+  Board.Field{Board.BlankF Board.Node Board.RoadH Board.RoadV}
+  Board.Position
+module dependencies: Config Pictures
+package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-8mjdaTrY6fT50flhL8375P
+                      GLUT-2.7.0.12@GLUT-2.7.0.12-1hjRN2wjD0V7bd3QjOEugK
+                      JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx
+                      ObjectName-1.1.0.1@ObjectName-1.1.0.1-EiFOWjUQWWuLyOhtrmuIWX
+                      OpenGL-3.0.2.0@OpenGL-3.0.2.0-AneXe1zSg4KAYwAAwF6c1
+                      OpenGLRaw-3.2.5.0@OpenGLRaw-3.2.5.0-FVpt3IkfQZvCtyIC3Snu0R
+                      StateVar-1.1.0.4@StateVar-1.1.0.4-5dJbnTVECtEAhfJXPZKdbO
+                      array-0.5.1.1@array-0.5.1.1 base-4.9.1.0
+                      binary-0.8.3.0@binary-0.8.3.0
+                      bmp-1.2.6.3@bmp-1.2.6.3-43OLkH0uuwm831pBFpx2PZ
+                      bytestring-0.10.8.1@bytestring-0.10.8.1
+                      containers-0.5.7.1@containers-0.5.7.1
+                      deepseq-1.4.2.0@deepseq-1.4.2.0
+                      fixed-0.2.1.1@fixed-0.2.1.1-8Jr82l0kss5Gr4nEevmXlZ ghc-prim-0.5.0.0
+                      gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT
+                      gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm
+                      gloss-juicy-0.2.2@gloss-juicy-0.2.2-BjcwtPSfHt1HGYiOTiDZ6y
+                      gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo
+                      half-0.2.2.3@half-0.2.2.3-GHJ372Ls7FBA3PAGtGHfOR
+                      integer-gmp-1.0.0.1 mtl-2.2.1@mtl-2.2.1-BLKBelFsPB3BoFeSWSOYj6
+                      primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH
+                      stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve
+                      text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR
+                      transformers-0.5.2.0@transformers-0.5.2.0
+                      vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG
+                      zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+         binary-0.8.3.0@binary-0.8.3.0:Data.Binary.Generic
+         bytestring-0.10.8.1@bytestring-0.10.8.1:Data.ByteString.Builder
+         gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture
+         stm-2.4.4.1@stm-2.4.4.1-JQn4hNPyYjP5m9AcbI88Ve:Control.Monad.STM
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text.Show
+         transformers-0.5.2.0@transformers-0.5.2.0:Control.Monad.Trans.Error
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Fusion.Bundle
+         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+family instance modules: JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx:Codec.Picture.Tga
+                         JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx:Codec.Picture.Tiff
+                         JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx:Codec.Picture.Types
+                         base-4.9.1.0:Control.Applicative base-4.9.1.0:Data.Complex
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Functor.Identity base-4.9.1.0:Data.List.NonEmpty
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Semigroup
+                         base-4.9.1.0:Data.Type.Equality base-4.9.1.0:Data.Version
+                         base-4.9.1.0:Data.Void base-4.9.1.0:GHC.Exts
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntMap.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.IntSet.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Map.Base
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Sequence
+                         containers-0.5.7.1@containers-0.5.7.1:Data.Set.Base
+                         primitive-0.6.1.0@primitive-0.6.1.0-6AbSTw9JXz141LE5p6LGH:Control.Monad.Primitive
+                         text-1.2.2.1@text-1.2.2.1-Ji7hMs2U4BkBwavd4taEVR:Data.Text
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Primitive
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Storable
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
+                         vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed.Base
+                         zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.1.0:Data.Foldable 254e836c2d813d34e47feb29bb8d40ed
+import  -/  base-4.9.1.0:Data.List 7349774f430841349c90dfd1144aea97
+import  -/  base-4.9.1.0:Data.Maybe ecf0c6f81372d9b58b142d5e758ea51b
+import  -/  base-4.9.1.0:GHC.Base 4caea1123ecf4b46e27cbccd6d279377
+import  -/  base-4.9.1.0:GHC.Show eca5834daba3b6a2bbbe64ab52056707
+import  -/  base-4.9.1.0:Prelude 74b3e204395920329f6de9d97206abe9
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 16d48e012d23eaef9bca91ccdd572c02
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss 58eacb3f8485bcd8d009c7ff8ffe14ab
+import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Data.Picture b3cd9471b5311716b09a8a19a6e13c2f
+import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture 23367fc3f20d795c15cac132c55fa6ca
+import  -/  Config 4a2c35a0baca4833c9e3272b3f027e48
+  exports: a9bf9bfe1deb5051a5f2921c768dd23f
+  blockSize 93459ab17f9236be4d256cf8af7e7657
+  boardData c1c2546c77bae5af7585c22d5b01e4db
+import  -/  Pictures ba55e8dca9d0922d252c3323431b5636
+  exports: a1656e40705d833c0a26371138eef804
+  blank 19faadfabeed95fe37bcf7296c9cda80
+  node da37147ce0fa6d096d12b58283047528
+  roadH ddd1693c123074af46c945bf1851f1ae
+  roadV 75bd01451692c98848302b11972648e5
+faa7612656ea74b3aaab235e6c7c74d5
+  $fEqField :: GHC.Classes.Eq Board.Field
+  DFunId
+  {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Board.Field Board.$fEqField_$c== Board.$fEqField_$c/= -}
+faa7612656ea74b3aaab235e6c7c74d5
+  $fEqField_$c/= :: Board.Field -> Board.Field -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (a :: Board.Field) (b :: Board.Field) ->
+                 case a of wild {
+                   Board.RoadH
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Board.RoadH -> GHC.Types.False }
+                   Board.RoadV
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Board.RoadV -> GHC.Types.False }
+                   Board.BlankF
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Board.BlankF -> GHC.Types.False }
+                   Board.Node
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Board.Node -> GHC.Types.False } }) -}
+faa7612656ea74b3aaab235e6c7c74d5
+  $fEqField_$c== :: Board.Field -> Board.Field -> GHC.Types.Bool
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
+     Unfolding: (\ (ds :: Board.Field) (ds1 :: Board.Field) ->
+                 case ds of wild {
+                   Board.RoadH
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Board.RoadH -> GHC.Types.True }
+                   Board.RoadV
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Board.RoadV -> GHC.Types.True }
+                   Board.BlankF
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Board.BlankF -> GHC.Types.True }
+                   Board.Node
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Board.Node -> GHC.Types.True } }) -}
+faa7612656ea74b3aaab235e6c7c74d5
+  $fShowField :: GHC.Show.Show Board.Field
+  DFunId
+  {- Strictness: m, Inline: [ALWAYS] CONLIKE,
+     Unfolding: DFun:.
+                  @ Board.Field
+                  Board.$fShowField_$cshowsPrec
+                  Board.$fShowField_$cshow
+                  Board.$fShowField_$cshowList -}
+33ed81908bc6fc840caa18f50e62fdaf
+  $fShowField1 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "Node"#) -}
+81c2341a7ee1116c64012d975979a98a
+  $fShowField2 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "BlankF"#) -}
+1285ed5e30f370ef6203df9a8360c1af
+  $fShowField3 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "RoadV"#) -}
+dc459b6535d6cf9fd1906b3ab29292d0
+  $fShowField4 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "RoadH"#) -}
+faa7612656ea74b3aaab235e6c7c74d5
+  $fShowField_$cshow :: Board.Field -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: Board.Field) ->
+                 Board.$fShowField_$cshowsPrec
+                   GHC.Show.shows22
+                   x
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+faa7612656ea74b3aaab235e6c7c74d5
+  $fShowField_$cshowList :: [Board.Field] -> GHC.Show.ShowS
+  {- Arity: 2,
+     Unfolding: (GHC.Show.showList__
+                   @ Board.Field
+                   Board.$w$cshowsPrec) -}
+faa7612656ea74b3aaab235e6c7c74d5
+  $fShowField_$cshowsPrec ::
+    GHC.Types.Int -> Board.Field -> GHC.Show.ShowS
+  {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
+     Unfolding: InlineRule (3, True, True)
+                (\ (w :: GHC.Types.Int)
+                   (w1 :: Board.Field)
+                   (w2 :: GHC.Base.String) ->
+                 Board.$w$cshowsPrec w1 w2) -}
+fd7ca30306eef8fbd420ce388992be0a
+  $tc'BlankF :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12647250000556740025##
+                   18112631551428465051##
+                   Board.$trModule
+                   Board.$tc'BlankF1) -}
+cc675638dd443532fbf5223ceec33064
+  $tc'BlankF1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'BlankF"#) -}
+cdde4936705334dbc1873728bf4d1743
+  $tc'Node :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   11411521331862564586##
+                   16959382730152180342##
+                   Board.$trModule
+                   Board.$tc'Node1) -}
+c73f35bc2f99f0b93caed12acac94045
+  $tc'Node1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'Node"#) -}
+f2f31aabd726aa2bb793513137cab4cd
+  $tc'RoadH :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   1542122643781385657##
+                   1037544867905384544##
+                   Board.$trModule
+                   Board.$tc'RoadH1) -}
+af08201b4306520aa8bfa5b9f8b34e72
+  $tc'RoadH1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'RoadH"#) -}
+4ccf4c37fe6c1ba72826798e617f9dd5
+  $tc'RoadV :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   15904144620870674054##
+                   9612239983417809600##
+                   Board.$trModule
+                   Board.$tc'RoadV1) -}
+1389cb0d408c8554755511c80593c8e1
+  $tc'RoadV1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'RoadV"#) -}
+c20c1f7d85e2aa2f5b3c2221db453984
+  $tcField :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   10259541718625664335##
+                   8462809860014467864##
+                   Board.$trModule
+                   Board.$tcField1) -}
+02b160d88ed23f294b5121e78855f44a
+  $tcField1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Field"#) -}
+20db16e149bcb11afc8a1ee3e6491cb3
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module Board.$trModule2 Board.$trModule1) -}
+7bfcd1ad21a98b4c6ff3401547372182
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Board"#) -}
+f290ddee277efafa26cedb6400414e08
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+faa7612656ea74b3aaab235e6c7c74d5
+  $w$cshowsPrec :: Board.Field -> GHC.Base.String -> GHC.Base.String
+  {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
+     Unfolding: (\ (w :: Board.Field) (w1 :: GHC.Base.String) ->
+                 case w of wild {
+                   Board.RoadH -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField4 w1
+                   Board.RoadV -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField3 w1
+                   Board.BlankF -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField2 w1
+                   Board.Node
+                   -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField1 w1 }) -}
+faa7612656ea74b3aaab235e6c7c74d5
+  data Field = RoadH | RoadV | BlankF | Node
+341d5e17c803e1a1e7952481203092f8
+  type Position = (GHC.Types.Float, GHC.Types.Float)
+8375991aae9661adcb08d63a46a2d38e
+  boardFields :: [[Board.Field]]
+  {- Unfolding: (Board.boardFields_go Config.boardData) -}
+ba0359432491392769c45798d301e2db
+  boardFields_go :: [[GHC.Types.Char]] -> [[Board.Field]]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+9cbdbae867169eeff8a3f7c29f66fd6c
+  fieldForChar :: GHC.Types.Char -> Board.Field
+  {- Arity: 1, HasNoCafRefs, Strictness: <S(S),1*U(1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: GHC.Types.Char) ->
+                 case ds of wild { GHC.Types.C# ds1 ->
+                 case ds1 of ds2 {
+                   DEFAULT -> Board.BlankF
+                   '#'# -> Board.RoadH
+                   '*'# -> Board.RoadV
+                   'o'# -> Board.Node } }) -}
+a23e9afa7448ee7d6a4b3b00aaeff1cf
+  fieldPicture ::
+    Board.Field -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ds :: Board.Field) ->
+                 case ds of wild {
+                   Board.RoadH -> Pictures.roadH
+                   Board.RoadV -> Pictures.roadV
+                   Board.BlankF -> Pictures.blank
+                   Board.Node -> Pictures.node }) -}
+9733cf037560b3a9b228b68268425408
+  picture :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Unfolding: (case GHC.Base.map
+                        @ [Board.Field]
+                        @ Graphics.Gloss.Internals.Data.Picture.Picture
+                        Board.rowPicture
+                        Board.boardFields of wild {
+                   []
+                   -> GHC.List.foldl2 @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   : x xs -> Board.picture_go xs x }) -}
+d983f57a20c52c169aa8d1c3db76c63f
+  picture_go ::
+    [Graphics.Gloss.Internals.Data.Picture.Picture]
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U> -}
+b9512b2e6df2e0ae14e845f6580912ef
+  rowPicture ::
+    [Board.Field] -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U>,
+     Unfolding: (\ (fields :: [Board.Field]) ->
+                 Board.rowPicture_go
+                   (GHC.Base.map
+                      @ Board.Field
+                      @ Graphics.Gloss.Internals.Data.Picture.Picture
+                      Board.fieldPicture
+                      fields)) -}
+bec0d0153fbc8344b0cede10a3e09447
+  rowPicture_go ::
+    [Graphics.Gloss.Internals.Data.Picture.Picture]
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U> -}
+instance GHC.Classes.Eq [Board.Field] = Board.$fEqField
+instance GHC.Show.Show [Board.Field] = Board.$fShowField
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: none
+require own pkg trusted: False
+
