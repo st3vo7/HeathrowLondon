@@ -21,6 +21,8 @@ ceovi (x:xs) = promeni_zadnji x : ceovi xs
 promeni_zadnji:: String -> String
 promeni_zadnji x = reverse ('?' :  (tail $ reverse x))
 
+--ovo je moglo lakse (bez  maybeToList-a) samo da sam prvo obradio slucaj
+--kada je lista xs prazna (inace head xs puca) ali neka ga za sad ovako. 
 napravi_novu :: [String] -> String -> [String]
 napravi_novu tabela xs
     | maybeToList (head' xs) == ['B'] = napravi_novu ( ispeglaj $ zip tabela ["###o","___*","___*","___*","???o"]) (tail xs)

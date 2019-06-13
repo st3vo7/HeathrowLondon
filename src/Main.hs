@@ -43,9 +43,10 @@ render state =
        let contentScale = Game.contentScale state
            content      = pictures [ D.board ]
        in  case Game.mode state of
-                _ ->            pictures [ D.background $ Game.windowSize state
-                                        , scale contentScale contentScale content
+                _ ->            pictures [ 
+                                         scale contentScale contentScale content
                                         ]
+                                        --D.background $ Game.windowSize state
 
 main :: IO ()
 -- main = do

@@ -1,6 +1,5 @@
 module Display ( showAt,
-                background,
-                board
+                 board
                ) where
 
 import qualified Board
@@ -17,14 +16,14 @@ showAt (x, y) = translate (blockSize * x + boardOffsetHorizontal) (blockSize * y
 board :: Picture
 board = showAt (0, 0) Board.picture
 
-fullImage :: Picture -> (Int, Int) -> Picture
-fullImage picture windowSize =
-           let (_, (picWidth, picHeight)) = boundingBox picture
-               (winWidth, winHeight)      = (fromIntegral $ fst windowSize, fromIntegral $ snd windowSize)
-               horizontalScale            = winWidth / picWidth
-               verticalScale              = winHeight / picHeight
-               scaleFactor                = max horizontalScale verticalScale
-           in scale scaleFactor scaleFactor $ picture
+--fullImage :: Picture -> (Int, Int) -> Picture
+--fullImage picture windowSize =
+--           let (_, (picWidth, picHeight)) = boundingBox picture
+--               (winWidth, winHeight)      = (fromIntegral $ fst windowSize, fromIntegral $ snd windowSize)
+--               horizontalScale            = winWidth / picWidth
+--               verticalScale              = winHeight / picHeight
+--               scaleFactor                = max horizontalScale verticalScale
+--           in scale scaleFactor scaleFactor $ picture
 
-background windowSize = fullImage P.background windowSize
+--background windowSize = fullImage P.background windowSize
 

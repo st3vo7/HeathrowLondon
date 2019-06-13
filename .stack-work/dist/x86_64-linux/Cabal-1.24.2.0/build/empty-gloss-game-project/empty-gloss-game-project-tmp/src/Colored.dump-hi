@@ -1,0 +1,129 @@
+
+==================== FINAL INTERFACE ====================
+2019-06-13 08:05:23.735262 UTC
+
+interface main@main:Colored 8002
+  interface hash: e1ef5ffa79e51340f36e4b54da2b7b90
+  ABI hash: 8d4cff8a97cc1a4e8583f76f69bbd53f
+  export-list hash: 998899bf630a5129fd100829c57e7f19
+  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  flag hash: bc3095f4b553734f0dadeae05b5c3808
+  sig of: Nothing
+  used TH splices: False
+  where
+exports:
+  Colored.ceovi
+  Colored.head'
+  Colored.inic_tabela
+  Colored.ispeglaj
+  Colored.napravi_novu
+  Colored.promeni_zadnji
+module dependencies:
+package dependencies: base-4.9.1.0* ghc-prim-0.5.0.0
+                      integer-gmp-1.0.0.1
+orphans: base-4.9.1.0:GHC.Base base-4.9.1.0:GHC.Float
+family instance modules: base-4.9.1.0:Control.Applicative
+                         base-4.9.1.0:Data.Either base-4.9.1.0:Data.Functor.Const
+                         base-4.9.1.0:Data.Monoid base-4.9.1.0:Data.Type.Equality
+                         base-4.9.1.0:GHC.Generics base-4.9.1.0:GHC.IO.Exception
+                         base-4.9.1.0:GHC.TypeLits
+import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.Maybe d876c4ffe4b3c43755a781e8ad860d88
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
+import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
+5e55876d3f20f9586505fa8a99119ad0
+  $trModule :: GHC.Types.Module
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.Module
+                   Colored.$trModule2
+                   Colored.$trModule1) -}
+b4bbe23581488c354c2cf388efaa7911
+  $trModule1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "Colored"#) -}
+0017b21843adb75d4710d3fdb3298ff5
+  $trModule2 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "main"#) -}
+b46b4087aaa8730c7b64de7bb5a00e29
+  ceovi :: [GHC.Base.String] -> [GHC.Base.String]
+  {- Arity: 1, Strictness: <S,1*U> -}
+c681010869c0937f554fa4da3a22b1c7
+  head' :: [a] -> GHC.Base.Maybe a
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ @ a (ds :: [a]) ->
+                 case ds of wild {
+                   [] -> GHC.Base.Nothing @ a : x xs -> GHC.Base.Just @ a x }) -}
+a21655ce87a6729cf1d38643b241cf88
+  inic_tabela :: [[GHC.Types.Char]]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Colored.inic_tabela1) -}
+88ec01001b681be164654cb9f786cb18
+  inic_tabela1 :: [[GHC.Types.Char]]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Colored.inic_tabela2) -}
+cb54678a9226698bffaf5c3a154144ca
+  inic_tabela2 :: [[GHC.Types.Char]]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Colored.inic_tabela3) -}
+0ea24dc02b96371f29361f6aa53504b1
+  inic_tabela3 :: [[GHC.Types.Char]]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   Colored.inic_tabela4) -}
+133371a6753bf977a7044e4f03917a1d
+  inic_tabela4 :: [[GHC.Types.Char]]
+  {- HasNoCafRefs, Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   (GHC.Types.[] @ GHC.Types.Char)
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+2c26b23e08c6bb2312da107b88432b38
+  ispeglaj ::
+    [(GHC.Base.String, GHC.Base.String)] -> [GHC.Base.String]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+edf661542abec2badda3e4b4a4695c28
+  napravi_novu ::
+    [GHC.Base.String] -> GHC.Base.String -> [GHC.Base.String]
+  {- Arity: 2, Strictness: <L,U><S,U> -}
+5bd48863af30652d3344dcf1c1d01659
+  promeni_zadnji :: GHC.Base.String -> GHC.Base.String
+  {- Arity: 1, Strictness: <L,1*U>,
+     Unfolding: (\ (x :: GHC.Base.String) ->
+                 GHC.List.reverse1
+                   @ GHC.Types.Char
+                   (GHC.Types.:
+                      @ GHC.Types.Char
+                      Colored.promeni_zadnji1
+                      (case GHC.List.reverse1
+                              @ GHC.Types.Char
+                              x
+                              (GHC.Types.[] @ GHC.Types.Char) of wild {
+                         [] -> GHC.List.scanl2 @ GHC.Types.Char : ds1 xs -> xs }))
+                   (GHC.Types.[] @ GHC.Types.Char)) -}
+eabaf9ddfa4b343d7de2f737b154f4f3
+  promeni_zadnji1 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '?'#) -}
+vectorised variables:
+vectorised tycons:
+vectorised reused tycons:
+parallel variables:
+parallel tycons:
+trusted: safe
+require own pkg trusted: False
+
