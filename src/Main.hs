@@ -88,8 +88,8 @@ main :: IO ()
 main = let size       = Config.windowSize
            position   = (600, 0)
            fps        = 30
-           background = black
-           window     = InWindow "Labyrinth" size position
+           background = white
+           window     = InWindow "From Heathrow to London" size position
            updates    = \ seconds state -> case Game.mode state of
                                                _                -> state
            

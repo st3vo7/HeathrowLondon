@@ -9,8 +9,8 @@ import Graphics.Gloss.Game
 ------------------------------------------------------------------------------------------------------------------------
 --ovi sa glos gejmom
 
-roadH = png "data/roadH.png"
-roadV = png "data/roadV.png"
+roadH = png "data/roadh.png"
+roadV = png "data/roadv.png"
 node =  png "data/node.png"
 blank = png "data/blank.png"
 background = png "data/background.png"
