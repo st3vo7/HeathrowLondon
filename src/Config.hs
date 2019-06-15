@@ -1,10 +1,12 @@
 module Config where
 
-windowSize = (600,600) :: (Int,Int)
+windowSize = (800,800) :: (Int,Int)
 
 windowPosition = (300,300) :: (Int,Int)
 
-blockSize = 32 :: Float
+blockSize = 30 :: Float
+
+gap = 150 :: Float
 
 
 boardHeight = length boardData
@@ -16,8 +18,11 @@ boardOffsetVertical   = - blockSize / 2.0 * (fromIntegral boardHeight)
 boardOffsetHorizontal = - blockSize / 2.0 * (fromIntegral boardWidth)
 
 
-boardData = ["###o###o###o###o",
-             "___*___*___*___*",
-             "___*___*___*___*",
-             "___*___*___*___*",
-             "###o###o###o###o"]
+boardData = [
+			 "####o####o####o####o",
+             "____*____*____*____*",
+             "____*____*____*____*",
+             "____-____-____-____-",
+             "____*____*____*____*",
+             "____*____*____*____*",
+             "####o####o####o####o"]

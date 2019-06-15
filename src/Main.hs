@@ -9,7 +9,7 @@ import Graphics.Gloss.Interface.Pure.Simulate
 
 import qualified Config
 import qualified ShortestPath as SP
-import qualified Board
+import qualified Board 
 import qualified Game
 import qualified Colored as Cld
 import qualified Display as D
@@ -40,12 +40,13 @@ groupsOf n xs = take n xs : groupsOf n (drop n xs)
 
 render :: Game.State -> Picture
 render state =
-       let contentScale = Game.contentScale state
-           content      = pictures [ D.board ]
-       in  case Game.mode state of
-                _ ->            pictures [ 
-                                         scale contentScale contentScale content
-                                        ]
+       let 
+           valuesBoardA  = D.boardValuesA ["10", "20", "30", "40"]
+           valuesBoardB  = D.boardValuesB ["5", "20", "78", "13"]
+           valuesBoardC  = D.boardValuesC ["17", "4", "37", "70"]
+           content      = pictures  [D.board,valuesBoardA,valuesBoardB,valuesBoardC]
+            in  case Game.mode state of
+                _ ->            pictures [content]
                                         --D.background $ Game.windowSize state
 
 main :: IO ()

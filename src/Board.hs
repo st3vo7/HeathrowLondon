@@ -8,7 +8,7 @@ import Graphics.Gloss
 import Data.Maybe
 import Data.List
 
-data Field = RoadH | RoadV | BlankF | Node deriving (Show, Eq)
+data Field = RoadH | RoadV | BlankF | Node | White deriving (Show, Eq)
 type Position = (Float, Float)
 
 -- Funkcije za prikaz na tabli
@@ -17,7 +17,9 @@ fieldForChar :: Char -> Field
 fieldForChar '#' = RoadH
 fieldForChar '*' = RoadV
 fieldForChar 'o' = Node
+fieldForChar '-' = White 
 fieldForChar  _  = BlankF
+
 
 
 --mapira redove karaktera iz tabele u tipove
@@ -29,7 +31,7 @@ fieldPicture RoadH = Pictures.roadH
 fieldPicture RoadV = Pictures.roadV
 fieldPicture Node = Pictures.node
 fieldPicture BlankF = Pictures.blank
-
+fieldPicture White = Pictures.whiteB
 --------------------------------------------------------------------------------------------------------------
 --tek kad proradi png od gloss gejma
 
@@ -42,9 +44,12 @@ rowPicture fields =
     in  foldr1 combine $ map fieldPicture fields
 
 
-
+--sve u jednu sliku smesta
 picture :: Picture
 picture = let combine = \ current previous -> pictures [ translate 0 Config.blockSize previous, current ]
           in  foldl1 (flip combine) $ map rowPicture boardFields
+
+
+
 
 ---------------------------------------------------------------------------------------------------------------
