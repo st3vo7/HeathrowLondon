@@ -50,7 +50,7 @@ render state =
                                         --D.background $ Game.windowSize state
 
 main :: IO ()
--- main = do
+--  main = do
 --     contents <- readFile "src/ulaz.txt"
 --     --let threes =  groupsOf 3 (map read $ lines contents)
 --     --let threes = map (read (lines contents)) :: Int
@@ -86,7 +86,22 @@ main :: IO ()
 
     
     
-main = let size       = Config.windowSize
+main = 
+  do  contents <- readFile "src/ulaz.txt"
+      let niz = (map read $  lines contents) :: [Int]
+     
+    
+      let threes = groupsOf 3 niz :: [[Int]]
+          roadSystem = map (\[a,b,c] -> SP.Section a b c) threes
+          path = SP.optimalPath roadSystem
+          pathString = concat $ map (show . fst ) path
+          pathPrice = sum $ map snd path
+          colored_path = Cld.napravi_novu Cld.inic_tabela pathString
+
+
+
+
+      let  size       = Config.windowSize
            position   = (600, 0)
            fps        = 30
            background = white
