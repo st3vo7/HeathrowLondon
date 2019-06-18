@@ -18,7 +18,7 @@ fieldForChar '#' = RoadH
 fieldForChar '*' = RoadV
 fieldForChar 'o' = Node
 fieldForChar '-' = White 
-fieldForChar  _  = BlankF
+fieldForChar  '_'  = BlankF
 
 
 
@@ -36,6 +36,7 @@ fieldPicture White = Pictures.whiteB
 --tek kad proradi png od gloss gejma
 
 --polje u sliku mapira
+--tj jedan niz (horizontalno) polja
 rowPicture :: [Field] -> Picture
 rowPicture fields =
     let combine = \ current previous -> pictures [
@@ -45,6 +46,7 @@ rowPicture fields =
 
 
 --sve u jednu sliku smesta
+--tako sto vertikalno kombinuje sve ove horizontalne
 picture :: Picture
 picture = let combine = \ current previous -> pictures [ translate 0 Config.blockSize previous, current ]
           in  foldl1 (flip combine) $ map rowPicture boardFields

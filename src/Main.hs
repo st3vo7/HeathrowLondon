@@ -23,6 +23,7 @@ groupsOf _ [] = []
 groupsOf n xs = take n xs : groupsOf n (drop n xs)
 
 
+
 --boardDataAB :: Int -> [Char]
 --boardDataAB n = concat $ take n $ repeat "###o"
 
@@ -38,6 +39,10 @@ groupsOf n xs = take n xs : groupsOf n (drop n xs)
 --changeChar tabela (x:xs)
 --    | x == 'B' = last 
 
+--ako se nalazi u ModeSplash prikazi splashScreen
+--ako se nalazi u ModeEnd prikazi endScreen
+--inace radi pictures[content]
+--note: Inic stanje je ModeSplash i treba da se klikne space da predje u ModeAnimate
 render :: Game.State -> Picture
 render state =
        let 
@@ -45,7 +50,12 @@ render state =
            valuesBoardB  = D.boardValuesB ["5", "20", "78", "13"]
            valuesBoardC  = D.boardValuesC ["17", "4", "37", "70"]
            content      = pictures  [D.board,valuesBoardA,valuesBoardB,valuesBoardC]
+           splashScreen = D.splash $ Game.windowSize state
+           endScreen = D.end $ Game.windowSize state
+           
             in  case Game.mode state of
+                Game.ModeSplash -> splashScreen
+                Game.ModeEnd    -> endScreen
                 _ ->            pictures [content]
                                         --D.background $ Game.windowSize state
 
@@ -83,7 +93,6 @@ main :: IO ()
 --         drawing = circle 80
         
 --         in display window background drawing
-
     
     
 main = 
@@ -98,22 +107,35 @@ main =
           pathPrice = sum $ map snd path
           colored_path = Cld.napravi_novu Cld.inic_tabela pathString
 
-
-
-
+      --print threes
+      --print colored_path
+      --initialState :: Game.State
+      
+      --dakle on iz Game-a pozove State i uzme threes da napravi inicijalno stanje
+      let initialState = Game.State { Game.cene_trojki  = threes
+                          , Game.mode         = Game.ModeSplash
+                          , Game.windowSize   = Config.windowSize
+                          , Game.contentScale = 1
+                          }
+      
+      
+      
+      
       let  size       = Config.windowSize
            position   = (600, 0)
            fps        = 30
            background = white
            window     = InWindow "From Heathrow to London" size position
            updates    = \ seconds state -> case Game.mode state of
+                                               Game.ModeSplash -> state
+                                               Game.ModeEnd    -> state
                                                _                -> state
            
        in Graphics.Gloss.Game.play
               window
               background
               fps
-              Game.initialState
+              initialState
               render
               Game.handleEvent
               [updates]

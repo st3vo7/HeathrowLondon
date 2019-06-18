@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-06-12 19:07:35.988819 UTC
+2019-06-15 12:24:47.276443 UTC
 
 interface main@main:Config 8002
-  interface hash: 2a91cba80736da4e27be3bcdf85fc0b4
-  ABI hash: 4a2c35a0baca4833c9e3272b3f027e48
-  export-list hash: a9bf9bfe1deb5051a5f2921c768dd23f
+  interface hash: 402918eb66b37b379aed2a0444ebf305
+  ABI hash: 2e9e080cc07eed1686f5894abde6d4db
+  export-list hash: b39e9c25461cdb937e7e3eb55f2778ce
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: bc3095f4b553734f0dadeae05b5c3808
   sig of: Nothing
@@ -18,6 +18,7 @@ exports:
   Config.boardOffsetHorizontal
   Config.boardOffsetVertical
   Config.boardWidth
+  Config.gap
   Config.windowPosition
   Config.windowSize
 module dependencies:
@@ -48,82 +49,105 @@ fe6cb10325439635cd563b08eaaecb5d
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-93459ab17f9236be4d256cf8af7e7657
+2d90ffd9cb0af89725e3bef80ed55e8d
   blockSize :: GHC.Types.Float
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 32.0#) -}
-c1c2546c77bae5af7585c22d5b01e4db
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 30.0#) -}
+79421bc59e16b558577690bf2622de2c
   boardData :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Config.boardData5
+                   Config.boardData7
                    Config.boardData1) -}
-3332dd44aacceebc8cfe15f5ee15ae33
+eedbee8e954588751ece35b216e8cc99
   boardData1 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Config.boardData6
+                   Config.boardData8
                    Config.boardData2) -}
-99dc0d86d1a2a6cd90d071e4aaddecf5
+306b9ba86eaac11a27a40cc740228789
   boardData2 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Config.boardData6
+                   Config.boardData8
                    Config.boardData3) -}
-9c2cffa0f42bf41ecea49170ce0d090a
+464c7d50e74682169c3b9c250ee5af5c
   boardData3 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Config.boardData6
+                   Config.boardData9
                    Config.boardData4) -}
-fac7e5f6f319129ab9f1c06cf802b1d2
+b438368903bf356b274d92b140415b2b
   boardData4 :: [[GHC.Types.Char]]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ [GHC.Types.Char]
-                   Config.boardData5
+                   Config.boardData8
+                   Config.boardData5) -}
+041b1aada2f88567bbd3d8b4aa0f2e9a
+  boardData5 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Config.boardData8
+                   Config.boardData6) -}
+89fe892d152f48003f3e17cca23f7510
+  boardData6 :: [[GHC.Types.Char]]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Config.boardData7
                    (GHC.Types.[] @ [GHC.Types.Char])) -}
-e4d1efd6c871bd684dab94ae8990100c
-  boardData5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "###o###o###o###o"#) -}
-90925f0f5c348f8fa3355e0722edd56b
-  boardData6 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "___*___*___*___*"#) -}
-211c878dbdfe94eb1ea60e6d4473d162
+5f3b4a33a9ce155913dd873a14a07a7f
+  boardData7 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "####o####o####o####o"#) -}
+95ec9970452cdcfa643b9b3f905db3c9
+  boardData8 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "____*____*____*____*"#) -}
+010d9549fbd9e82295eb03a5421d2e58
+  boardData9 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString#
+                   "____-____-____-____-"#) -}
+5a0162f4c3f30819ea8c8be0ed242d01
   boardHeight :: GHC.Types.Int
   {- Unfolding: (case GHC.List.$wlenAcc
                         @ [GHC.Types.Char]
                         Config.boardData
                         0# of ww2 { DEFAULT ->
                  GHC.Types.I# ww2 }) -}
-deb6b3e9349ffde8349bfeeae004ae7f
+144c49216b9c8f2f60c78ab8272c0e35
   boardOffsetHorizontal :: GHC.Types.Float
   {- Unfolding: (case Config.boardWidth of wild { GHC.Types.I# i ->
                  GHC.Types.F#
                    (GHC.Prim.negateFloat#
-                      (GHC.Prim.timesFloat# 16.0# (GHC.Prim.int2Float# i))) }) -}
-0bc4609a4248a57d939c4af95a2506f5
+                      (GHC.Prim.timesFloat# 15.0# (GHC.Prim.int2Float# i))) }) -}
+737b24d9e4ec67fedb785c2d1d44b39b
   boardOffsetVertical :: GHC.Types.Float
   {- Unfolding: (case Config.boardHeight of wild { GHC.Types.I# i ->
                  GHC.Types.F#
                    (GHC.Prim.negateFloat#
-                      (GHC.Prim.timesFloat# 16.0# (GHC.Prim.int2Float# i))) }) -}
-9081a646905634dcdde7301ea8147883
+                      (GHC.Prim.timesFloat# 15.0# (GHC.Prim.int2Float# i))) }) -}
+1c0e299583074249e981cd666f7c3d4f
   boardWidth :: GHC.Types.Int
   {- Unfolding: (case GHC.List.$wlenAcc
                         @ GHC.Types.Char
                         Config.boardWidth1
                         0# of ww2 { DEFAULT ->
                  GHC.Types.I# ww2 }) -}
-abf6d5d3d96e5a034e33cfd138a4cf89
+7be3f300b5b0a1e9ebbe09334fdb3ee7
   boardWidth1 :: [GHC.Types.Char]
   {- Unfolding: (GHC.List.$w!!
                    @ [GHC.Types.Char]
                    Config.boardData
                    0#) -}
+d055d2168e87fccd2747cb2e2e9f41f5
+  gap :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 150.0#) -}
 19612144e703778938fb0e9d0432295f
   windowPosition :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m,
@@ -131,13 +155,13 @@ abf6d5d3d96e5a034e33cfd138a4cf89
 993fe66367a4ef4e4fad746a720b0f33
   windowPosition1 :: GHC.Types.Int
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 300#) -}
-871197070b2c00d6a9062c6364531cd6
+87edbe2fcc82d125cd53d473967c50fc
   windowSize :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Strictness: m,
      Unfolding: ((Config.windowSize1, Config.windowSize1)) -}
-d6cd6e22da12142a034c9e5d242a0551
+163d0fdad114dc1d5f8d250aad63c278
   windowSize1 :: GHC.Types.Int
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 600#) -}
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.I# 800#) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

@@ -3,11 +3,13 @@ module Display ( showAt,
                  boardValuesA,
                  boardValuesB,
                  boardValuesC,
-                 rowTextPicture
+                 rowTextPicture,
+                 splash,
+                 end
                ) where
 
 import qualified Board
---import qualified Game
+import qualified Game
 import Config
 import qualified Pictures as P
 
@@ -57,14 +59,18 @@ rowPicture values =
     in  foldr1 combine values
 
 
---fullImage :: Picture -> (Int, Int) -> Picture
---fullImage picture windowSize =
---           let (_, (picWidth, picHeight)) = boundingBox picture
---               (winWidth, winHeight)      = (fromIntegral $ fst windowSize, fromIntegral $ snd windowSize)
---               horizontalScale            = winWidth / picWidth
---               verticalScale              = winHeight / picHeight
---               scaleFactor                = max horizontalScale verticalScale
---           in scale scaleFactor scaleFactor $ picture
+fullImage :: Picture -> (Int, Int) -> Picture
+fullImage picture windowSize =
+           let (_, (picWidth, picHeight)) = boundingBox picture
+               (winWidth, winHeight)      = (fromIntegral $ fst windowSize, fromIntegral $ snd windowSize)
+               horizontalScale            = winWidth / picWidth
+               verticalScale              = winHeight / picHeight
+               scaleFactor                = max horizontalScale verticalScale
+           in scale scaleFactor scaleFactor $ picture
 
 --background windowSize = fullImage P.background windowSize
+splash windowSize = fullImage P.splash windowSize
+end windowSize = fullImage P.end windowSize
+--splash windowSize = pictures [P.splash]
+
 

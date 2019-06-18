@@ -1,12 +1,12 @@
 
 ==================== FINAL INTERFACE ====================
-2019-06-13 16:16:29.417778 UTC
+2019-06-18 12:18:10.849286 UTC
 
 interface main@main:Main 8002
-  interface hash: 47589fac19c1680d473624adb9afd47a
-  ABI hash: 2878821bac629460b3f739b17e3c7d91
-  export-list hash: 60f24259661ec79939213ba406c660fb
-  orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
+  interface hash: 021f291b818e49515a542c49c4a666f3
+  ABI hash: 4f2c36ebed31d54f6e5e3335ad2d311d
+  export-list hash: 44e7c56d877ae62b222194f7be1c4eac
+  orphan hash: 56bac288ebc3894b989fa0d61cc11109
   flag hash: 9cc5af640bff0536be5d3be83151f467
   sig of: Nothing
   used TH splices: False
@@ -77,11 +77,17 @@ family instance modules: JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5Xu
                          vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
                          vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed.Base
                          zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
 import  -/  base-4.9.1.0:Data.List 07ae2acca6538aa0800bd0a993ac6ac1
+import  -/  base-4.9.1.0:Data.OldList 27987919d8da2f92e3f472ca81f730f8
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:GHC.Err 3bba35a16538d33d424682ce66876cdd
 import  -/  base-4.9.1.0:GHC.List ab8c4e523e6c479c549d3bcd5fc4a439
+import  -/  base-4.9.1.0:GHC.Show a027f5ac24879eaba752f44aa90fe511
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
 import  -/  base-4.9.1.0:System.IO e4a64a8e3dce8616da54f0ee7104f7db
+import  -/  base-4.9.1.0:Text.Read 75c59863e882ebaec4532e9465e2ee9b
 import  -/  ghc-prim-0.5.0.0:GHC.Types 89f8de4f08018c9177c98d979eae0e45
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss 58eacb3f8485bcd8d009c7ff8ffe14ab
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Data.Color 8e5e6ea72b4261d7595c1931a0a9edb3
@@ -90,25 +96,53 @@ import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Interface.Pure.Simulate 0dc54674b8aef0ecd39e9db3bd083b9c
 import  -/  gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm:Graphics.Gloss.Game 3421bef7dfb0f57e993263f043c0a29c
 import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture cbb8b48928bf128ac054b70988405a09
-import  -/  Board 41b2b393f272bbb52d2e1408c53ddcf9
-  exports: 6d2688adf706b82a0624af9deffcd63a
+import  -/  Board 0fb7ab3b943a32e1dc7f1a8674ae73d5
+  exports: 6b06484ab9b742d7c9477ee59a0e7ef4
 import  -/  Colored 8d4cff8a97cc1a4e8583f76f69bbd53f
   exports: 998899bf630a5129fd100829c57e7f19
-import  -/  Config 4a2c35a0baca4833c9e3272b3f027e48
-  exports: a9bf9bfe1deb5051a5f2921c768dd23f
-  windowSize 871197070b2c00d6a9062c6364531cd6
-import  -/  Display 4616078e682f82719a7df222dc6bb148
-  exports: e017d1a2a66530e0e6f9049215ce034e
-  board 748bbd4daed12d4e22e5af12e282f463
-import  -/  Game d59d74afe97846326dbf233f3c2c1b6c
-  exports: db2776ee595a995468f95f5ca15dccd9
-  State b9b23a2b59115e9fa35704d8e3d84c53
-  contentScale fe7abb22d7602ea192b74ed5451d4d6f
-  handleEvent 27e69382ee4c28dad78a1603e281b719
-  initialState 30a4cde7e219ff39805722b5180d1d8c
-  mode 3c5e87441fc2ce12376583470381a4b4
+  inic_tabela a21655ce87a6729cf1d38643b241cf88
+  napravi_novu edf661542abec2badda3e4b4a4695c28
+import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
+  exports: b39e9c25461cdb937e7e3eb55f2778ce
+  windowSize 87edbe2fcc82d125cd53d473967c50fc
+import  -/  Display 925d17df3e86a8bbe4a8936409a17bd3
+  exports: 77cd7dc6b97d9bee0c67680b91206493
+  board b0fede0a6fd79a8fe4b698582c9853ae
+  boardValuesA 70f7d2d8a19d2975b8444862182396f1
+  boardValuesB 083230e2d81cbeb063fd8911c04d2786
+  boardValuesC 3942d8318373b02b641177c4bed38af4
+  end 977601b44edc4940b27ef9c7a1166036
+  splash eb372a974cc1f39c38b5e61649efc8a1
+import  -/  Game 9cd82f52803b3be88a1b6075e45f799e
+  exports: 7719c63944938d6e618589b9b787e48f
+  ModeEnd 34fc8e92518476d3ceac504d074e084b
+  ModeSplash 8238f90f323eca459f95aa3bce65a58f
+  State f07e0431a95499c5f8d2030ea8b69285
+  State 1c65fa58d25d699812887e05c4f50541
+  cene_trojki bf02835005057b48499ce14ddf4e42ca
+  contentScale cf64224b2b24324a77c9b4b073de66c8
+  handleEvent c54a4764b56b9eca4e803254f23b073f
+  mode fa43745594a282e6aea05c106ab5a98d
+  windowSize 761c0a5626b11ba9a650ae71ddaa4055
 import  -/  ShortestPath b64913c440018ea7b2c008a4ce279a12
   exports: 7bab5b0d6cd02c44d9e9121cb250f09f
+  Section 0cd873a6adc4349e8cceabe69043a86a
+  optimalPath a86302aab1967e186dc7f52b20e1c5f1
+d2ada01a519caea4efc153c59b25dfe2
+  $sread :: GHC.Base.String -> GHC.Types.Int
+  {- Arity: 1, Strictness: <L,U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (s :: GHC.Base.String) ->
+                 case Text.Read.readEither
+                        @ GHC.Types.Int
+                        GHC.Read.$fReadInt
+                        s of wild {
+                   Data.Either.Left x
+                   -> GHC.Err.errorWithoutStackTrace
+                        @ 'GHC.Types.PtrRepLifted
+                        @ GHC.Types.Int
+                        x
+                   Data.Either.Right y -> y }) -}
 d6831ef04cb9301b090dfae6f7bb7ec7
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -124,33 +158,63 @@ d6831ef04cb9301b090dfae6f7bb7ec7
 4d5f6550046edb9bda1a4b53999a97c4
   $wgroupsOf :: GHC.Prim.Int# -> [a] -> [[a]]
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
+f36a1432de33d552f765972ac97fc710
+  $wrender ::
+    Game.Mode
+    -> (GHC.Types.Int, GHC.Types.Int)
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 2, Strictness: <S,1*U><L,1*U(1*U(U),1*U(U))>,
+     Inline: [0],
+     Unfolding: (\ (ww :: Game.Mode)
+                   (ww1 :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 case ww of wild {
+                   Game.ModeSplash -> Display.fullImage Pictures.splash ww1
+                   Game.ModeAnimate -> Main.render1
+                   Game.ModeEnd -> Display.fullImage Pictures.end ww1 }) -}
 a0b27c85f45ada18445113996b120fa8
   groupsOf :: GHC.Types.Int -> [a] -> [[a]]
   {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ @ a (w :: GHC.Types.Int) (w1 :: [a]) ->
                  case w of ww { GHC.Types.I# ww1 -> Main.$wgroupsOf @ a ww1 w1 }) -}
-21c03a0fd85698d02331fee39b82a357
+9b35c14310802fc0a3db47757f49b49c
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-bea1a54b547631999c32c95cc3f9647c
+99a80c5cfbb38538861e7a5a710c2d19
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <S,U>,
-     Unfolding: (\ (eta :: GHC.Prim.State#
-                             GHC.Prim.RealWorld)[OneShot] ->
+     Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
+                 case GHC.IO.Handle.FD.openFile1
+                        Main.main14
+                        GHC.IO.IOMode.ReadMode
+                        s of ds1 { (#,#) ipv ipv1 ->
+                 case GHC.IO.Handle.Text.hGetContents1
+                        ipv1
+                        ipv of ds2 { (#,#) ipv2 ipv3 ->
                  case Graphics.Gloss.Internals.Interface.Game.playWithBackendIO1
                         @ Game.State
                         @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
                         Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState
                         Graphics.Gloss.Internals.Interface.Backend.GLUT.$fBackendGLUTState_$cinitBackendState
-                        Main.main8
+                        Main.main9
                         Graphics.Gloss.Data.Color.white
-                        Main.main7
-                        Game.initialState
+                        Main.main8
+                        (Game.State
+                           (Main.$wgroupsOf
+                              @ GHC.Types.Int
+                              3#
+                              (GHC.Base.map
+                                 @ [GHC.Types.Char]
+                                 @ GHC.Types.Int
+                                 Main.$sread
+                                 (Data.OldList.lines ipv3)))
+                           Game.ModeSplash
+                           Config.windowSize
+                           Main.main7)
                         Main.main6
                           `cast`
                         (<Game.State>_R
@@ -167,27 +231,33 @@ bea1a54b547631999c32c95cc3f9647c
                          ->_R <Game.State>_R
                          ->_R Sym (GHC.Types.N:IO[0] <Game.State>_R))
                         GHC.Types.True
-                        eta of ds1 { (#,#) ipv ipv1 ->
-                 (# ipv, GHC.Tuple.() #) }) -}
-8cd40cdd04a212a2f988139679e44235
-  main10 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0#) -}
-9c8f2acd2ac59aa3623356a09ec541b3
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 (# ipv4, GHC.Tuple.() #) } } }) -}
+d8943da47d9d8a7ca9cbc198098375c0
+  main10 :: (GHC.Types.Int, GHC.Types.Int)
+  {- HasNoCafRefs, Unfolding: ((Main.main12, Main.main11)) -}
+3df1a907b8a2fabb602a9ff86909cec8
   main11 :: GHC.Types.Int
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 0#) -}
+3e85a21b4d74e46d87306c26fc36152c
+  main12 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 600#) -}
-0d5f5b9a19b6bc96b90c274cf886dc82
-  main12 :: [GHC.Types.Char]
+f8e0c744cadbb9e3f9ce30261062cf0a
+  main13 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "From Heathrow to London"#) -}
-143605f256bc38e3098770aa47ca261d
-  main13 ::
+cab50e382f9df2c9f459e5c102e9a496
+  main14 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "src/ulaz.txt"#) -}
+e6af83cee7224184392dd21089a17071
+  main15 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1,
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-283aa4390b2486e3d9ee26839b1ca542
+2a1d7c6be9f9c9523c602b0fe7df915a
   main2 ::
     GHC.Types.Float
     -> Game.State
@@ -203,19 +273,22 @@ bea1a54b547631999c32c95cc3f9647c
                       Main.main3
                       time
                       world1 #)) -}
-3e132c58ad7bcc9275ef8481212102bd
+3f9443cfa36ead143a0b1ff07d43d104
   main3 :: [GHC.Types.Float -> Game.State -> Game.State]
   {- HasNoCafRefs, Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ (GHC.Types.Float -> Game.State -> Game.State)
                    Main.main4
                    (GHC.Types.[] @ (GHC.Types.Float -> Game.State -> Game.State))) -}
-9260247668900da960d69b7fd014c4f0
+529cc4356e1a9db0018a3e5ecd7537da
   main4 :: GHC.Types.Float -> Game.State -> Game.State
-  {- Arity: 2, HasNoCafRefs, Strictness: <L,A><S,1*U(U,U,U)>m,
-     Unfolding: InlineRule (2, True, True)
-                (\ (seconds :: GHC.Types.Float) (state :: Game.State) -> state) -}
-aaab8a7646b0ff1af072ef65f2ad0f0b
+  {- Arity: 2, HasNoCafRefs,
+     Strictness: <L,A><S(LSLL),1*U(U,U,U,U)>m,
+     Unfolding: InlineRule (2, True, False)
+                (\ (seconds :: GHC.Types.Float) (state :: Game.State) ->
+                 case state of wild { Game.State ds1 ds2 ds3 ds4 ->
+                 case ds2 of wild1 { DEFAULT -> wild } }) -}
+266340437c0137c92b232d5fa34e11f8
   main5 ::
     Graphics.Gloss.Internals.Interface.Event.Event
     -> Game.State
@@ -225,8 +298,8 @@ aaab8a7646b0ff1af072ef65f2ad0f0b
      Unfolding: (\ (event :: Graphics.Gloss.Internals.Interface.Event.Event)
                    (world1 :: Game.State)[OneShot]
                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
-                 (# s, world1 #)) -}
-a7e0662dc3e9a14e857f3e74230a8bee
+                 (# s, Game.handleEvent event world1 #)) -}
+4aa3da28917829f32bf187331b97e1fe
   main6 ::
     Game.State
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -236,48 +309,234 @@ a7e0662dc3e9a14e857f3e74230a8bee
      Unfolding: (\ (x :: Game.State)
                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  (# s, Main.render x #)) -}
-4b9acae5d120de23d279dccb4583d33a
-  main7 :: GHC.Types.Int
+a3901bd6eee456c6bea66d3df584f850
+  main7 :: GHC.Types.Float
+  {- HasNoCafRefs, Unfolding: (GHC.Types.F# 1.0#) -}
+5885992df8f56de37d2dfda54e5421bf
+  main8 :: GHC.Types.Int
   {- HasNoCafRefs, Unfolding: (GHC.Types.I# 30#) -}
-ae4ea70bc5b3cff8b74cfea76fb33aa0
-  main8 :: Graphics.Gloss.Data.Display.Display
+fd119b4b2004b7c230cd0a076488edfd
+  main9 :: Graphics.Gloss.Data.Display.Display
   {- Unfolding: (Graphics.Gloss.Data.Display.InWindow
-                   Main.main12
+                   Main.main13
                    Config.windowSize
-                   Main.main9) -}
-19a49efc9b9eb77c39872d6cf14adbba
-  main9 :: (GHC.Types.Int, GHC.Types.Int)
-  {- HasNoCafRefs, Unfolding: ((Main.main11, Main.main10)) -}
-d88fe3e253fadfec7bda1bbff04b03ff
+                   Main.main10) -}
+8ef834ed46eb3c5ca936fef0bd5f00c9
   render ::
     Game.State -> Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Arity: 1, Strictness: <L,1*U(A,A,1*U(U))>m14,
+  {- Arity: 1, Strictness: <S(LSLL),1*U(A,1*U,1*U(1*U(U),1*U(U)),A)>,
+     Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
-                (\ (state :: Game.State) ->
-                 let {
-                   contentScale :: GHC.Types.Float
-                   = case state of wild { Game.State ds1 ds2 ds3 -> ds3 }
-                 } in
-                 Graphics.Gloss.Internals.Data.Picture.Pictures
-                   (GHC.Types.:
-                      @ Graphics.Gloss.Internals.Data.Picture.Picture
-                      (Graphics.Gloss.Internals.Data.Picture.Scale
-                         contentScale
-                         contentScale
-                         Main.render1)
-                      (GHC.Types.[] @ Graphics.Gloss.Internals.Data.Picture.Picture))) -}
-44d9e4861d99ab92f9a2f586339ac0f8
+                (\ (w :: Game.State) ->
+                 case w of ww { Game.State ww1 ww2 ww3 ww4 ->
+                 Main.$wrender ww2 ww3 }) -}
+6e4668c5716604ee7d3dd9cebd845f30
   render1 :: Graphics.Gloss.Internals.Data.Picture.Picture
   {- Strictness: m14,
      Unfolding: (Graphics.Gloss.Internals.Data.Picture.Pictures
                    Main.render2) -}
-d7a62d7a9f5ecebd36cf83e274bf54f0
+7a76f7397b9e39166e4852b0fccc4583
+  render10 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Unfolding: (Main.render_go Main.render11) -}
+48a0e4599678a3cca717d69f98da9852
+  render11 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render18
+                   Main.render12) -}
+bc4f960926d27d92f3316525800b8a7f
+  render12 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render17
+                   Main.render13) -}
+8c5025da2b80265f737b9f2c828d25b7
+  render13 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render16
+                   Main.render14) -}
+5a2d25977d6bf90c9acb7a99ed53fc47
+  render14 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render15
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+b0bd54126c7a17068c01c098f067fdd6
+  render15 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "70"#) -}
+9dece62dca424dba39297b134232783d
+  render16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "37"#) -}
+ea280a8a38a52e862950c363078dd2da
+  render17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "4"#) -}
+df48db607134f26e61213e1b6f514215
+  render18 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "17"#) -}
+d8735ccf29ec8aa7fcd8f3e73ce7e65a
+  render19 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m11,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
+                   Display.boardValuesB2
+                   Display.boardValuesB1
+                   Main.render20) -}
+4e8506d9c1766f75e9e9f268ec3a5fa3
   render2 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   Display.board
+                   Main.render3
                    (GHC.Types.[] @ Graphics.Gloss.Internals.Data.Picture.Picture)) -}
+630f72cfaab84f958f7cc3bdfc74bb07
+  render20 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Unfolding: (Display.boardValuesB_go Main.render21) -}
+250a2c328241222b4fce91894171db70
+  render21 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Unfolding: (Main.render_go1 Main.render22) -}
+ede459018836ef6709197b7f635110cb
+  render22 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render29
+                   Main.render23) -}
+cccf35da7fc442dbc38fb569a2b255c3
+  render23 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render28
+                   Main.render24) -}
+f2f26487e662d2ef36c2affe67ff47e8
+  render24 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render27
+                   Main.render25) -}
+86deb8c0f6f526387bbaa900704f1012
+  render25 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render26
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+1071f9b9734a9bc14cbdaa76a92855b9
+  render26 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "13"#) -}
+cb71f270a4568c8202ffbce7d6a2879c
+  render27 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "78"#) -}
+68985203fea2ef2722d7428ba0ed83c3
+  render28 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "20"#) -}
+a47f2bc00782c40d42e87d9ec05fbee5
+  render29 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "5"#) -}
+abbd9f51f4c86ec4b7de366997ee165d
+  render3 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m14,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Pictures
+                   Main.render4) -}
+cfd13e2fc5f5c510ea55f2487e5b7185
+  render30 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m11,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
+                   Display.boardValuesA2
+                   Display.boardValuesA1
+                   Main.render31) -}
+4d5e3f87215078e5f3997640d2c949f9
+  render31 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Unfolding: (Display.boardValuesA_go Main.render32) -}
+2f08a8d4f45bb9f847840121e6f133df
+  render32 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Unfolding: (Main.render_go2 Main.render33) -}
+04e40b088191d8b532e4d9e72ae5c41e
+  render33 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render39
+                   Main.render34) -}
+8c94d27c6000f950de98a6525db5d97c
+  render34 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render28
+                   Main.render35) -}
+7cd2fbe5b58a1e2683633de914e0a39c
+  render35 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render38
+                   Main.render36) -}
+110a8b752503f51a065c75e739e52588
+  render36 :: [[GHC.Types.Char]]
+  {- Unfolding: (GHC.Types.:
+                   @ [GHC.Types.Char]
+                   Main.render37
+                   (GHC.Types.[] @ [GHC.Types.Char])) -}
+47c84b653b57141900e98a8589f26b0e
+  render37 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "40"#) -}
+1a7732c1f346678500405e23eeb35211
+  render38 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "30"#) -}
+8d3b09e4336daee9cad2ae0f3ca5ff50
+  render39 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "10"#) -}
+062ffb98a40382183b3545a44092e9f2
+  render4 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   Display.board
+                   Main.render5) -}
+622fc04016acaa0beb0f606ab8a14648
+  render5 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   Main.render30
+                   Main.render6) -}
+4f3c06de7e96eb78c00cf487b4cada73
+  render6 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   Main.render19
+                   Main.render7) -}
+aaaf82a2892aec7b613b77ca50337dfd
+  render7 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Strictness: m2,
+     Unfolding: (GHC.Types.:
+                   @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   Main.render8
+                   (GHC.Types.[] @ Graphics.Gloss.Internals.Data.Picture.Picture)) -}
+e95e68f8f9ff740f3c3c862e7d1081ba
+  render8 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Strictness: m11,
+     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
+                   Display.boardValuesC2
+                   Display.boardValuesC1
+                   Main.render9) -}
+acb5929c0c32662287ec203a02ae95bc
+  render9 :: Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Unfolding: (Display.boardValuesC_go Main.render10) -}
+7f7aa3d6bf07bb7c31178346840efd27
+  render_go ::
+    [[GHC.Types.Char]]
+    -> [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+487013b10f91f976a1b9ebaaf2f0c124
+  render_go1 ::
+    [[GHC.Types.Char]]
+    -> [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+83c1a98a881876428879a87f8a712185
+  render_go2 ::
+    [[GHC.Types.Char]]
+    -> [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
+"SPEC/Main read @ Int" [ALWAYS] forall ($dRead :: GHC.Read.Read
+                                                    GHC.Types.Int)
+  Text.Read.read @ GHC.Types.Int $dRead = Main.$sread
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

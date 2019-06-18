@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-06-13 16:16:28.588254 UTC
+2019-06-18 09:15:09.594953 UTC
 
 interface main@main:Display 8002
-  interface hash: 2173dbc015f4bc4a909ee8da2b6074d6
-  ABI hash: 4616078e682f82719a7df222dc6bb148
-  export-list hash: e017d1a2a66530e0e6f9049215ce034e
+  interface hash: 0fe9be1abb0a069635d7e85c2d1eccd6
+  ABI hash: 925d17df3e86a8bbe4a8936409a17bd3
+  export-list hash: 77cd7dc6b97d9bee0c67680b91206493
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: bc3095f4b553734f0dadeae05b5c3808
   sig of: Nothing
@@ -13,8 +13,14 @@ interface main@main:Display 8002
   where
 exports:
   Display.board
+  Display.boardValuesA
+  Display.boardValuesB
+  Display.boardValuesC
+  Display.end
+  Display.rowTextPicture
   Display.showAt
-module dependencies: Board Config Pictures
+  Display.splash
+module dependencies: Board Config Game Pictures
 package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-8mjdaTrY6fT50flhL8375P
                       GLUT-2.7.0.12@GLUT-2.7.0.12-1hjRN2wjD0V7bd3QjOEugK
                       JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx
@@ -75,23 +81,33 @@ family instance modules: JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5Xu
                          vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed
                          vector-0.11.0.0@vector-0.11.0.0-LMwQhhnXj8U3T5Bm1JFxG:Data.Vector.Unboxed.Base
                          zlib-0.6.1.2@zlib-0.6.1.2-7negTfm2ujt1gW4wr40MUp:Codec.Compression.Zlib.Stream
+import  -/  base-4.9.1.0:Data.Foldable 3e0b6967a1da89945d0e2d47266337a2
+import  -/  base-4.9.1.0:Data.Tuple 7dc4bbb45d2e69c991ffac438beeca11
+import  -/  base-4.9.1.0:GHC.Base c4231c43c07e46080a26bf94094c7aa1
 import  -/  base-4.9.1.0:GHC.Num 00bfaa7b2f9d6084913c0697a8a49ec8
+import  -/  base-4.9.1.0:GHC.Real 82e4e59051a13dba1da63e1e970a69e6
 import  -/  base-4.9.1.0:Prelude 22dd289b8469a8fa8dc81cab7b237771
+import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss 58eacb3f8485bcd8d009c7ff8ffe14ab
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Data.Picture fd5c4f23ee339ce6738783fc4ab4a0a5
 import  -/  gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm:Graphics.Gloss.Game 3421bef7dfb0f57e993263f043c0a29c
 import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture cbb8b48928bf128ac054b70988405a09
-import  -/  Board 41b2b393f272bbb52d2e1408c53ddcf9
-  exports: 6d2688adf706b82a0624af9deffcd63a
+import  -/  Board 0fb7ab3b943a32e1dc7f1a8674ae73d5
+  exports: 6b06484ab9b742d7c9477ee59a0e7ef4
   Position 341d5e17c803e1a1e7952481203092f8
-  picture fbb4a6c097fe638f6c95e911aff0c9c9
-import  -/  Config 4a2c35a0baca4833c9e3272b3f027e48
-  exports: a9bf9bfe1deb5051a5f2921c768dd23f
-  blockSize 93459ab17f9236be4d256cf8af7e7657
-  boardOffsetHorizontal deb6b3e9349ffde8349bfeeae004ae7f
-  boardOffsetVertical 0bc4609a4248a57d939c4af95a2506f5
-import  -/  Pictures 9213937d8799ec7de3508a7de72d9cd3
-  exports: a1656e40705d833c0a26371138eef804
+  picture 9c1e38e0042a61331d1ac972d077257c
+import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
+  exports: b39e9c25461cdb937e7e3eb55f2778ce
+  blockSize 2d90ffd9cb0af89725e3bef80ed55e8d
+  boardOffsetHorizontal 144c49216b9c8f2f60c78ab8272c0e35
+  boardOffsetVertical 737b24d9e4ec67fedb785c2d1d44b39b
+  gap d055d2168e87fccd2747cb2e2e9f41f5
+import  -/  Game 2704c06b4e2b209c0db2aea56cc248fd
+  exports: 7719c63944938d6e618589b9b787e48f
+import  -/  Pictures 3f8c0c9cf36243325813d899759de931
+  exports: 9c03922b40273e7cb2621f458949f5af
+  end 33efa383b6b3f905c1794497c0e9c315
+  splash fe6de3d2a334b3b004b82dd1260b91e8
 7fe0f7202714030606b8366d060d5c20
   $trModule :: GHC.Types.Module
   {- HasNoCafRefs, Strictness: m,
@@ -106,14 +122,163 @@ e94a145fdc00bb33d648c7fd91b6a2ae
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-748bbd4daed12d4e22e5af12e282f463
+b0fede0a6fd79a8fe4b698582c9853ae
   board :: Graphics.Gloss.Internals.Data.Picture.Picture
   {- Strictness: m11,
      Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
                    Config.boardOffsetHorizontal
                    Config.boardOffsetVertical
                    Board.picture) -}
-eced6a959f9fb6ebdce744be70b06825
+70f7d2d8a19d2975b8444862182396f1
+  boardValuesA ::
+    [[GHC.Types.Char]] -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <L,1*U>m11, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [[GHC.Types.Char]]) ->
+                 Graphics.Gloss.Internals.Data.Picture.Translate
+                   Display.boardValuesA2
+                   Display.boardValuesA1
+                   (Display.boardValuesA_go (Display.rowTextPicture w))) -}
+441b0bba17757ab689435756174528ef
+  boardValuesA1 :: GHC.Types.Float
+  {- Unfolding: (case Config.boardOffsetVertical of wild1 { GHC.Types.F# y ->
+                 GHC.Types.F# (GHC.Prim.plusFloat# -30.0# y) }) -}
+6431f2c9cf2fbacdb01e9e7d419793b7
+  boardValuesA2 :: GHC.Types.Float
+  {- Unfolding: (case Config.boardOffsetHorizontal of wild1 { GHC.Types.F# y ->
+                 GHC.Types.F# (GHC.Prim.minusFloat# -570.0# y) }) -}
+d2d869f498c652620f92525df6732e5a
+  boardValuesA_go ::
+    [Graphics.Gloss.Internals.Data.Picture.Picture]
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U> -}
+083230e2d81cbeb063fd8911c04d2786
+  boardValuesB ::
+    [[GHC.Types.Char]] -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <L,1*U>m11, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [[GHC.Types.Char]]) ->
+                 Graphics.Gloss.Internals.Data.Picture.Translate
+                   Display.boardValuesB2
+                   Display.boardValuesB1
+                   (Display.boardValuesB_go (Display.rowTextPicture w))) -}
+f7e350dc604c47befa74c5a7432250eb
+  boardValuesB1 :: GHC.Types.Float
+  {- Unfolding: (case Config.boardOffsetVertical of wild1 { GHC.Types.F# y ->
+                 GHC.Types.F# (GHC.Prim.plusFloat# 195.0# y) }) -}
+562a5eb52eb59b32500dd5e9517f4b0c
+  boardValuesB2 :: GHC.Types.Float
+  {- Unfolding: (case Config.boardOffsetHorizontal of wild1 { GHC.Types.F# y ->
+                 GHC.Types.F# (GHC.Prim.plusFloat# 37.5# y) }) -}
+5b85fb1de879b0376b84213c8003348a
+  boardValuesB_go ::
+    [Graphics.Gloss.Internals.Data.Picture.Picture]
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U> -}
+3942d8318373b02b641177c4bed38af4
+  boardValuesC ::
+    [[GHC.Types.Char]] -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <L,1*U>m11, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: [[GHC.Types.Char]]) ->
+                 Graphics.Gloss.Internals.Data.Picture.Translate
+                   Display.boardValuesC2
+                   Display.boardValuesC1
+                   (Display.boardValuesC_go (Display.rowTextPicture w))) -}
+4c5caaee2582b94adb6212513b008acb
+  boardValuesC1 :: GHC.Types.Float
+  {- Unfolding: (case Config.boardOffsetVertical of wild1 { GHC.Types.F# y ->
+                 GHC.Types.F# (GHC.Prim.plusFloat# 81.0# y) }) -}
+3d3112983254fbd26de973a3d4264f74
+  boardValuesC2 :: GHC.Types.Float
+  {- Unfolding: (case Config.boardOffsetHorizontal of wild1 { GHC.Types.F# y ->
+                 GHC.Types.F# (GHC.Prim.plusFloat# 111.0# y) }) -}
+71d74fb008ed5474947d62c91ad3d199
+  boardValuesC_go ::
+    [Graphics.Gloss.Internals.Data.Picture.Picture]
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U> -}
+977601b44edc4940b27ef9c7a1166036
+  end ::
+    (GHC.Types.Int, GHC.Types.Int)
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <L,1*U(1*U(U),1*U(U))>m13,
+     Unfolding: InlineRule (1, True, False)
+                (\ (windowSize :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 Display.fullImage Pictures.end windowSize) -}
+e0eb0bcf16915ae96dab0ca3c1aa43bb
+  fullImage ::
+    Graphics.Gloss.Internals.Data.Picture.Picture
+    -> (GHC.Types.Int, GHC.Types.Int)
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 2, Strictness: <L,U><L,1*U(1*U(U),1*U(U))>m13,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (2, True, False)
+                (\ (w :: Graphics.Gloss.Internals.Data.Picture.Picture)
+                   (w1 :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 let {
+                   scaleFactor :: GHC.Types.Float
+                   = case w1 of wild { (,) x ds1 ->
+                     case x of wild1 { GHC.Types.I# i ->
+                     case Graphics.Gloss.Game.$wboundingBox w of ww { (#,#) ww1 ww2 ->
+                     case ww2 of ds { (,) picWidth picHeight ->
+                     case picWidth of wild2 { GHC.Types.F# y ->
+                     case ds1 of wild3 { GHC.Types.I# i1 ->
+                     case picHeight of wild4 { GHC.Types.F# y1 ->
+                     case GHC.Prim.divideFloat#
+                            (GHC.Prim.int2Float# i)
+                            y of wild5 { DEFAULT ->
+                     case GHC.Prim.divideFloat#
+                            (GHC.Prim.int2Float# i1)
+                            y1 of wild6 { DEFAULT ->
+                     case GHC.Prim.tagToEnum#
+                            @ GHC.Types.Bool
+                            (GHC.Prim.leFloat# wild5 wild6) of wild7 {
+                       GHC.Types.False -> GHC.Types.F# wild5
+                       GHC.Types.True -> GHC.Types.F# wild6 } } } } } } } } } }
+                 } in
+                 Graphics.Gloss.Internals.Data.Picture.Scale
+                   scaleFactor
+                   scaleFactor
+                   w) -}
+79ed67b9e11892983f06718eae93958f
+  rowTextPicture ::
+    [[GHC.Types.Char]]
+    -> [Graphics.Gloss.Internals.Data.Picture.Picture]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (prices :: [[GHC.Types.Char]]) ->
+                 GHC.Base.build
+                   @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   (\ @ b1
+                      (c :: Graphics.Gloss.Internals.Data.Picture.Picture
+                            -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ [GHC.Types.Char]
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ Graphics.Gloss.Internals.Data.Picture.Picture
+                         @ b1
+                         @ [GHC.Types.Char]
+                         c
+                         Display.rowTextPicture1)
+                      n
+                      prices)) -}
+fbeccb135206868d3936d5d1ed4b5ec7
+  rowTextPicture1 ::
+    [GHC.Types.Char] -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, HasNoCafRefs, Strictness: <L,U>m13,
+     Unfolding: InlineRule (1, True, False)
+                (\ (x :: [GHC.Types.Char]) ->
+                 Graphics.Gloss.Internals.Data.Picture.Scale
+                   Display.rowTextPicture2
+                   Display.rowTextPicture2
+                   (Graphics.Gloss.Internals.Data.Picture.Text x)) -}
+3385f62255e9fa681999fbf532ef3a26
+  rowTextPicture2 :: GHC.Types.Float
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 0.15#) -}
+35fa0770d582b7df4dcdbc2df778fae7
   showAt ::
     Board.Position
     -> Graphics.Gloss.Internals.Data.Picture.Picture
@@ -127,12 +292,20 @@ eced6a959f9fb6ebdce744be70b06825
                    (case x of wild1 { GHC.Types.F# y1 ->
                     case Config.boardOffsetHorizontal of wild2 { GHC.Types.F# y2 ->
                     GHC.Types.F#
-                      (GHC.Prim.plusFloat# (GHC.Prim.timesFloat# 32.0# y1) y2) } })
+                      (GHC.Prim.plusFloat# (GHC.Prim.timesFloat# 30.0# y1) y2) } })
                    (case y of wild1 { GHC.Types.F# y1 ->
                     case Config.boardOffsetVertical of wild2 { GHC.Types.F# y2 ->
                     GHC.Types.F#
-                      (GHC.Prim.plusFloat# (GHC.Prim.timesFloat# 32.0# y1) y2) } })
+                      (GHC.Prim.plusFloat# (GHC.Prim.timesFloat# 30.0# y1) y2) } })
                    eta }) -}
+eb372a974cc1f39c38b5e61649efc8a1
+  splash ::
+    (GHC.Types.Int, GHC.Types.Int)
+    -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <L,1*U(1*U(U),1*U(U))>m13,
+     Unfolding: InlineRule (1, True, False)
+                (\ (windowSize :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 Display.fullImage Pictures.splash windowSize) -}
 vectorised variables:
 vectorised tycons:
 vectorised reused tycons:

@@ -13,7 +13,11 @@ roadH = png "data/roadh.png"
 roadV = png "data/roadv.png"
 node =  png "data/node.png"
 blank = png "data/blank.png"
-background = png "data/background.png"
+--background = png "data/background.png"
+
+splash = png "data/HTL_splash.png"
+end = png "data/HTL_end.png"
+
 whiteB = color white $ scale 0.01 0.01 (text "0")
 ---------------------------------------------------------------------------------------------------------------------------
 --ovi u medjuvremenu 
