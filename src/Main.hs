@@ -43,20 +43,32 @@ groupsOf n xs = take n xs : groupsOf n (drop n xs)
 --ako se nalazi u ModeEnd prikazi endScreen
 --inace radi pictures[content]
 --note: Inic stanje je ModeSplash i treba da se klikne space da predje u ModeAnimate
+
+getIntsAtPosition::[[Int]] -> Int -> [Int]
+getIntsAtPosition list index = map (!! index) list 
+
+intsToStrings::[Int] -> [String]
+intsToStrings ints = map show ints
+
+
+
+
 render :: Game.State -> Picture
 render state =
        let 
-           valuesBoardA  = D.boardValuesA ["10", "20", "30", "40"]
-           valuesBoardB  = D.boardValuesB ["5", "20", "78", "13"]
-           valuesBoardC  = D.boardValuesC ["17", "4", "37", "70"]
-           content      = pictures  [D.board,valuesBoardA,valuesBoardB,valuesBoardC]
+           valuesBoardA  = D.boardValuesA $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0                                   ---["10", "20", "30", "40"]
+           valuesBoardB  = D.boardValuesB $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1                                   ---["5", "20", "78", "13"]
+           valuesBoardC  = D.boardValuesC $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2                                   ---["17", "4", "37", "70"]
+           content      = pictures  [D.board, valuesBoardA,valuesBoardB,valuesBoardC]
            splashScreen = D.splash $ Game.windowSize state
            endScreen = D.end $ Game.windowSize state
-           
+      --     valuesBoardA = intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0
+      --     valuesBoardB = intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1
+      --     valuesBoardC = intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2
             in  case Game.mode state of
                 Game.ModeSplash -> splashScreen
                 Game.ModeEnd    -> endScreen
-                _ ->            pictures [content]
+                Game.ModeAnimate ->            pictures [content]
                                         --D.background $ Game.windowSize state
 
 main :: IO ()
