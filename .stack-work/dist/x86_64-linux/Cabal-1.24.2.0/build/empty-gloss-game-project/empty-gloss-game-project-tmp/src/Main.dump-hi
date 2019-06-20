@@ -1,18 +1,20 @@
 
 ==================== FINAL INTERFACE ====================
-2019-06-18 12:18:10.849286 UTC
+2019-06-20 12:08:16.260585 UTC
 
 interface main@main:Main 8002
-  interface hash: 021f291b818e49515a542c49c4a666f3
-  ABI hash: 4f2c36ebed31d54f6e5e3335ad2d311d
-  export-list hash: 44e7c56d877ae62b222194f7be1c4eac
+  interface hash: ecad9c74d237d30a11f63c74b64ffcca
+  ABI hash: 8be9317ee35f4eecaa4e8ff011f8d3f6
+  export-list hash: 6123a2ca255b0898bed6519f98ffedd4
   orphan hash: 56bac288ebc3894b989fa0d61cc11109
   flag hash: 9cc5af640bff0536be5d3be83151f467
   sig of: Nothing
   used TH splices: False
   where
 exports:
+  Main.getIntsAtPosition
   Main.groupsOf
+  Main.intsToStrings
   Main.main
   Main.render
 module dependencies: Board Colored Config Display Game Pictures
@@ -98,12 +100,14 @@ import  -/  gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm:Graphic
 import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture cbb8b48928bf128ac054b70988405a09
 import  -/  Board 0fb7ab3b943a32e1dc7f1a8674ae73d5
   exports: 6b06484ab9b742d7c9477ee59a0e7ef4
-import  -/  Colored 8d4cff8a97cc1a4e8583f76f69bbd53f
-  exports: 998899bf630a5129fd100829c57e7f19
-  inic_tabela a21655ce87a6729cf1d38643b241cf88
+import  -/  Colored d7252f0baf45ad4ede89350d59fc16c5
+  exports: dd1dc068e1e40ef2bd31f5836adb89f4
+  inic_tabela 606e04dc6c21322e385956b4ca252fba
+  izmeni_novu 3d02811f7ffa8101257a3959dd70e5a4
   napravi_novu edf661542abec2badda3e4b4a4695c28
 import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
   exports: b39e9c25461cdb937e7e3eb55f2778ce
+  boardData 79421bc59e16b558577690bf2622de2c
   windowSize 87edbe2fcc82d125cd53d473967c50fc
 import  -/  Display 925d17df3e86a8bbe4a8936409a17bd3
   exports: 77cd7dc6b97d9bee0c67680b91206493
@@ -115,6 +119,7 @@ import  -/  Display 925d17df3e86a8bbe4a8936409a17bd3
   splash eb372a974cc1f39c38b5e61649efc8a1
 import  -/  Game 9cd82f52803b3be88a1b6075e45f799e
   exports: 7719c63944938d6e618589b9b787e48f
+  ModeAnimate 257eaa12448fc0ed32bf0e2b4316111a
   ModeEnd 34fc8e92518476d3ceac504d074e084b
   ModeSplash 8238f90f323eca459f95aa3bce65a58f
   State f07e0431a95499c5f8d2030ea8b69285
@@ -158,43 +163,178 @@ d6831ef04cb9301b090dfae6f7bb7ec7
 4d5f6550046edb9bda1a4b53999a97c4
   $wgroupsOf :: GHC.Prim.Int# -> [a] -> [[a]]
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
-f36a1432de33d552f765972ac97fc710
+ef8f2d93850500ff69abb63d29584b4d
   $wrender ::
-    Game.Mode
+    [[GHC.Types.Int]]
+    -> Game.Mode
     -> (GHC.Types.Int, GHC.Types.Int)
     -> Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Arity: 2, Strictness: <S,1*U><L,1*U(1*U(U),1*U(U))>,
+  {- Arity: 3, Strictness: <L,U><S,1*U><L,1*U(1*U(U),1*U(U))>,
      Inline: [0],
-     Unfolding: (\ (ww :: Game.Mode)
-                   (ww1 :: (GHC.Types.Int, GHC.Types.Int)) ->
-                 case ww of wild {
-                   Game.ModeSplash -> Display.fullImage Pictures.splash ww1
-                   Game.ModeAnimate -> Main.render1
-                   Game.ModeEnd -> Display.fullImage Pictures.end ww1 }) -}
+     Unfolding: (\ (ww :: [[GHC.Types.Int]])
+                   (ww1 :: Game.Mode)
+                   (ww2 :: (GHC.Types.Int, GHC.Types.Int)) ->
+                 case ww1 of wild {
+                   Game.ModeSplash -> Display.fullImage Pictures.splash ww2
+                   Game.ModeAnimate
+                   -> Graphics.Gloss.Internals.Data.Picture.Pictures
+                        (GHC.Types.:
+                           @ Graphics.Gloss.Internals.Data.Picture.Picture
+                           (Graphics.Gloss.Internals.Data.Picture.Pictures
+                              (GHC.Types.:
+                                 @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                 Display.board
+                                 (GHC.Types.:
+                                    @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                    (Graphics.Gloss.Internals.Data.Picture.Translate
+                                       Display.boardValuesA2
+                                       Display.boardValuesA1
+                                       (Display.boardValuesA_go
+                                          (Main.render_go2
+                                             (GHC.Base.map
+                                                @ [GHC.Types.Int]
+                                                @ [GHC.Types.Char]
+                                                Main.render3
+                                                ww))))
+                                    (GHC.Types.:
+                                       @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                       (Graphics.Gloss.Internals.Data.Picture.Translate
+                                          Display.boardValuesB2
+                                          Display.boardValuesB1
+                                          (Display.boardValuesB_go
+                                             (Main.render_go1
+                                                (GHC.Base.map
+                                                   @ [GHC.Types.Int]
+                                                   @ [GHC.Types.Char]
+                                                   Main.render2
+                                                   ww))))
+                                       (GHC.Types.:
+                                          @ Graphics.Gloss.Internals.Data.Picture.Picture
+                                          (Graphics.Gloss.Internals.Data.Picture.Translate
+                                             Display.boardValuesC2
+                                             Display.boardValuesC1
+                                             (Display.boardValuesC_go
+                                                (Main.render_go
+                                                   (GHC.Base.map
+                                                      @ [GHC.Types.Int]
+                                                      @ [GHC.Types.Char]
+                                                      Main.render1
+                                                      ww))))
+                                          (GHC.Types.[]
+                                             @ Graphics.Gloss.Internals.Data.Picture.Picture))))))
+                           (GHC.Types.[] @ Graphics.Gloss.Internals.Data.Picture.Picture))
+                   Game.ModeEnd -> Display.fullImage Pictures.end ww2 }) -}
+edefffacd1913aaded63aa3ff55ff955
+  getIntsAtPosition ::
+    [[GHC.Types.Int]] -> GHC.Types.Int -> [GHC.Types.Int]
+  {- Arity: 2, Strictness: <S,1*U><L,U(U)>,
+     Unfolding: InlineRule (2, True, False)
+                (\ (list :: [[GHC.Types.Int]]) (index :: GHC.Types.Int) ->
+                 GHC.Base.build
+                   @ GHC.Types.Int
+                   (\ @ b1
+                      (c :: GHC.Types.Int -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ [GHC.Types.Int]
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ GHC.Types.Int
+                         @ b1
+                         @ [GHC.Types.Int]
+                         c
+                         (\ (ds :: [GHC.Types.Int]) ->
+                          GHC.List.!! @ GHC.Types.Int ds index))
+                      n
+                      list)) -}
 a0b27c85f45ada18445113996b120fa8
   groupsOf :: GHC.Types.Int -> [a] -> [[a]]
   {- Arity: 2, Strictness: <S(S),1*U(U)><S,1*U>, Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ @ a (w :: GHC.Types.Int) (w1 :: [a]) ->
                  case w of ww { GHC.Types.I# ww1 -> Main.$wgroupsOf @ a ww1 w1 }) -}
-9b35c14310802fc0a3db47757f49b49c
+189e996c38070b3532f555a82474782d
+  intsToStrings :: [GHC.Types.Int] -> [GHC.Base.String]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (ints :: [GHC.Types.Int]) ->
+                 GHC.Base.build
+                   @ [GHC.Types.Char]
+                   (\ @ b1
+                      (c :: [GHC.Types.Char] -> b1 -> b1)[OneShot]
+                      (n :: b1)[OneShot] ->
+                    GHC.Base.foldr
+                      @ GHC.Types.Int
+                      @ b1
+                      (GHC.Base.mapFB
+                         @ [GHC.Types.Char]
+                         @ b1
+                         @ GHC.Types.Int
+                         c
+                         GHC.Show.$fShowInt_$cshow)
+                      n
+                      ints)) -}
+43147c3e4ad9b3efafc4fe2eabf670f6
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-99a80c5cfbb38538861e7a5a710c2d19
+f77b6a0a29b805ea95cd861ad463e843
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: (\ (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  case GHC.IO.Handle.FD.openFile1
-                        Main.main14
+                        Main.main21
                         GHC.IO.IOMode.ReadMode
                         s of ds1 { (#,#) ipv ipv1 ->
                  case GHC.IO.Handle.Text.hGetContents1
                         ipv1
                         ipv of ds2 { (#,#) ipv2 ipv3 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        Main.main16
+                        GHC.Types.True
+                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
+                 let {
+                   threes :: [[GHC.Types.Int]]
+                   = Main.$wgroupsOf
+                       @ GHC.Types.Int
+                       3#
+                       (GHC.Base.map
+                          @ [GHC.Types.Char]
+                          @ GHC.Types.Int
+                          Main.$sread
+                          (Data.OldList.lines ipv3))
+                 } in
+                 let {
+                   pathString :: [GHC.Types.Char]
+                   = Main.main_go
+                       (ShortestPath.optimalPath
+                          (GHC.Base.map
+                             @ [GHC.Types.Int]
+                             @ ShortestPath.Section
+                             Main.main14
+                             threes))
+                 } in
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.Show.showList__
+                           @ [GHC.Types.Char]
+                           GHC.Show.shows_$cshowList1
+                           (Colored.izmeni_novu
+                              (Colored.napravi_novu Colored.inic_tabela pathString))
+                           (GHC.Types.[] @ GHC.Types.Char))
+                        GHC.Types.True
+                        ipv4 of ds4 { (#,#) ipv6 ipv7 ->
+                 case GHC.IO.Handle.Text.hPutStr2
+                        GHC.IO.Handle.FD.stdout
+                        (GHC.CString.unpackAppendCString#
+                           "Najbolja putanja je: "#
+                           pathString)
+                        GHC.Types.True
+                        ipv6 of ds5 { (#,#) ipv8 ipv9 ->
                  case Graphics.Gloss.Internals.Interface.Game.playWithBackendIO1
                         @ Game.State
                         @ Graphics.Gloss.Internals.Interface.Backend.GLUT.GLUTState
@@ -203,18 +343,7 @@ a0b27c85f45ada18445113996b120fa8
                         Main.main9
                         Graphics.Gloss.Data.Color.white
                         Main.main8
-                        (Game.State
-                           (Main.$wgroupsOf
-                              @ GHC.Types.Int
-                              3#
-                              (GHC.Base.map
-                                 @ [GHC.Types.Char]
-                                 @ GHC.Types.Int
-                                 Main.$sread
-                                 (Data.OldList.lines ipv3)))
-                           Game.ModeSplash
-                           Config.windowSize
-                           Main.main7)
+                        (Game.State threes Game.ModeSplash Config.windowSize Main.main7)
                         Main.main6
                           `cast`
                         (<Game.State>_R
@@ -231,8 +360,8 @@ a0b27c85f45ada18445113996b120fa8
                          ->_R <Game.State>_R
                          ->_R Sym (GHC.Types.N:IO[0] <Game.State>_R))
                         GHC.Types.True
-                        ipv2 of ds3 { (#,#) ipv4 ipv5 ->
-                 (# ipv4, GHC.Tuple.() #) } } }) -}
+                        ipv8 of ds6 { (#,#) ipv10 ipv11 ->
+                 (# ipv10, GHC.Tuple.() #) } } } } } }) -}
 d8943da47d9d8a7ca9cbc198098375c0
   main10 :: (GHC.Types.Int, GHC.Types.Int)
   {- HasNoCafRefs, Unfolding: ((Main.main12, Main.main11)) -}
@@ -246,17 +375,48 @@ f8e0c744cadbb9e3f9ce30261062cf0a
   main13 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString#
                    "From Heathrow to London"#) -}
-cab50e382f9df2c9f459e5c102e9a496
-  main14 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "src/ulaz.txt"#) -}
-e6af83cee7224184392dd21089a17071
-  main15 ::
-    GHC.Prim.State# GHC.Prim.RealWorld
-    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+4672e0650cd126615cf4b40cdb05044f
+  main14 :: [GHC.Types.Int] -> ShortestPath.Section
   {- Arity: 1,
-     Unfolding: (GHC.TopHandler.runMainIO1
-                   @ ()
-                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
+     Unfolding: (\ (ds :: [GHC.Types.Int]) ->
+                 case ds of wild {
+                   [] -> Main.main15 GHC.Prim.void#
+                   : a ds1
+                   -> case ds1 of wild1 {
+                        [] -> Main.main15 GHC.Prim.void#
+                        : b ds2
+                        -> case ds2 of wild2 {
+                             [] -> Main.main15 GHC.Prim.void#
+                             : c ds3
+                             -> case ds3 of wild3 {
+                                  [] -> ShortestPath.Section a b c
+                                  : ipv ipv1 -> Main.main15 GHC.Prim.void# } } } }) -}
+5ae91b1ded23fbe12eec50b96cee4d43
+  main15 :: GHC.Prim.Void# -> ShortestPath.Section
+  {- Arity: 1, Strictness: <B,A>x -}
+ef79f48a91362275c17f7c6cd01951ce
+  main16 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.showList__2
+                   Main.main17) -}
+2f41595f74b95711f722937e8c79e8e5
+  main17 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   Main.main18) -}
+bdd135ca37e9ab70e098cb6687169ca7
+  main18 :: GHC.Base.String
+  {- Unfolding: (GHC.Show.showLitString
+                   Config.boardData7
+                   Main.main19) -}
+260e51b66f40277266217214639a8996
+  main19 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.Types.:
+                   @ GHC.Types.Char
+                   GHC.Show.shows6
+                   Main.main20) -}
 2a1d7c6be9f9c9523c602b0fe7df915a
   main2 ::
     GHC.Types.Float
@@ -273,6 +433,20 @@ e6af83cee7224184392dd21089a17071
                       Main.main3
                       time
                       world1 #)) -}
+bf5b3f7c4535356d82191b87f56fde89
+  main20 :: GHC.Base.String
+  {- Unfolding: (Main.main_showl Config.boardData1) -}
+2669abb7cc22dba0e214dcbf8fa573c0
+  main21 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "src/ulaz.txt"#) -}
+744cb6a3088a674002f1022d4f097719
+  main22 ::
+    GHC.Prim.State# GHC.Prim.RealWorld
+    -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
+  {- Arity: 1,
+     Unfolding: (GHC.TopHandler.runMainIO1
+                   @ ()
+                   Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
 3f9443cfa36ead143a0b1ff07d43d104
   main3 :: [GHC.Types.Float -> Game.State -> Game.State]
   {- HasNoCafRefs, Strictness: m2,
@@ -299,7 +473,7 @@ e6af83cee7224184392dd21089a17071
                    (world1 :: Game.State)[OneShot]
                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  (# s, Game.handleEvent event world1 #)) -}
-4aa3da28917829f32bf187331b97e1fe
+0a0a6ba28a31148a0f88762f461906d1
   main6 ::
     Game.State
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -321,204 +495,61 @@ fd119b4b2004b7c230cd0a076488edfd
                    Main.main13
                    Config.windowSize
                    Main.main10) -}
-8ef834ed46eb3c5ca936fef0bd5f00c9
+dc345e263a34d5a5c1a24bae697b9140
+  main_go ::
+    [(ShortestPath.Label, GHC.Types.Int)] -> [GHC.Types.Char]
+  {- Arity: 1, Strictness: <S,1*U> -}
+82972a309dfe042f55e1f06e8f6360d8
+  main_showl :: [[GHC.Types.Char]] -> GHC.Base.String
+  {- Arity: 1, Strictness: <S,1*U> -}
+98622b88cfed036c975d0977b28fe049
   render ::
     Game.State -> Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Arity: 1, Strictness: <S(LSLL),1*U(A,1*U,1*U(1*U(U),1*U(U)),A)>,
+  {- Arity: 1, Strictness: <S(LSLL),1*U(U,1*U,1*U(1*U(U),1*U(U)),A)>,
      Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
                 (\ (w :: Game.State) ->
                  case w of ww { Game.State ww1 ww2 ww3 ww4 ->
-                 Main.$wrender ww2 ww3 }) -}
-6e4668c5716604ee7d3dd9cebd845f30
-  render1 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Strictness: m14,
-     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Pictures
-                   Main.render2) -}
-7a76f7397b9e39166e4852b0fccc4583
-  render10 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Unfolding: (Main.render_go Main.render11) -}
-48a0e4599678a3cca717d69f98da9852
-  render11 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render18
-                   Main.render12) -}
-bc4f960926d27d92f3316525800b8a7f
-  render12 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render17
-                   Main.render13) -}
-8c5025da2b80265f737b9f2c828d25b7
-  render13 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render16
-                   Main.render14) -}
-5a2d25977d6bf90c9acb7a99ed53fc47
-  render14 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render15
-                   (GHC.Types.[] @ [GHC.Types.Char])) -}
-b0bd54126c7a17068c01c098f067fdd6
-  render15 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "70"#) -}
-9dece62dca424dba39297b134232783d
-  render16 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "37"#) -}
-ea280a8a38a52e862950c363078dd2da
-  render17 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "4"#) -}
-df48db607134f26e61213e1b6f514215
-  render18 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "17"#) -}
-d8735ccf29ec8aa7fcd8f3e73ce7e65a
-  render19 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Strictness: m11,
-     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
-                   Display.boardValuesB2
-                   Display.boardValuesB1
-                   Main.render20) -}
-4e8506d9c1766f75e9e9f268ec3a5fa3
-  render2 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   Main.render3
-                   (GHC.Types.[] @ Graphics.Gloss.Internals.Data.Picture.Picture)) -}
-630f72cfaab84f958f7cc3bdfc74bb07
-  render20 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Unfolding: (Display.boardValuesB_go Main.render21) -}
-250a2c328241222b4fce91894171db70
-  render21 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Unfolding: (Main.render_go1 Main.render22) -}
-ede459018836ef6709197b7f635110cb
-  render22 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render29
-                   Main.render23) -}
-cccf35da7fc442dbc38fb569a2b255c3
-  render23 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render28
-                   Main.render24) -}
-f2f26487e662d2ef36c2affe67ff47e8
-  render24 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render27
-                   Main.render25) -}
-86deb8c0f6f526387bbaa900704f1012
-  render25 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render26
-                   (GHC.Types.[] @ [GHC.Types.Char])) -}
-1071f9b9734a9bc14cbdaa76a92855b9
-  render26 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "13"#) -}
-cb71f270a4568c8202ffbce7d6a2879c
-  render27 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "78"#) -}
-68985203fea2ef2722d7428ba0ed83c3
-  render28 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "20"#) -}
-a47f2bc00782c40d42e87d9ec05fbee5
-  render29 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "5"#) -}
-abbd9f51f4c86ec4b7de366997ee165d
-  render3 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Strictness: m14,
-     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Pictures
-                   Main.render4) -}
-cfd13e2fc5f5c510ea55f2487e5b7185
-  render30 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Strictness: m11,
-     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
-                   Display.boardValuesA2
-                   Display.boardValuesA1
-                   Main.render31) -}
-4d5e3f87215078e5f3997640d2c949f9
-  render31 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Unfolding: (Display.boardValuesA_go Main.render32) -}
-2f08a8d4f45bb9f847840121e6f133df
-  render32 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Unfolding: (Main.render_go2 Main.render33) -}
-04e40b088191d8b532e4d9e72ae5c41e
-  render33 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render39
-                   Main.render34) -}
-8c94d27c6000f950de98a6525db5d97c
-  render34 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render28
-                   Main.render35) -}
-7cd2fbe5b58a1e2683633de914e0a39c
-  render35 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render38
-                   Main.render36) -}
-110a8b752503f51a065c75e739e52588
-  render36 :: [[GHC.Types.Char]]
-  {- Unfolding: (GHC.Types.:
-                   @ [GHC.Types.Char]
-                   Main.render37
-                   (GHC.Types.[] @ [GHC.Types.Char])) -}
-47c84b653b57141900e98a8589f26b0e
-  render37 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "40"#) -}
-1a7732c1f346678500405e23eeb35211
-  render38 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "30"#) -}
-8d3b09e4336daee9cad2ae0f3ca5ff50
-  render39 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "10"#) -}
-062ffb98a40382183b3545a44092e9f2
-  render4 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   Display.board
-                   Main.render5) -}
-622fc04016acaa0beb0f606ab8a14648
-  render5 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   Main.render30
-                   Main.render6) -}
-4f3c06de7e96eb78c00cf487b4cada73
-  render6 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   Main.render19
-                   Main.render7) -}
-aaaf82a2892aec7b613b77ca50337dfd
-  render7 :: [Graphics.Gloss.Internals.Data.Picture.Picture]
-  {- Strictness: m2,
-     Unfolding: (GHC.Types.:
-                   @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   Main.render8
-                   (GHC.Types.[] @ Graphics.Gloss.Internals.Data.Picture.Picture)) -}
-e95e68f8f9ff740f3c3c862e7d1081ba
-  render8 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Strictness: m11,
-     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
-                   Display.boardValuesC2
-                   Display.boardValuesC1
-                   Main.render9) -}
-acb5929c0c32662287ec203a02ae95bc
-  render9 :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Unfolding: (Display.boardValuesC_go Main.render10) -}
+                 Main.$wrender ww1 ww2 ww3 }) -}
+f1002f3d4b77a59e93d6927eab4099ed
+  render1 :: [GHC.Types.Int] -> GHC.Base.String
+  {- Arity: 1,
+     Unfolding: (\ (x :: [GHC.Types.Int]) ->
+                 case GHC.List.$w!!
+                        @ GHC.Types.Int
+                        x
+                        2# of ww2 { GHC.Types.I# ww3 ->
+                 case GHC.Show.$wshowSignedInt
+                        0#
+                        ww3
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Types.: @ GHC.Types.Char ww5 ww6 } }) -}
+6f4f785cea6d0209988c92af6f463883
+  render2 :: [GHC.Types.Int] -> GHC.Base.String
+  {- Arity: 1,
+     Unfolding: (\ (x :: [GHC.Types.Int]) ->
+                 case GHC.List.$w!!
+                        @ GHC.Types.Int
+                        x
+                        1# of ww2 { GHC.Types.I# ww3 ->
+                 case GHC.Show.$wshowSignedInt
+                        0#
+                        ww3
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Types.: @ GHC.Types.Char ww5 ww6 } }) -}
+7083236d9f14f59d12286ba862cd0624
+  render3 :: [GHC.Types.Int] -> GHC.Base.String
+  {- Arity: 1,
+     Unfolding: (\ (x :: [GHC.Types.Int]) ->
+                 case GHC.List.$w!!
+                        @ GHC.Types.Int
+                        x
+                        0# of ww2 { GHC.Types.I# ww3 ->
+                 case GHC.Show.$wshowSignedInt
+                        0#
+                        ww3
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Types.: @ GHC.Types.Char ww5 ww6 } }) -}
 7f7aa3d6bf07bb7c31178346840efd27
   render_go ::
     [[GHC.Types.Char]]

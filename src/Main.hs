@@ -117,10 +117,14 @@ main =
           path = SP.optimalPath roadSystem
           pathString = concat $ map (show . fst ) path
           pathPrice = sum $ map snd path
-          colored_path = Cld.napravi_novu Cld.inic_tabela pathString
+          colored_path' = Cld.napravi_novu Cld.inic_tabela pathString
+          --izmeni, tako sto doda crtice (-) na odgovarajucim mestima
+          colored_path = Cld.izmeni_novu colored_path'
 
       --print threes
-      --print colored_path
+      print Config.boardData
+      print colored_path
+      putStrLn $ "Najbolja putanja je: " ++ pathString
       --initialState :: Game.State
       
       --dakle on iz Game-a pozove State i uzme threes da napravi inicijalno stanje
