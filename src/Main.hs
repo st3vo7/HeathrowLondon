@@ -140,12 +140,13 @@ insertAt newElement 0 as = newElement:as
 insertAt newElement i (a:as) = a : insertAt newElement (i - 1) as
 
 
-zameni::[String] -> [String] -> (Int, Int) -> ([String],[String]) 
-zameni prva druga par
+zameni::[String] -> [String] -> ([String],[String]) 
+zameni prva druga
     | (i == 0) = (setAorB prva druga par) 
     | (i == 6) = (setAorB prva druga par)
     | otherwise = (setC prva druga par)
       where i = fst $ charAtPosition druga '?'
+            par = charAtPosition druga '?'
 
 setAorB::[String] -> [String] -> (Int, Int) -> ([String], [String])
 setAorB prva druga par = (replaceNth (fst par) nova1 prva, replaceNth (fst par) nova2 druga) 
@@ -202,53 +203,20 @@ main =
   --        colored_path  = Cld.napravi_novu Cld.inic_tabela pathString::[String]
 
 
+      -- let lista1 = fst $ zameni (Config.boardData) colored_path' 
+      --     lista2 = snd $ zameni (Config.boardData) colored_path' 
 
-      --     colored_path1 = tail colored_path' 
-      --     colored_path2 = tail colored_path1 
-      --     colored_path3 = tail colored_path2
-      --     colored_path4 = tail colored_path3 
-      --     colored_path5 = tail colored_path4 
-      --     colored_path6 = tail colored_path5 
+      --     lista3 = fst $ zameni lista1 lista2 
+      --     lista4 = snd $ zameni lista1 lista2 
 
-      --     bord = Config.boardData
-      --     bord1 = tail bord
-      --     bord2 = tail bord1
-      --     bord3 = tail bord2
-      --     bord4 = tail bord3
-      --     bord5 = tail bord4
-      --     bord6 = tail bord5
+      --     lista5 = fst $ zameni lista3 lista4 
+      --     lista6 = snd $ zameni lista3 lista4 
 
-      -- putStrLn []
-      -- putStrLn $ head bord
-      -- putStrLn $ head bord1
-      -- putStrLn $ head bord2
-      -- putStrLn $ head bord3
-      -- putStrLn $ head bord4
-      -- putStrLn $ head bord5
-      -- putStrLn $ head bord6
-      -- putStrLn []
-      -- putStrLn $ head colored_path'
-      -- putStrLn $ head colored_path1
-      -- putStrLn $ head colored_path2
-      -- putStrLn $ head colored_path3
-      -- putStrLn $ head colored_path4
-      -- putStrLn $ head colored_path5
-      -- putStrLn $ head colored_path6
+      --     lista7 = fst $ zameni lista5 lista6 
+      --     lista8 = snd $ zameni lista5 lista6 
 
-      -- let lista1 = fst $ zameni (Config.boardData) colored_path' (charAtPosition colored_path' '?')
-      --     lista2 = snd $ zameni (Config.boardData) colored_path' (charAtPosition colored_path' '?')
-
-      --     lista3 = fst $ zameni lista1 lista2 (charAtPosition lista2 '?')
-      --     lista4 = snd $ zameni lista1 lista2 (charAtPosition lista2 '?')
-
-      --     lista5 = fst $ zameni lista3 lista4 (charAtPosition lista4 '?')
-      --     lista6 = snd $ zameni lista3 lista4 (charAtPosition lista4 '?')
-
-      --     lista7 = fst $ zameni lista5 lista6 (charAtPosition lista6 '?')
-      --     lista8 = snd $ zameni lista5 lista6 (charAtPosition lista6 '?')
-
-      --     lista9 = fst $ zameni lista7 lista8 (charAtPosition lista8 '?')
-      --     lista10 = snd $ zameni lista7 lista8 (charAtPosition lista8 '?')
+      --     lista9 = fst $ zameni lista7 lista8 
+      --     lista10 = snd $ zameni lista7 lista8 
 
 
 
