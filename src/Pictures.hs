@@ -13,7 +13,7 @@ roadH = png "data/roadh.png"
 roadV = png "data/roadv.png"
 node =  png "data/node.png"
 blank = png "data/blank.png"
---background = png "data/background.png"
+redRoad = png "data/redroad.png"
 
 splash = png "data/HTL_splash.png"
 end = png "data/HTL_end.png"

@@ -71,6 +71,5 @@ fullImage picture windowSize =
 --background windowSize = fullImage P.background windowSize
 splash windowSize = fullImage P.splash windowSize
 end windowSize = fullImage P.end windowSize
---splash windowSize = pictures [P.splash]
 
 

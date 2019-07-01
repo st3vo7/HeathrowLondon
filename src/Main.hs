@@ -4,7 +4,6 @@ import System.IO
 import Data.List
 import Data.Maybe
 import Graphics.Gloss
-import Graphics.Gloss
 import Graphics.Gloss.Game
 import Graphics.Gloss.Interface.Pure.Simulate
 
@@ -59,17 +58,19 @@ render state =
            valuesBoardA  = D.boardValuesA $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0                                   ---["10", "20", "30", "40"]
            valuesBoardB  = D.boardValuesB $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1                                   ---["5", "20", "78", "13"]
            valuesBoardC  = D.boardValuesC $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2                                   ---["17", "4", "37", "70"]
-           content      = pictures  [D.board, valuesBoardA,valuesBoardB,valuesBoardC]
+           content      = pictures  [D.board, valuesBoardA,valuesBoardB,valuesBoardC ] --, D.tabla $ Game.pocetna_tabla state
            splashScreen = D.splash $ Game.windowSize state
            endScreen = D.end $ Game.windowSize state
+           contentScale = Game.contentScale state
       --     valuesBoardA = intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0
       --     valuesBoardB = intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1
       --     valuesBoardC = intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2
             in  case Game.mode state of
                 Game.ModeSplash -> splashScreen
                 Game.ModeEnd    -> endScreen
-                Game.ModeAnimate ->            pictures [content]
-                                        --D.background $ Game.windowSize state
+                _               -> pictures [scale contentScale contentScale content]
+        
+                               
 
 
 
@@ -110,74 +111,6 @@ main :: IO ()
     
 
 
---prvo pojavljivanje karaktera zipovano sa indeksima (lista, indeks_pojavljivanja)
-charAtPosition::[[Char]] -> Char -> (Int, Int)
-charAtPosition lista kar = minim $ zip [0..n] $ map (fromMaybeToInt kar) lista
-  where n = (length lista) - 1
-
-
-fromMaybeToInt::Char -> [Char] -> Int
-fromMaybeToInt kar lista = if n == Nothing then (maxBound :: Int) else fromJust $ n
-  where n = (elemIndex kar lista)
-
---vraca par indeks vrednost minimalnog pojavljivanja karaktera 
-minim :: [(Int,Int)] -> (Int,Int)
-minim [x]      = x
-minim (x:xs)   = minM x $ minim xs
-
-
---fja za poredjenje dve torke (r_br_liste,indeks_u_listi) po drugoj koordinati 
-minM :: (Int,Int) -> (Int,Int) -> (Int,Int)
-minM a b
-    | (snd a) > (snd b)  = b
-    | (snd a) < (snd b)  = a
-    | (snd a) == (snd b) = a
-
-
-
-insertAt :: a -> Int -> [a] -> [a]
-insertAt newElement 0 as = newElement:as
-insertAt newElement i (a:as) = a : insertAt newElement (i - 1) as
-
-
-zameni::[String] -> [String] -> ([String],[String]) 
-zameni prva druga
-    | (i == 0) = (setAorB prva druga par) 
-    | (i == 6) = (setAorB prva druga par)
-    | otherwise = (setC prva druga par)
-      where i = fst $ charAtPosition druga '?'
-            par = charAtPosition druga '?'
-
-setAorB::[String] -> [String] -> (Int, Int) -> ([String], [String])
-setAorB prva druga par = (replaceNth (fst par) nova1 prva, replaceNth (fst par) nova2 druga) 
-  where (nova1, nova2) = (replaceNth (snd par) '?' (prva !! (fst par)), replaceNth (snd par) 'x' (druga !! (fst par)))
-
-
-setC::[String] -> [String] -> (Int, Int) -> ([String], [String])
-setC prva druga par = (replaceNth (indx) nova1 prva, replaceNth (indx) nova2 druga) 
-  where { (nova1, nova2) = (replaceNth (snd par) '?' (prva !! (indx)), replaceNth (snd par) 'x' (druga !! (indx))); 
-          indx = if (wasB prva par) then (((length prva) - 1) - (fst par)) else fst par;                                                                                                 }
---setC prva druga par = (["a"], ["a"])
-
-
--- insertAt::[a] -> Int -> a -> [a]
--- insertAt lista 
-
-replaceNth :: Int -> a -> [a] -> [a]
-replaceNth _ _ [] = []
-replaceNth n newVal (x:xs)
-  | n == 0 = newVal:xs
-  | otherwise = x:replaceNth (n-1) newVal xs
-
-
--- //vraca vrednost minimalnog pojavljivanja 
--- vratiPojavljivanje::lista
--- vratiPojavljivanje = min $ map $ elemIIndex ‘?’ llista
-
-wasB::[String] -> (Int, Int) -> Bool
-wasB lista koordinate = if ((lista !! n) !! ((snd koordinate)-1)) == '?' then True else False
-  where n = (length lista) - 1 
-
 
 
 main = 
@@ -195,19 +128,21 @@ main =
           colored_path = Cld.izmeni_novu colored_path'
 
       --print threes
-      print Config.boardData
-      print colored_path
-      putStrLn $ "Najbolja putanja je: " ++ pathString
+      --print Config.boardData
+      --print colored_path
+      --putStrLn $ "Najbolja putanja je: " ++ pathString
       --initialState :: Game.State
 
   --        colored_path  = Cld.napravi_novu Cld.inic_tabela pathString::[String]
 
 
-      -- let lista1 = fst $ zameni (Config.boardData) colored_path' 
-      --     lista2 = snd $ zameni (Config.boardData) colored_path' 
-
-      --     lista3 = fst $ zameni lista1 lista2 
-      --     lista4 = snd $ zameni lista1 lista2 
+      --let lista1 = fst $ Game.zameni (Config.boardData) colored_path' 
+      --    lista2 = snd $ Game.zameni (Config.boardData) colored_path'
+      --    lista3 = fst $ zameni lista1 lista2 
+      --    lista4 = snd $ zameni lista1 lista2 
+        
+      --print lista1
+      --print lista2
 
       --     lista5 = fst $ zameni lista3 lista4 
       --     lista6 = snd $ zameni lista3 lista4 
@@ -256,13 +191,16 @@ main =
       -- putStrLn $ head colored_path6
 
       -- print $ charAtPosition lista8 '?'
-
+      
+      
       
       --dakle on iz Game-a pozove State i uzme threes da napravi inicijalno stanje
       let initialState = Game.State { Game.cene_trojki  = threes
                           , Game.mode         = Game.ModeSplash
                           , Game.windowSize   = Config.windowSize
                           , Game.contentScale = 1
+                          , Game.pocetna_tabla = Config.boardData
+                          , Game.krajnja_tabla = colored_path'
                           }
       
       
@@ -276,7 +214,7 @@ main =
            updates    = \ seconds state -> case Game.mode state of
                                                Game.ModeSplash -> state
                                                Game.ModeEnd    -> state
-                                               _                -> state
+                                               _                -> Game.update seconds state
            
        in Graphics.Gloss.Game.play
               window
@@ -286,28 +224,5 @@ main =
               render
               Game.handleEvent
               [updates]
-
-
-
-
-    
-    --ovde će da, kao poslednju liniju  u Config.hs, doda boardData
-    
-    --ideja mi je da kad završi sa radom obriše poslednju liniju u Config-u (kako bi ok radilo i za novi ulaz)
-    --to radi tako što u cicsenje upiše sadržaj Config-a ...
-
-  --  ciscenje <- readFile "Config.hs"
-    
-    
--- ... i pozove f-ju koja pretvori sve u listu po novim redovima, i vrati sve osim poslenjeg reda ...
- --   let nf = pocistiZaSobom ciscenje
-
-    
--- ... i zatim sve to overwrite-uje novim fajlom Config.hs
---    writeFile "Config.hs" (show nf)
-    
-    --putStrLn threes
-    
-    --putStrLn contents
     
     

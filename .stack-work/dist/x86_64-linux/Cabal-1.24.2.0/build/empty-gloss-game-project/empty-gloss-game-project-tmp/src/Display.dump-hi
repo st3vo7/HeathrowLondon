@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-06-20 07:13:44.356772 UTC
+2019-07-01 15:27:36.494073 UTC
 
 interface main@main:Display 8002
-  interface hash: d92333061669b5fa53aac0f27d0727e6
-  ABI hash: 925d17df3e86a8bbe4a8936409a17bd3
+  interface hash: 4243670ce554a9e34ce5c1f890d170a2
+  ABI hash: 04ff337598c717cef4e569b88dc5bd72
   export-list hash: 77cd7dc6b97d9bee0c67680b91206493
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: bc3095f4b553734f0dadeae05b5c3808
@@ -92,20 +92,20 @@ import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss 
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Data.Picture fd5c4f23ee339ce6738783fc4ab4a0a5
 import  -/  gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm:Graphics.Gloss.Game 3421bef7dfb0f57e993263f043c0a29c
 import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture cbb8b48928bf128ac054b70988405a09
-import  -/  Board 0fb7ab3b943a32e1dc7f1a8674ae73d5
-  exports: 6b06484ab9b742d7c9477ee59a0e7ef4
+import  -/  Board 257a7d55e2874c2950428918b8d2ea17
+  exports: d0556e5d03e71158b8027f930704f4c6
   Position 341d5e17c803e1a1e7952481203092f8
-  picture 9c1e38e0042a61331d1ac972d077257c
+  picture ebcce933d8240cef2aa2499e7fe75686
 import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
   exports: b39e9c25461cdb937e7e3eb55f2778ce
   blockSize 2d90ffd9cb0af89725e3bef80ed55e8d
   boardOffsetHorizontal 144c49216b9c8f2f60c78ab8272c0e35
   boardOffsetVertical 737b24d9e4ec67fedb785c2d1d44b39b
   gap d055d2168e87fccd2747cb2e2e9f41f5
-import  -/  Game 9cd82f52803b3be88a1b6075e45f799e
-  exports: 7719c63944938d6e618589b9b787e48f
-import  -/  Pictures 3f8c0c9cf36243325813d899759de931
-  exports: 9c03922b40273e7cb2621f458949f5af
+import  -/  Game 09aa1cb3a545d2eb2c4c54456aeda29e
+  exports: 903aca7bb5165b1bdd86c2f04cd3ebbe
+import  -/  Pictures 5b1fbd96abc2f267deede4590908b9d0
+  exports: 5be6182ee1b170eb7155e7384433d1f2
   end 33efa383b6b3f905c1794497c0e9c315
   splash fe6de3d2a334b3b004b82dd1260b91e8
 7fe0f7202714030606b8366d060d5c20
@@ -122,7 +122,7 @@ e94a145fdc00bb33d648c7fd91b6a2ae
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-b0fede0a6fd79a8fe4b698582c9853ae
+7e992d9a4b3457cb6247d522b3b0856f
   board :: Graphics.Gloss.Internals.Data.Picture.Picture
   {- Strictness: m11,
      Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
