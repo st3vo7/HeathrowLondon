@@ -58,7 +58,7 @@ render state =
            valuesBoardA  = D.boardValuesA $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0                                   ---["10", "20", "30", "40"]
            valuesBoardB  = D.boardValuesB $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1                                   ---["5", "20", "78", "13"]
            valuesBoardC  = D.boardValuesC $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2                                   ---["17", "4", "37", "70"]
-           content      = pictures  [D.board, valuesBoardA,valuesBoardB,valuesBoardC ] --, D.tabla $ Game.pocetna_tabla state
+           content      = pictures  [D.board state, valuesBoardA,valuesBoardB,valuesBoardC ]
            splashScreen = D.splash $ Game.windowSize state
            endScreen = D.end $ Game.windowSize state
            contentScale = Game.contentScale state
@@ -200,7 +200,7 @@ main =
                           , Game.windowSize   = Config.windowSize
                           , Game.contentScale = 1
                           , Game.pocetna_tabla = Config.boardData
-                          , Game.krajnja_tabla = colored_path'
+                          , Game.krajnja_tabla = colored_path
                           }
       
       
@@ -214,7 +214,7 @@ main =
            updates    = \ seconds state -> case Game.mode state of
                                                Game.ModeSplash -> state
                                                Game.ModeEnd    -> state
-                                               _                -> Game.update seconds state
+                                               _               -> Game.update seconds state
            
        in Graphics.Gloss.Game.play
               window

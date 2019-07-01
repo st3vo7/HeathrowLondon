@@ -3,7 +3,6 @@ module Game where
 import Data.List
 import Data.Maybe
 
-import qualified Board
 import qualified Config
 import Debug.Trace
 
@@ -12,10 +11,6 @@ import Graphics.Gloss.Game
 
 
 data Mode = ModeSplash | ModeAnimate | ModeEnd deriving (Show,Eq)
-
---data BoardState = BoardState { pocetna_tabla :: [String]
---                             , krajnja_tabla :: [String]
---                             } deriving Show
 
 
 data State = State  { cene_trojki :: [[Int]]

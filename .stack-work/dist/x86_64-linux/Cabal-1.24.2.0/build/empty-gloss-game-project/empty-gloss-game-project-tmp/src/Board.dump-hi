@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-07-01 14:46:51.474575 UTC
+2019-07-04 13:41:48.751428 UTC
 
 interface main@main:Board 8002
-  interface hash: 83e7b75dfe2f83dd5855631030ddae63
-  ABI hash: 257a7d55e2874c2950428918b8d2ea17
+  interface hash: a5fad71c8308f39e41f9e014c99818ba
+  ABI hash: b1a1b9f978d95bdb70bbf6293412bed6
   export-list hash: d0556e5d03e71158b8027f930704f4c6
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: bc3095f4b553734f0dadeae05b5c3808
@@ -19,7 +19,7 @@ exports:
   Board.rowPicture
   Board.Field{Board.BlankF Board.Node Board.RedRoad Board.RoadH Board.RoadV Board.White}
   Board.Position
-module dependencies: Config Pictures
+module dependencies: Config Game Pictures
 package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-8mjdaTrY6fT50flhL8375P
                       GLUT-2.7.0.12@GLUT-2.7.0.12-1hjRN2wjD0V7bd3QjOEugK
                       JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx
@@ -93,7 +93,10 @@ import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4
 import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
   exports: b39e9c25461cdb937e7e3eb55f2778ce
   blockSize 2d90ffd9cb0af89725e3bef80ed55e8d
-  boardData 79421bc59e16b558577690bf2622de2c
+import  -/  Game 09aa1cb3a545d2eb2c4c54456aeda29e
+  exports: 903aca7bb5165b1bdd86c2f04cd3ebbe
+  State 2a0afa603b4a56b0bd514e766bbf00ea
+  pocetna_tabla c6fe8ceb3e5f8895bf7b4eaf123122f9
 import  -/  Pictures 5b1fbd96abc2f267deede4590908b9d0
   exports: 5be6182ee1b170eb7155e7384433d1f2
   blank da524900957c0356ba1ae8d9b7b4265e
@@ -313,15 +316,33 @@ f290ddee277efafa26cedb6400414e08
                    Board.White -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField2 w1
                    Board.RedRoad
                    -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField1 w1 }) -}
+6172ac01d86860a777ff3355d18e673d
+  $wpicture ::
+    [GHC.Base.String] -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: [GHC.Base.String]) ->
+                 case GHC.Base.map
+                        @ [Board.Field]
+                        @ Graphics.Gloss.Internals.Data.Picture.Picture
+                        Board.rowPicture
+                        (Board.boardFields_go ww) of wild {
+                   []
+                   -> GHC.List.foldl2 @ Graphics.Gloss.Internals.Data.Picture.Picture
+                   : x xs -> Board.picture_go xs x }) -}
 35c03315d39f02667df9133a1aa28d4b
   data Field = RoadH | RoadV | BlankF | Node | White | RedRoad
 341d5e17c803e1a1e7952481203092f8
   type Position = (GHC.Types.Float, GHC.Types.Float)
-24f0b5ea8a7db165c8cf6ea4bd7d4b00
-  boardFields :: [[Board.Field]]
-  {- Unfolding: (Board.boardFields_go Config.boardData) -}
-c116ab762d99db791b31f2a488cba9df
-  boardFields_go :: [[GHC.Types.Char]] -> [[Board.Field]]
+72b1a8bf698e31689e7180416bee0a00
+  boardFields :: Game.State -> [[Board.Field]]
+  {- Arity: 1, Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Game.State) ->
+                 case w of ww { Game.State ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 Board.boardFields_go ww5 }) -}
+275733565e87495bfb427f8a23731e6f
+  boardFields_go :: [GHC.Base.String] -> [[Board.Field]]
   {- Arity: 1, Strictness: <S,1*U> -}
 b3e513442f366e508fb2da00c5c9db1f
   fieldForChar :: GHC.Types.Char -> Board.Field
@@ -353,16 +374,15 @@ f51ffc904b50196e8db4c7dcc2e34f8a
                    Board.Node -> Pictures.node
                    Board.White -> Pictures.whiteB
                    Board.RedRoad -> Pictures.redRoad }) -}
-ebcce933d8240cef2aa2499e7fe75686
-  picture :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Unfolding: (case GHC.Base.map
-                        @ [Board.Field]
-                        @ Graphics.Gloss.Internals.Data.Picture.Picture
-                        Board.rowPicture
-                        Board.boardFields of wild {
-                   []
-                   -> GHC.List.foldl2 @ Graphics.Gloss.Internals.Data.Picture.Picture
-                   : x xs -> Board.picture_go xs x }) -}
+0bc1338eee74ecb1d09277c5737e9a36
+  picture ::
+    Game.State -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
+     Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Game.State) ->
+                 case w of ww { Game.State ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 Board.$wpicture ww5 }) -}
 41fea63f36c207d970af03f5c68342dc
   picture_go ::
     [Graphics.Gloss.Internals.Data.Picture.Picture]

@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-07-01 15:27:36.494073 UTC
+2019-07-04 13:43:34.188328 UTC
 
 interface main@main:Display 8002
-  interface hash: 4243670ce554a9e34ce5c1f890d170a2
-  ABI hash: 04ff337598c717cef4e569b88dc5bd72
+  interface hash: 7ab35c0df03621640e528a3bbe4bde48
+  ABI hash: bd644724a7c5b040a1a1bc1bd661cc06
   export-list hash: 77cd7dc6b97d9bee0c67680b91206493
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: bc3095f4b553734f0dadeae05b5c3808
@@ -92,10 +92,10 @@ import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss 
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Data.Picture fd5c4f23ee339ce6738783fc4ab4a0a5
 import  -/  gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm:Graphics.Gloss.Game 3421bef7dfb0f57e993263f043c0a29c
 import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4ZEzo:Graphics.Gloss.Internals.Data.Picture cbb8b48928bf128ac054b70988405a09
-import  -/  Board 257a7d55e2874c2950428918b8d2ea17
+import  -/  Board b1a1b9f978d95bdb70bbf6293412bed6
   exports: d0556e5d03e71158b8027f930704f4c6
   Position 341d5e17c803e1a1e7952481203092f8
-  picture ebcce933d8240cef2aa2499e7fe75686
+  picture 0bc1338eee74ecb1d09277c5737e9a36
 import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
   exports: b39e9c25461cdb937e7e3eb55f2778ce
   blockSize 2d90ffd9cb0af89725e3bef80ed55e8d
@@ -104,6 +104,7 @@ import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
   gap d055d2168e87fccd2747cb2e2e9f41f5
 import  -/  Game 09aa1cb3a545d2eb2c4c54456aeda29e
   exports: 903aca7bb5165b1bdd86c2f04cd3ebbe
+  State 2a0afa603b4a56b0bd514e766bbf00ea
 import  -/  Pictures 5b1fbd96abc2f267deede4590908b9d0
   exports: 5be6182ee1b170eb7155e7384433d1f2
   end 33efa383b6b3f905c1794497c0e9c315
@@ -122,13 +123,16 @@ e94a145fdc00bb33d648c7fd91b6a2ae
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-7e992d9a4b3457cb6247d522b3b0856f
-  board :: Graphics.Gloss.Internals.Data.Picture.Picture
-  {- Strictness: m11,
-     Unfolding: (Graphics.Gloss.Internals.Data.Picture.Translate
+081ab6b8f4fecb70d166374c140ee636
+  board ::
+    Game.State -> Graphics.Gloss.Internals.Data.Picture.Picture
+  {- Arity: 1, Strictness: <L,1*U(A,A,A,A,1*U,A)>m11,
+     Unfolding: InlineRule (1, True, False)
+                (\ (state :: Game.State) ->
+                 Graphics.Gloss.Internals.Data.Picture.Translate
                    Config.boardOffsetHorizontal
                    Config.boardOffsetVertical
-                   Board.picture) -}
+                   (Board.picture state)) -}
 70f7d2d8a19d2975b8444862182396f1
   boardValuesA ::
     [[GHC.Types.Char]] -> Graphics.Gloss.Internals.Data.Picture.Picture

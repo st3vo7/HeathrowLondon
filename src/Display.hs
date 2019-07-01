@@ -30,8 +30,8 @@ showAtC :: Board.Position -> Picture -> Picture
 showAtC (x, y) = translate (blockSize * x + boardOffsetHorizontal) (blockSize * y + boardOffsetVertical)
 
 --prikazuje celu tablu
-board :: Picture
-board = showAt (0, 0) Board.picture
+board :: Game.State -> Picture
+board state = showAt (0, 0) (Board.picture state)
 
 
 
@@ -71,5 +71,4 @@ fullImage picture windowSize =
 --background windowSize = fullImage P.background windowSize
 splash windowSize = fullImage P.splash windowSize
 end windowSize = fullImage P.end windowSize
-
 

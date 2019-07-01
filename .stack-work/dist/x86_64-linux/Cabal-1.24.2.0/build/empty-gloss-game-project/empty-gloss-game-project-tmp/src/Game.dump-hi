@@ -1,9 +1,9 @@
 
 ==================== FINAL INTERFACE ====================
-2019-07-01 14:56:57.254618 UTC
+2019-07-04 13:41:48.037917 UTC
 
 interface main@main:Game 8002
-  interface hash: 68610f6e7a2442a24c1cb8a8cc6dde92
+  interface hash: 2921ba1fdc77d6912dd404993b30709c
   ABI hash: 09aa1cb3a545d2eb2c4c54456aeda29e
   export-list hash: 903aca7bb5165b1bdd86c2f04cd3ebbe
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
@@ -26,7 +26,7 @@ exports:
   Game.zameni
   Game.Mode{Game.ModeAnimate Game.ModeEnd Game.ModeSplash}
   Game.State{Game.State cene_trojki contentScale krajnja_tabla mode pocetna_tabla windowSize}
-module dependencies: Board Config Pictures
+module dependencies: Config
 package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-8mjdaTrY6fT50flhL8375P
                       GLUT-2.7.0.12@GLUT-2.7.0.12-1hjRN2wjD0V7bd3QjOEugK
                       JuicyPixels-3.2.8.2@JuicyPixels-3.2.8.2-JViBgltRj36L5XuDdgF7cx
@@ -103,8 +103,6 @@ import  -/  ghc-prim-0.5.0.0:GHC.Classes 0bdf3d057a415ec1b84a7b1994efbe47
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Internals.Interface.Backend.Types 27c7a37ec0ef39978c14a4283451c288
 import  -/  gloss-1.10.2.5@gloss-1.10.2.5-EDPkhjN4e926j3oUsqTTMT:Graphics.Gloss.Internals.Interface.Event a13830d3a45a7b608eb64aa1877bc6f0
 import  -/  gloss-game-0.3.3.0@gloss-game-0.3.3.0-4sMIsRk9e9mDpSvX13whrm:Graphics.Gloss.Game 3421bef7dfb0f57e993263f043c0a29c
-import  -/  Board 257a7d55e2874c2950428918b8d2ea17
-  exports: d0556e5d03e71158b8027f930704f4c6
 import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
   exports: b39e9c25461cdb937e7e3eb55f2778ce
 20b588cd527e2d01c05816a17ec3cb88

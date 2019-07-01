@@ -2,6 +2,7 @@ module Board where
   
 import qualified Config
 import qualified Pictures
+import qualified Game
 
 import Graphics.Gloss
 
@@ -24,8 +25,8 @@ fieldForChar '?' = RedRoad
 
 
 --mapira redove karaktera iz tabele u tipove
-boardFields = [ map fieldForChar row
-                | row <- Config.boardData ]
+boardFields state = [ map fieldForChar row
+                | row <- Game.pocetna_tabla state ]
 
 --mapira tipove u slike
 fieldPicture RoadH = Pictures.roadH
@@ -49,9 +50,9 @@ rowPicture fields =
 
 --sve u jednu sliku smesta
 --tako sto vertikalno kombinuje sve ove horizontalne
-picture :: Picture
-picture = let combine = \ current previous -> pictures [ translate 0 Config.blockSize previous, current ]
-          in  foldl1 (flip combine) $ map rowPicture boardFields
+picture :: Game.State -> Picture
+picture state = let combine = \ current previous -> pictures [ translate 0 Config.blockSize previous, current ]
+                in  foldl1 (flip combine) $ map rowPicture ( boardFields state )
 
 
 
