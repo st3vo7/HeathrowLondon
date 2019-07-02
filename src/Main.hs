@@ -55,9 +55,9 @@ intsToStrings ints = map show ints
 render :: Game.State -> Picture
 render state =
        let 
-           valuesBoardA  = D.boardValuesA $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0                                   ---["10", "20", "30", "40"]
+           valuesBoardA  = D.boardValuesA $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2                                   ---["10", "20", "30", "40"]
            valuesBoardB  = D.boardValuesB $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1                                   ---["5", "20", "78", "13"]
-           valuesBoardC  = D.boardValuesC $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2                                   ---["17", "4", "37", "70"]
+           valuesBoardC  = D.boardValuesC $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0                                   ---["17", "4", "37", "70"]
            content      = pictures  [D.board state, valuesBoardA,valuesBoardB,valuesBoardC ]
            splashScreen = D.splash $ Game.windowSize state
            endScreen = D.end $ Game.windowSize state

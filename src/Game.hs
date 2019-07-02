@@ -93,7 +93,7 @@ setAorB prva druga par = (replaceNth (fst par) nova1 prva, replaceNth (fst par) 
 
 setC::[String] -> [String] -> (Int, Int) -> ([String], [String])
 setC prva druga par = (replaceNth (indx) nova1 prva, replaceNth (indx) nova2 druga) 
-  where { (nova1, nova2) = (replaceNth (snd par) '?' (prva !! (indx)), replaceNth (snd par) 'x' (druga !! (indx))); 
+  where { (nova1, nova2) = (replaceNth (snd par) '!' (prva !! (indx)), replaceNth (snd par) 'x' (druga !! (indx))); 
           indx = if (wasB prva par) then (((length prva) - 1) - (fst par)) else fst par;                                                                                                 }
 --setC prva druga par = (["a"], ["a"])
 
