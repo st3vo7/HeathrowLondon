@@ -9,7 +9,7 @@ import Graphics.Gloss
 import Data.Maybe
 import Data.List
 
-data Field = RoadH | RoadV | BlankF | Node | White | RedRoad deriving (Show, Eq)
+data Field = RoadH | RoadV | BlankF | Node | White | RedRoadH | RedRoadV deriving (Show, Eq)
 type Position = (Float, Float)
 
 -- Funkcije za prikaz na tabli
@@ -20,7 +20,9 @@ fieldForChar '*' = RoadV
 fieldForChar 'o' = Node
 fieldForChar '-' = White 
 fieldForChar '_'  = BlankF
-fieldForChar '?' = RedRoad
+fieldForChar '?' = RedRoadH
+fieldForChar '!' = RedRoadV
+
 
 
 
@@ -34,7 +36,8 @@ fieldPicture RoadV = Pictures.roadV
 fieldPicture Node = Pictures.node
 fieldPicture BlankF = Pictures.blank
 fieldPicture White = Pictures.whiteB
-fieldPicture RedRoad = Pictures.redRoad
+fieldPicture RedRoadH = Pictures.redRoadH
+fieldPicture RedRoadV = Pictures.redRoadV
 --------------------------------------------------------------------------------------------------------------
 --tek kad proradi png od gloss gejma
 

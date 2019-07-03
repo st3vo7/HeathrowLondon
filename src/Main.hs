@@ -128,9 +128,9 @@ main =
           colored_path = Cld.izmeni_novu colored_path'
 
       --print threes
-      --print Config.boardData
-      --print colored_path
-      --putStrLn $ "Najbolja putanja je: " ++ pathString
+      print Config.boardData
+      print colored_path
+      putStrLn $ "Najbolja putanja je: " ++ pathString
       --initialState :: Game.State
 
   --        colored_path  = Cld.napravi_novu Cld.inic_tabela pathString::[String]

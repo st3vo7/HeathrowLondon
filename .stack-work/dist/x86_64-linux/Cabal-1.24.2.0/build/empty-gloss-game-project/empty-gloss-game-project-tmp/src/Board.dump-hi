@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-07-04 13:41:48.751428 UTC
+2019-07-03 10:27:57.766771 UTC
 
 interface main@main:Board 8002
-  interface hash: a5fad71c8308f39e41f9e014c99818ba
-  ABI hash: b1a1b9f978d95bdb70bbf6293412bed6
-  export-list hash: d0556e5d03e71158b8027f930704f4c6
+  interface hash: 60a51b77c4bd3d81e8883d445dad0df6
+  ABI hash: fe3a27519ae9542e0b84a321cbd25fe1
+  export-list hash: f38da3085db6b2132cb0673a2f9528ca
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: bc3095f4b553734f0dadeae05b5c3808
   sig of: Nothing
@@ -17,7 +17,7 @@ exports:
   Board.fieldPicture
   Board.picture
   Board.rowPicture
-  Board.Field{Board.BlankF Board.Node Board.RedRoad Board.RoadH Board.RoadV Board.White}
+  Board.Field{Board.BlankF Board.Node Board.RedRoadH Board.RedRoadV Board.RoadH Board.RoadV Board.White}
   Board.Position
 module dependencies: Config Game Pictures
 package dependencies: GLURaw-2.0.0.3@GLURaw-2.0.0.3-8mjdaTrY6fT50flhL8375P
@@ -93,25 +93,26 @@ import  -/  gloss-rendering-1.10.3.5@gloss-rendering-1.10.3.5-FgDllLAutdLH3OZ8t4
 import  -/  Config 2e9e080cc07eed1686f5894abde6d4db
   exports: b39e9c25461cdb937e7e3eb55f2778ce
   blockSize 2d90ffd9cb0af89725e3bef80ed55e8d
-import  -/  Game 09aa1cb3a545d2eb2c4c54456aeda29e
+import  -/  Game 596a6e6559397a3c48a1b67a37f50458
   exports: 903aca7bb5165b1bdd86c2f04cd3ebbe
   State 2a0afa603b4a56b0bd514e766bbf00ea
   pocetna_tabla c6fe8ceb3e5f8895bf7b4eaf123122f9
-import  -/  Pictures 5b1fbd96abc2f267deede4590908b9d0
-  exports: 5be6182ee1b170eb7155e7384433d1f2
+import  -/  Pictures d52671d24eb453d1261dc82889f688de
+  exports: 21155662a162a491c110643493df9678
   blank da524900957c0356ba1ae8d9b7b4265e
   node 7ac5415e00036cd69bbe3f9dfbe44723
-  redRoad 7243c7ae9c276b737eadb7fe0470d934
+  redRoadH b0c53a88303aae9b4e8e8cd67a24915b
+  redRoadV 62d2e6d12ce7296b28d70a686bf12b68
   roadH a5fe42aaa6442a45aea0b398a48ef0e7
   roadV 49dd5abf947b5eaf53f0ae625cd047f5
   whiteB f03920a94d28257416d16f24ca1d7e27
-35c03315d39f02667df9133a1aa28d4b
+69aff54e5ad8117794a4ba68eb1d8622
   $fEqField :: GHC.Classes.Eq Board.Field
   DFunId
   {- HasNoCafRefs, Strictness: m, Inline: [ALWAYS] CONLIKE,
      Unfolding: DFun:.
                   @ Board.Field Board.$fEqField_$c== Board.$fEqField_$c/= -}
-35c03315d39f02667df9133a1aa28d4b
+69aff54e5ad8117794a4ba68eb1d8622
   $fEqField_$c/= :: Board.Field -> Board.Field -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
      Unfolding: (\ (a :: Board.Field) (b :: Board.Field) ->
@@ -131,10 +132,13 @@ import  -/  Pictures 5b1fbd96abc2f267deede4590908b9d0
                    Board.White
                    -> case b of wild1 {
                         DEFAULT -> GHC.Types.True Board.White -> GHC.Types.False }
-                   Board.RedRoad
+                   Board.RedRoadH
                    -> case b of wild1 {
-                        DEFAULT -> GHC.Types.True Board.RedRoad -> GHC.Types.False } }) -}
-35c03315d39f02667df9133a1aa28d4b
+                        DEFAULT -> GHC.Types.True Board.RedRoadH -> GHC.Types.False }
+                   Board.RedRoadV
+                   -> case b of wild1 {
+                        DEFAULT -> GHC.Types.True Board.RedRoadV -> GHC.Types.False } }) -}
+69aff54e5ad8117794a4ba68eb1d8622
   $fEqField_$c== :: Board.Field -> Board.Field -> GHC.Types.Bool
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><S,1*U>,
      Unfolding: (\ (ds :: Board.Field) (ds1 :: Board.Field) ->
@@ -154,10 +158,13 @@ import  -/  Pictures 5b1fbd96abc2f267deede4590908b9d0
                    Board.White
                    -> case ds1 of wild1 {
                         DEFAULT -> GHC.Types.False Board.White -> GHC.Types.True }
-                   Board.RedRoad
+                   Board.RedRoadH
                    -> case ds1 of wild1 {
-                        DEFAULT -> GHC.Types.False Board.RedRoad -> GHC.Types.True } }) -}
-35c03315d39f02667df9133a1aa28d4b
+                        DEFAULT -> GHC.Types.False Board.RedRoadH -> GHC.Types.True }
+                   Board.RedRoadV
+                   -> case ds1 of wild1 {
+                        DEFAULT -> GHC.Types.False Board.RedRoadV -> GHC.Types.True } }) -}
+69aff54e5ad8117794a4ba68eb1d8622
   $fShowField :: GHC.Show.Show Board.Field
   DFunId
   {- Strictness: m, Inline: [ALWAYS] CONLIKE,
@@ -166,25 +173,28 @@ import  -/  Pictures 5b1fbd96abc2f267deede4590908b9d0
                   Board.$fShowField_$cshowsPrec
                   Board.$fShowField_$cshow
                   Board.$fShowField_$cshowList -}
-2ab6b7bc7edf7c2dfe061424950a2c6b
+303f6a9695f40427ef8595a9a76446cb
   $fShowField1 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "RedRoad"#) -}
-452d11489a7779d94cb3b5c368027951
+  {- Unfolding: (GHC.CString.unpackCString# "RedRoadV"#) -}
+843f392eec88d59cc1c2eac284439af6
   $fShowField2 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "White"#) -}
-fca0086289413ed7dd412d6422424d96
+  {- Unfolding: (GHC.CString.unpackCString# "RedRoadH"#) -}
+cb1fca40eb3849b3e1145eb166ec4cc9
   $fShowField3 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "Node"#) -}
-ad44e075fa92aeb56140eeff4cd27316
+  {- Unfolding: (GHC.CString.unpackCString# "White"#) -}
+c54f2dab2470006d62a3d07eb7dbf43d
   $fShowField4 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "BlankF"#) -}
-fb581b790253778f750f2ef797749ff9
+  {- Unfolding: (GHC.CString.unpackCString# "Node"#) -}
+c41db45c6aad089f75773089124b2b0c
   $fShowField5 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "RoadV"#) -}
-a2e186626205f285f4dcedbef62c8f13
+  {- Unfolding: (GHC.CString.unpackCString# "BlankF"#) -}
+60ff27a602af31a319ffb688da5dbfa6
   $fShowField6 :: [GHC.Types.Char]
+  {- Unfolding: (GHC.CString.unpackCString# "RoadV"#) -}
+e4d168646de260fc87bf28d625b755c7
+  $fShowField7 :: [GHC.Types.Char]
   {- Unfolding: (GHC.CString.unpackCString# "RoadH"#) -}
-35c03315d39f02667df9133a1aa28d4b
+69aff54e5ad8117794a4ba68eb1d8622
   $fShowField_$cshow :: Board.Field -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U>,
      Unfolding: InlineRule (1, True, False)
@@ -193,13 +203,13 @@ a2e186626205f285f4dcedbef62c8f13
                    GHC.Show.shows22
                    x
                    (GHC.Types.[] @ GHC.Types.Char)) -}
-35c03315d39f02667df9133a1aa28d4b
+69aff54e5ad8117794a4ba68eb1d8622
   $fShowField_$cshowList :: [Board.Field] -> GHC.Show.ShowS
   {- Arity: 2,
      Unfolding: (GHC.Show.showList__
                    @ Board.Field
                    Board.$w$cshowsPrec) -}
-35c03315d39f02667df9133a1aa28d4b
+69aff54e5ad8117794a4ba68eb1d8622
   $fShowField_$cshowsPrec ::
     GHC.Types.Int -> Board.Field -> GHC.Show.ShowS
   {- Arity: 3, Strictness: <L,A><S,1*U><L,1*U>, Inline: INLINE[0],
@@ -232,18 +242,30 @@ c73f35bc2f99f0b93caed12acac94045
   $tc'Node1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "'Node"#) -}
-4f9df8b388e3099a3aa95ff36329ae47
-  $tc'RedRoad :: GHC.Types.TyCon
+75b18d42d991c2fc17a0704c8d20891e
+  $tc'RedRoadH :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
      Unfolding: (GHC.Types.TyCon
-                   15591689355275816101##
-                   6951241996751127014##
+                   14013370232706634972##
+                   5743421940675644781##
                    Board.$trModule
-                   Board.$tc'RedRoad1) -}
-3cefd5fbefbc0b7532862a59fe39d93a
-  $tc'RedRoad1 :: GHC.Types.TrName
+                   Board.$tc'RedRoadH1) -}
+5799bc54e27a7fe01ab4e746a95898ea
+  $tc'RedRoadH1 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
-     Unfolding: (GHC.Types.TrNameS "'RedRoad"#) -}
+     Unfolding: (GHC.Types.TrNameS "'RedRoadH"#) -}
+472c9a35d7d7fd91ad706ace4cfc38fe
+  $tc'RedRoadV :: GHC.Types.TyCon
+  {- HasNoCafRefs, Strictness: m,
+     Unfolding: (GHC.Types.TyCon
+                   12498514472757670469##
+                   2825629248494354207##
+                   Board.$trModule
+                   Board.$tc'RedRoadV1) -}
+dee189f9895be44ba46a22fcc698bc30
+  $tc'RedRoadV1 :: GHC.Types.TrName
+  {- HasNoCafRefs, Strictness: m1,
+     Unfolding: (GHC.Types.TrNameS "'RedRoadV"#) -}
 f2f31aabd726aa2bb793513137cab4cd
   $tc'RoadH :: GHC.Types.TyCon
   {- HasNoCafRefs, Strictness: m,
@@ -304,19 +326,34 @@ f290ddee277efafa26cedb6400414e08
   $trModule2 :: GHC.Types.TrName
   {- HasNoCafRefs, Strictness: m1,
      Unfolding: (GHC.Types.TrNameS "main"#) -}
-35c03315d39f02667df9133a1aa28d4b
+69aff54e5ad8117794a4ba68eb1d8622
   $w$cshowsPrec :: Board.Field -> GHC.Base.String -> GHC.Base.String
   {- Arity: 2, Strictness: <S,1*U><L,1*U>, Inline: [0],
      Unfolding: (\ (w :: Board.Field) (w1 :: GHC.Base.String) ->
                  case w of wild {
-                   Board.RoadH -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField6 w1
-                   Board.RoadV -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField5 w1
-                   Board.BlankF -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField4 w1
-                   Board.Node -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField3 w1
-                   Board.White -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField2 w1
-                   Board.RedRoad
+                   Board.RoadH -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField7 w1
+                   Board.RoadV -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField6 w1
+                   Board.BlankF -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField5 w1
+                   Board.Node -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField4 w1
+                   Board.White -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField3 w1
+                   Board.RedRoadH
+                   -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField2 w1
+                   Board.RedRoadV
                    -> GHC.Base.++ @ GHC.Types.Char Board.$fShowField1 w1 }) -}
-6172ac01d86860a777ff3355d18e673d
+62de882dc61464bd70b75e458c0195d5
+  $wfieldForChar :: GHC.Prim.Char# -> Board.Field
+  {- Arity: 1, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: GHC.Prim.Char#) ->
+                 case ww of ds {
+                   DEFAULT -> Board.fieldForChar1
+                   '!'# -> Board.RedRoadV
+                   '#'# -> Board.RoadH
+                   '*'# -> Board.RoadV
+                   '-'# -> Board.White
+                   '?'# -> Board.RedRoadH
+                   '_'# -> Board.BlankF
+                   'o'# -> Board.Node }) -}
+0c409b4f3d56a28736951029d9cf4eec
   $wpicture ::
     [GHC.Base.String] -> Graphics.Gloss.Internals.Data.Picture.Picture
   {- Arity: 1, Strictness: <S,1*U>, Inline: [0],
@@ -329,11 +366,12 @@ f290ddee277efafa26cedb6400414e08
                    []
                    -> GHC.List.foldl2 @ Graphics.Gloss.Internals.Data.Picture.Picture
                    : x xs -> Board.picture_go xs x }) -}
-35c03315d39f02667df9133a1aa28d4b
-  data Field = RoadH | RoadV | BlankF | Node | White | RedRoad
+69aff54e5ad8117794a4ba68eb1d8622
+  data Field
+    = RoadH | RoadV | BlankF | Node | White | RedRoadH | RedRoadV
 341d5e17c803e1a1e7952481203092f8
   type Position = (GHC.Types.Float, GHC.Types.Float)
-72b1a8bf698e31689e7180416bee0a00
+5c5370be514c89eacbd51b7fb1ca9485
   boardFields :: Game.State -> [[Board.Field]]
   {- Arity: 1, Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
      Inline: INLINE[0],
@@ -341,27 +379,19 @@ f290ddee277efafa26cedb6400414e08
                 (\ (w :: Game.State) ->
                  case w of ww { Game.State ww1 ww2 ww3 ww4 ww5 ww6 ->
                  Board.boardFields_go ww5 }) -}
-275733565e87495bfb427f8a23731e6f
+2ab6d6f20761b400ce388b056c457306
   boardFields_go :: [GHC.Base.String] -> [[Board.Field]]
   {- Arity: 1, Strictness: <S,1*U> -}
-b3e513442f366e508fb2da00c5c9db1f
+0a0ea54037a00cbc0b4910ab182d3535
   fieldForChar :: GHC.Types.Char -> Board.Field
-  {- Arity: 1, Strictness: <S(S),1*U(1*U)>,
+  {- Arity: 1, Strictness: <S(S),1*U(1*U)>, Inline: INLINE[0],
      Unfolding: InlineRule (1, True, False)
-                (\ (ds :: GHC.Types.Char) ->
-                 case ds of wild { GHC.Types.C# ds1 ->
-                 case ds1 of ds2 {
-                   DEFAULT -> Board.fieldForChar1
-                   '#'# -> Board.RoadH
-                   '*'# -> Board.RoadV
-                   '-'# -> Board.White
-                   '?'# -> Board.RedRoad
-                   '_'# -> Board.BlankF
-                   'o'# -> Board.Node } }) -}
-c5491fc778f4f7c8f4faa6ec28b4120d
+                (\ (w :: GHC.Types.Char) ->
+                 case w of ww { GHC.Types.C# ww1 -> Board.$wfieldForChar ww1 }) -}
+f8c832487292aa0c7eb73aee5e913211
   fieldForChar1 :: Board.Field
   {- Strictness: x -}
-f51ffc904b50196e8db4c7dcc2e34f8a
+352a5314be970b3c61a334b17e11cd0a
   fieldPicture ::
     Board.Field -> Graphics.Gloss.Internals.Data.Picture.Picture
   {- Arity: 1, Strictness: <S,1*U>,
@@ -373,8 +403,9 @@ f51ffc904b50196e8db4c7dcc2e34f8a
                    Board.BlankF -> Pictures.blank
                    Board.Node -> Pictures.node
                    Board.White -> Pictures.whiteB
-                   Board.RedRoad -> Pictures.redRoad }) -}
-0bc1338eee74ecb1d09277c5737e9a36
+                   Board.RedRoadH -> Pictures.redRoadH
+                   Board.RedRoadV -> Pictures.redRoadV }) -}
+6d34bf2637641a883176de5efc7f536c
   picture ::
     Game.State -> Graphics.Gloss.Internals.Data.Picture.Picture
   {- Arity: 1, Strictness: <S(LLLLSL),1*U(A,A,A,A,1*U,A)>,
@@ -389,7 +420,7 @@ f51ffc904b50196e8db4c7dcc2e34f8a
     -> Graphics.Gloss.Internals.Data.Picture.Picture
     -> Graphics.Gloss.Internals.Data.Picture.Picture
   {- Arity: 2, HasNoCafRefs, Strictness: <S,1*U><L,U> -}
-28ed053bc40ed0f44edfc443718c7b8c
+88f96b14fd3d44f85da40a75de1d6076
   rowPicture ::
     [Board.Field] -> Graphics.Gloss.Internals.Data.Picture.Picture
   {- Arity: 1, Strictness: <S,1*U>,
