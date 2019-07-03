@@ -136,28 +136,40 @@ main =
   --        colored_path  = Cld.napravi_novu Cld.inic_tabela pathString::[String]
 
 
-      --let lista1 = fst $ Game.zameni (Config.boardData) colored_path' 
-      --    lista2 = snd $ Game.zameni (Config.boardData) colored_path'
-      --    lista3 = fst $ zameni lista1 lista2 
-      --    lista4 = snd $ zameni lista1 lista2 
+      -- let lista1 = fst $ Game.zameni (Config.boardData) colored_path' 
+      --     lista2 = snd $ Game.zameni (Config.boardData) colored_path'
+      --     lista3 = fst $ Game.zameni lista1 lista2 
+      --     lista4 = snd $ Game.zameni lista1 lista2 
         
-      --print lista1
-      --print lista2
+      --     print lista1
+      --     print lista2
 
-      --     lista5 = fst $ zameni lista3 lista4 
-      --     lista6 = snd $ zameni lista3 lista4 
+      --     lista5 = fst $ Game.zameni lista3 lista4 
+      --     lista6 = snd $ Game.zameni lista3 lista4 
 
-      --     lista7 = fst $ zameni lista5 lista6 
-      --     lista8 = snd $ zameni lista5 lista6 
+      --     lista7 = fst $ Game.zameni lista5 lista6 
+      --     lista8 = snd $ Game.zameni lista5 lista6 
 
-      --     lista9 = fst $ zameni lista7 lista8 
-      --     lista10 = snd $ zameni lista7 lista8 
+      --     lista9 = fst $ Game.zameni lista7 lista8 
+      --     lista10 = snd $ Game.zameni lista7 lista8 
+
+      --     lista11 = fst $ Game.zameni lista9 lista10 
+      --     lista12 = snd $ Game.zameni lista9 lista10 
+
+      --     lista13 = fst $ Game.zameni lista11 lista12 
+      --     lista14 = snd $ Game.zameni lista11 lista12 
+
+      --     lista15 = fst $ Game.zameni lista13 lista14 
+      --     lista16 = snd $ Game.zameni lista13 lista14 
+
+      --     lista17 = fst $ Game.zameni lista15 lista16 
+      --     lista18 = snd $ Game.zameni lista15 lista16 
+
+      --     lista19 = fst $ Game.zameni lista17 lista18 
+      --     lista20 = snd $ Game.zameni lista17 lista18 
 
 
-
-
-
-      --     colored_path0 = lista9
+      --     colored_path0 = lista19
       --     colored_path1 = tail colored_path0
       --     colored_path2 = tail colored_path1 
       --     colored_path3 = tail colored_path2
@@ -165,7 +177,7 @@ main =
       --     colored_path5 = tail colored_path4 
       --     colored_path6 = tail colored_path5 
 
-      --     bord = lista10
+      --     bord = lista20
       --     bord1 = tail bord
       --     bord2 = tail bord1
       --     bord3 = tail bord2
@@ -173,14 +185,7 @@ main =
       --     bord5 = tail bord4
       --     bord6 = tail bord5
 
-      -- putStrLn []
-      -- putStrLn $ head bord
-      -- putStrLn $ head bord1
-      -- putStrLn $ head bord2
-      -- putStrLn $ head bord3
-      -- putStrLn $ head bord4
-      -- putStrLn $ head bord5
-      -- putStrLn $ head bord6
+
       -- putStrLn []
       -- putStrLn $ head colored_path0
       -- putStrLn $ head colored_path1
@@ -189,8 +194,16 @@ main =
       -- putStrLn $ head colored_path4
       -- putStrLn $ head colored_path5
       -- putStrLn $ head colored_path6
+      -- putStrLn []
+      -- putStrLn $ head bord
+      -- putStrLn $ head bord1
+      -- putStrLn $ head bord2
+      -- putStrLn $ head bord3
+      -- putStrLn $ head bord4
+      -- putStrLn $ head bord5
+      -- putStrLn $ head bord6
 
-      -- print $ charAtPosition lista8 '?'
+      -- print $ Game.charAtPosition lista10 '?'
       
       
       

@@ -83,7 +83,7 @@ zameni prva druga
     | (i == 0) = (setAorB prva druga par) 
     | (i == 6) = (setAorB prva druga par)
     | otherwise = (setC prva druga par)
-      where i = fst $ charAtPosition druga '?'
+      where i = fst $ par
             par = charAtPosition druga '?'
 
 setAorB::[String] -> [String] -> (Int, Int) -> ([String], [String])
@@ -92,9 +92,10 @@ setAorB prva druga par = (replaceNth (fst par) nova1 prva, replaceNth (fst par) 
 
 
 setC::[String] -> [String] -> (Int, Int) -> ([String], [String])
-setC prva druga par = (replaceNth (indx) nova1 prva, replaceNth (indx) nova2 druga) 
-  where { (nova1, nova2) = (replaceNth (snd par) '!' (prva !! (indx)), replaceNth (snd par) 'x' (druga !! (indx))); 
-          indx = if (wasB prva par) then (((length prva) - 1) - (fst par)) else fst par;                                                                                                 }
+setC prva druga par = (replaceNth (indx) nova1 prva, replaceNth (indxX) nova2 druga) 
+  where { (nova1, nova2) = (replaceNth (snd par) '!' (prva !! (indx)), replaceNth (snd par) 'x' (druga !! (indxX))); 
+          indx = if (wasB prva par) then (((length prva) - 1) - (fst par)) else fst par;
+          indxX = if (wasB prva par) then fst par else  abs (((length prva) - 1) - (fst par));                                                                                                 }
 --setC prva druga par = (["a"], ["a"])
 
 
