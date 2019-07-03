@@ -55,9 +55,9 @@ intsToStrings ints = map show ints
 render :: Game.State -> Picture
 render state =
        let 
-           valuesBoardA  = D.boardValuesA $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2                                   ---["10", "20", "30", "40"]
-           valuesBoardB  = D.boardValuesB $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1                                   ---["5", "20", "78", "13"]
-           valuesBoardC  = D.boardValuesC $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0                                   ---["17", "4", "37", "70"]
+           valuesBoardA  = D.boardValuesA $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 1                                   ---["10", "20", "30", "40"]
+           valuesBoardB  = D.boardValuesB $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 0                                   ---["5", "20", "78", "13"]
+           valuesBoardC  = D.boardValuesC $ intsToStrings $ getIntsAtPosition (Game.cene_trojki state) 2                                   ---["17", "4", "37", "70"]
            content      = pictures  [D.board state, valuesBoardA,valuesBoardB,valuesBoardC ]
            splashScreen = D.splash $ Game.windowSize state
            endScreen = D.end $ Game.windowSize state
@@ -128,9 +128,9 @@ main =
           colored_path = Cld.izmeni_novu colored_path'
 
       --print threes
-      print Config.boardData
-      print colored_path
-      putStrLn $ "Najbolja putanja je: " ++ pathString
+      --print Config.boardData
+      --print colored_path
+      --putStrLn $ "Najbolja putanja je: " ++ pathString
       --initialState :: Game.State
 
   --        colored_path  = Cld.napravi_novu Cld.inic_tabela pathString::[String]
