@@ -1,11 +1,11 @@
 
 ==================== FINAL INTERFACE ====================
-2019-07-03 10:09:45.202783 UTC
+2019-07-04 09:10:11.066292 UTC
 
 interface main@main:Game 8002
-  interface hash: ebac117389fd5ff3b138e14c364ad6ee
-  ABI hash: 596a6e6559397a3c48a1b67a37f50458
-  export-list hash: 903aca7bb5165b1bdd86c2f04cd3ebbe
+  interface hash: 22d82be8e54ba4350ba955f92485c36f
+  ABI hash: d04c7ef276053326ff86c2195683b0ff
+  export-list hash: 006b89a71d74846db7def2121d9e604d
   orphan hash: 693e9af84d3dfcc71e640e005bdc5e2e
   flag hash: bc3095f4b553734f0dadeae05b5c3808
   sig of: Nothing
@@ -15,9 +15,11 @@ exports:
   Game.charAtPosition
   Game.fromMaybeToInt
   Game.handleEvent
+  Game.imaUpitnika
   Game.insertAt
   Game.minM
   Game.minim
+  Game.nemaUpitnika
   Game.replaceNth
   Game.setAorB
   Game.setC
@@ -327,10 +329,19 @@ bfddda3a7f73c81040d44c90c2e0e17b
   {- Arity: 7,
      Strictness: <S,U><L,U><L,U><L,U(U(U),U(U))><L,1*U(U)><L,U><L,U>,
      Inline: [0] -}
+3256ef975775f2ba97569ba9adbb4381
+  $wimaUpitnika :: [GHC.Base.String] -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U>, Inline: [0],
+     Unfolding: (\ (ww :: [GHC.Base.String]) ->
+                 GHC.List.elem
+                   @ GHC.Types.Char
+                   GHC.Classes.$fEqChar
+                   Game.imaUpitnika1
+                   (Game.imaUpitnika_go ww)) -}
 7281d4f542ba3122962c5a4f37e95ec7
   $winsertAt :: a -> GHC.Prim.Int# -> [a] -> (# a, [a] #)
   {- Arity: 3, Strictness: <L,U><S,1*U><L,U>, Inline: [0] -}
-02ea2fc82230c6c7bb951f6f03425b9f
+f463052461d86bde297fd8558065f5a1
   $wsetAorB ::
     [GHC.Base.String]
     -> [GHC.Base.String]
@@ -348,7 +359,7 @@ bfddda3a7f73c81040d44c90c2e0e17b
                        Game.replaceNth
                          @ GHC.Types.Char
                          ds1
-                         Game.setAorB2
+                         Game.imaUpitnika1
                          (GHC.List.$w!! @ GHC.Base.String w ww1) } })
                       w,
                     Game.replaceNth
@@ -362,31 +373,31 @@ bfddda3a7f73c81040d44c90c2e0e17b
                          Game.setAorB1
                          (GHC.List.$w!! @ GHC.Base.String w1 ww1) } })
                       w1 #)) -}
-5f5d98f76cc6203e846079869495786c
+f340b9fea96c96ac754b2f414cc7e968
   $wsetC ::
     [GHC.Base.String]
     -> [GHC.Base.String]
     -> (GHC.Types.Int, GHC.Types.Int)
     -> (# [GHC.Base.String], [GHC.Base.String] #)
-  {- Arity: 3, Strictness: <L,U><L,U><L,U(1*U(U),U(U))>, Inline: [0],
+  {- Arity: 3, Strictness: <L,U><L,U><L,U(U(U),U(U))>, Inline: [0],
      Unfolding: (\ (w :: [GHC.Base.String])
                    (w1 :: [GHC.Base.String])
                    (w2 :: (GHC.Types.Int, GHC.Types.Int)) ->
-                 let {
-                   indx :: GHC.Types.Int
-                   = case w2 of ww { (,) ww1 ww2 ->
-                     case ww2 of ww3 { GHC.Types.I# ww4 ->
-                     case Game.$wwasB w ww4 of wild {
-                       GHC.Types.False -> ww1
-                       GHC.Types.True
-                       -> case GHC.List.$wlenAcc
-                                 @ [GHC.Types.Char]
-                                 w
-                                 0# of ww5 { DEFAULT ->
-                          case ww1 of wild1 { GHC.Types.I# y ->
-                          GHC.Types.I# (GHC.Prim.-# (GHC.Prim.-# ww5 1#) y) } } } } }
-                 } in
-                 (# Game.replaceNth
+                 (# let {
+                      indx :: GHC.Types.Int
+                      = case w2 of ww { (,) ww1 ww2 ->
+                        case ww2 of ww3 { GHC.Types.I# ww4 ->
+                        case Game.$wwasB w ww4 of wild {
+                          GHC.Types.False -> ww1
+                          GHC.Types.True
+                          -> case GHC.List.$wlenAcc
+                                    @ [GHC.Types.Char]
+                                    w
+                                    0# of ww5 { DEFAULT ->
+                             case ww1 of wild1 { GHC.Types.I# y ->
+                             GHC.Types.I# (GHC.Prim.-# (GHC.Prim.-# ww5 1#) y) } } } } }
+                    } in
+                    Game.replaceNth
                       @ [GHC.Types.Char]
                       indx
                       (Game.replaceNth
@@ -395,14 +406,20 @@ bfddda3a7f73c81040d44c90c2e0e17b
                          Game.setC1
                          (GHC.List.!! @ GHC.Base.String w indx))
                       w,
+                    let {
+                      indxX :: GHC.Types.Int
+                      = case w2 of ww { (,) ww1 ww2 ->
+                        case ww2 of ww3 { GHC.Types.I# ww4 ->
+                        case Game.$wwasB w ww4 of wild { DEFAULT -> ww1 } } }
+                    } in
                     Game.replaceNth
                       @ [GHC.Types.Char]
-                      indx
+                      indxX
                       (Game.replaceNth
                          @ GHC.Types.Char
                          (Data.Tuple.snd @ GHC.Types.Int @ GHC.Types.Int w2)
                          Game.setAorB1
-                         (GHC.List.!! @ GHC.Base.String w1 indx))
+                         (GHC.List.!! @ GHC.Base.String w1 indxX))
                       w1 #)) -}
 750bcecde6aaf8d5d682ec0c551c2466
   $wwasB :: [GHC.Base.String] -> GHC.Prim.Int# -> GHC.Types.Bool
@@ -415,13 +432,15 @@ bfddda3a7f73c81040d44c90c2e0e17b
                         (GHC.Prim.-# ww 1#) of wild { GHC.Types.C# x ->
                  case x of wild1 {
                    DEFAULT -> GHC.Types.False '?'# -> GHC.Types.True } } }) -}
-c93599c98fca19dca4938237428acd51
+8d6cccc61aefd604a80bcaedd72bb2a3
   $wzameni ::
     [GHC.Base.String]
     -> [GHC.Base.String] -> (# [GHC.Base.String], [GHC.Base.String] #)
   {- Arity: 2, Strictness: <L,U><S,U>, Inline: [0],
      Unfolding: (\ (w :: [GHC.Base.String]) (w1 :: [GHC.Base.String]) ->
-                 case Game.charAtPosition w1 Game.setAorB2 of wild { (,) x ds1 ->
+                 case Game.charAtPosition
+                        w1
+                        Game.imaUpitnika1 of wild { (,) x ds1 ->
                  case x of wild1 { GHC.Types.I# x1 ->
                  case x1 of wild2 {
                    DEFAULT -> Game.$wsetC w w1 wild
@@ -569,6 +588,20 @@ f93423d1f126f40f4d04b835517b3db3
 5a41cac64ca01c417c8d005956cb7567
   handleEvent2 :: GHC.Types.Float
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.F# 1.0#) -}
+84c48606ffee4a595b9de63a5e4c7019
+  imaUpitnika :: Game.State -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLS),1*U(A,A,A,A,A,1*U)>, Inline: INLINE[0],
+     Unfolding: InlineRule (1, True, False)
+                (\ (w :: Game.State) ->
+                 case w of ww { Game.State ww1 ww2 ww3 ww4 ww5 ww6 ->
+                 Game.$wimaUpitnika ww6 }) -}
+cfbee12574789732d7c5b2f5c9f3ada2
+  imaUpitnika1 :: GHC.Types.Char
+  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '?'#) -}
+3a45ccd99658c19a08f39f0a13c7a6b0
+  imaUpitnika_go :: [[GHC.Types.Char]] -> [GHC.Types.Char]
+  {- Arity: 1, HasNoCafRefs, Strictness: <S,1*U> -}
 bd5f97126194dc24605ec1cc96b7bbf9
   insertAt :: a -> GHC.Types.Int -> [a] -> [a]
   {- Arity: 3, Strictness: <L,U><S(S),1*U(1*U)><L,U>m2,
@@ -630,6 +663,15 @@ df746ec7fe37148858fc6e41c012ce9f
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Game.State) ->
                  case ds of wild { Game.State ds1 ds2 ds3 ds4 ds5 ds6 -> ds2 }) -}
+08620d6e3cc594008ec400d4b7ee12c7
+  nemaUpitnika :: Game.State -> GHC.Types.Bool
+  {- Arity: 1, HasNoCafRefs,
+     Strictness: <S(LLLLLS),1*U(A,A,A,A,A,1*U)>,
+     Unfolding: InlineRule (1, True, False)
+                (\ (stanje :: Game.State) ->
+                 case Game.imaUpitnika stanje of wild {
+                   GHC.Types.False -> GHC.Types.True
+                   GHC.Types.True -> GHC.Types.False }) -}
 c6fe8ceb3e5f8895bf7b4eaf123122f9
   pocetna_tabla :: Game.State -> [GHC.Base.String]
   RecSel Left Game.State
@@ -641,7 +683,7 @@ c6fe8ceb3e5f8895bf7b4eaf123122f9
 37a570aa42f9dc3274939e08cfc6c5b9
   replaceNth :: GHC.Types.Int -> a -> [a] -> [a]
   {- Arity: 3, HasNoCafRefs, Strictness: <L,1*U(1*U)><L,U><S,1*U> -}
-0b1aa603abb04769c3ff51885472b5e0
+aa412db99bf7cd3bff30879568d716de
   setAorB ::
     [GHC.Base.String]
     -> [GHC.Base.String]
@@ -658,16 +700,13 @@ c6fe8ceb3e5f8895bf7b4eaf123122f9
 5bf8a1489e579ee9461f577b906cfed5
   setAorB1 :: GHC.Types.Char
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# 'x'#) -}
-40ac365fecdcb9eb320a8677f0ab60fa
-  setAorB2 :: GHC.Types.Char
-  {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '?'#) -}
-fe226ac081b1f08ea35b27434c637ff6
+4a4fb78fab243b5e5c682fe656df30f7
   setC ::
     [GHC.Base.String]
     -> [GHC.Base.String]
     -> (GHC.Types.Int, GHC.Types.Int)
     -> ([GHC.Base.String], [GHC.Base.String])
-  {- Arity: 3, Strictness: <L,U><L,U><L,U(1*U(U),U(U))>m,
+  {- Arity: 3, Strictness: <L,U><L,U><L,U(U(U),U(U))>m,
      Inline: INLINE[0],
      Unfolding: InlineRule (3, True, False)
                 (\ (w :: [GHC.Base.String])
@@ -677,20 +716,31 @@ fe226ac081b1f08ea35b27434c637ff6
 e1c6ef34ae9847cf3d4ce9f871d91f41
   setC1 :: GHC.Types.Char
   {- HasNoCafRefs, Strictness: m, Unfolding: (GHC.Types.C# '!'#) -}
-95c1fa8a36882664ed27758a9e1f3b2d
+d7f72efc57cb03f51bd0c166ecbc7a02
   update :: GHC.Types.Float -> Game.State -> Game.State
-  {- Arity: 2, Strictness: <L,A><S,1*U(U,U,U,U,U,U)>m,
+  {- Arity: 2, Strictness: <L,A><S,U(U,U,U,U,U,U)>m,
      Inline: INLINE[0],
      Unfolding: InlineRule (2, True, False)
                 (\ (w :: GHC.Types.Float) (w1 :: Game.State) ->
                  case w1 of ww { Game.State ww1 ww2 ww3 ww4 ww5 ww6 ->
-                 Game.State
-                   ww1
-                   ww2
-                   ww3
-                   ww4
-                   (case Game.$wzameni ww5 ww6 of ww7 { (#,#) ww8 ww9 -> ww8 })
-                   (case Game.$wzameni ww5 ww6 of ww7 { (#,#) ww8 ww9 -> ww9 }) }) -}
+                 let {
+                   newState :: [GHC.Base.String]
+                   = case Game.$wzameni ww5 ww6 of ww7 { (#,#) ww8 ww9 -> ww9 }
+                 } in
+                 case GHC.List.elem
+                        @ GHC.Types.Char
+                        GHC.Classes.$fEqChar
+                        Game.imaUpitnika1
+                        (Game.imaUpitnika_go newState) of wild {
+                   GHC.Types.False -> Game.State ww1 Game.ModeEnd ww3 ww4 ww5 ww6
+                   GHC.Types.True
+                   -> Game.State
+                        ww1
+                        ww2
+                        ww3
+                        ww4
+                        (case Game.$wzameni ww5 ww6 of ww7 { (#,#) ww8 ww9 -> ww8 })
+                        newState } }) -}
 5a863be110d1abe99c65cceadeb19632
   wasB ::
     [GHC.Base.String]
@@ -710,7 +760,7 @@ e1c6ef34ae9847cf3d4ce9f871d91f41
      Unfolding: InlineRule (1, True, False)
                 (\ (ds :: Game.State) ->
                  case ds of wild { Game.State ds1 ds2 ds3 ds4 ds5 ds6 -> ds3 }) -}
-fe096e7c4ff0fb9a19761712cc5c8e01
+d146061e9161123117a305bf1d182297
   zameni ::
     [GHC.Base.String]
     -> [GHC.Base.String] -> ([GHC.Base.String], [GHC.Base.String])

@@ -29,12 +29,12 @@ version :: Version
 version = Version [0,1,0,0] []
 bindir, libdir, dynlibdir, datadir, libexecdir, sysconfdir :: FilePath
 
-bindir     = "/home/stefan/Documents/FP/Projekat/uco5/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/bin"
-libdir     = "/home/stefan/Documents/FP/Projekat/uco5/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/lib/x86_64-linux-ghc-8.0.2/empty-gloss-game-project-0.1.0.0"
-dynlibdir  = "/home/stefan/Documents/FP/Projekat/uco5/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/lib/x86_64-linux-ghc-8.0.2"
-datadir    = "/home/stefan/Documents/FP/Projekat/uco5/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/share/x86_64-linux-ghc-8.0.2/empty-gloss-game-project-0.1.0.0"
-libexecdir = "/home/stefan/Documents/FP/Projekat/uco5/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/libexec"
-sysconfdir = "/home/stefan/Documents/FP/Projekat/uco5/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/etc"
+bindir     = "/home/stefan/Documents/FP/Projekat/uco8/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/bin"
+libdir     = "/home/stefan/Documents/FP/Projekat/uco8/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/lib/x86_64-linux-ghc-8.0.2/empty-gloss-game-project-0.1.0.0"
+dynlibdir  = "/home/stefan/Documents/FP/Projekat/uco8/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/lib/x86_64-linux-ghc-8.0.2"
+datadir    = "/home/stefan/Documents/FP/Projekat/uco8/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/share/x86_64-linux-ghc-8.0.2/empty-gloss-game-project-0.1.0.0"
+libexecdir = "/home/stefan/Documents/FP/Projekat/uco8/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/libexec"
+sysconfdir = "/home/stefan/Documents/FP/Projekat/uco8/HeathrowLondon/.stack-work/install/x86_64-linux/lts-8.24/8.0.2/etc"
 
 getBinDir, getLibDir, getDynLibDir, getDataDir, getLibexecDir, getSysconfDir :: IO FilePath
 getBinDir = catchIO (getEnv "empty_gloss_game_project_bindir") (\_ -> return bindir)

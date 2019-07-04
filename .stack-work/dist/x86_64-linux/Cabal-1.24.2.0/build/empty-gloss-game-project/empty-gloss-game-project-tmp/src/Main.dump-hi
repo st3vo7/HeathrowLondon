@@ -1,10 +1,10 @@
 
 ==================== FINAL INTERFACE ====================
-2019-07-03 10:40:15.113843 UTC
+2019-07-04 09:32:28.052933 UTC
 
 interface main@main:Main 8002
-  interface hash: 4e951a81adcfe43e47cf19093da5053b
-  ABI hash: 149dfb7384b268ef5a69d3e101c9c9a9
+  interface hash: f308b82e85161fdc8b6459b9de3a1227
+  ABI hash: 9a854f3795347894232c8d0a0dad2a4a
   export-list hash: 6123a2ca255b0898bed6519f98ffedd4
   orphan hash: 56bac288ebc3894b989fa0d61cc11109
   flag hash: 9cc5af640bff0536be5d3be83151f467
@@ -118,8 +118,8 @@ import  -/  Display ff926280c7b77976e57c2ef2903a8b0b
   boardValuesC 3942d8318373b02b641177c4bed38af4
   end 977601b44edc4940b27ef9c7a1166036
   splash eb372a974cc1f39c38b5e61649efc8a1
-import  -/  Game 596a6e6559397a3c48a1b67a37f50458
-  exports: 903aca7bb5165b1bdd86c2f04cd3ebbe
+import  -/  Game d04c7ef276053326ff86c2195683b0ff
+  exports: 006b89a71d74846db7def2121d9e604d
   ModeEnd 34fc8e92518476d3ceac504d074e084b
   ModeSplash 8238f90f323eca459f95aa3bce65a58f
   State 7ad32a496a24b7fe88903aff2b9172e9
@@ -130,7 +130,7 @@ import  -/  Game 596a6e6559397a3c48a1b67a37f50458
   krajnja_tabla df746ec7fe37148858fc6e41c012ce9f
   mode 024ab839a4a70c0c47c8981b44e4ab17
   pocetna_tabla c6fe8ceb3e5f8895bf7b4eaf123122f9
-  update 95c1fa8a36882664ed27758a9e1f3b2d
+  update d7f72efc57cb03f51bd0c166ecbc7a02
   windowSize 90bfd89a16b6b9cbb70b05502e30ffb1
 import  -/  ShortestPath b64913c440018ea7b2c008a4ce279a12
   exports: 7bab5b0d6cd02c44d9e9121cb250f09f
@@ -166,7 +166,7 @@ d6831ef04cb9301b090dfae6f7bb7ec7
 4d5f6550046edb9bda1a4b53999a97c4
   $wgroupsOf :: GHC.Prim.Int# -> [a] -> [[a]]
   {- Arity: 2, Strictness: <S,U><S,1*U>, Inline: [0] -}
-50f71c0fea13b772078e7d8b99fbc0ce
+e30c553526f779c6e01f352cffeebc12
   $wrender ::
     [[GHC.Types.Int]]
     -> Game.Mode
@@ -288,12 +288,12 @@ a0b27c85f45ada18445113996b120fa8
                          GHC.Show.$fShowInt_$cshow)
                       n
                       ints)) -}
-ee4fb48ed777bb3c9d04376e6b192e76
+2a199f14aeeefc3473cdae2fbede236a
   main :: GHC.Types.IO ()
   {- Arity: 1, Strictness: <S,U>,
      Unfolding: InlineRule (0, True, True)
                 Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R)) -}
-17caf46c8021a3ed13efed6cf0e652e3
+a0e075ffcda6aa30665a30af2258be99
   main1 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -437,7 +437,7 @@ bdd135ca37e9ab70e098cb6687169ca7
                    @ GHC.Types.Char
                    GHC.Show.shows6
                    Main.main20) -}
-57b63ee08df2630152c09487904b9642
+093767df4bde4233b6f4720654527ec2
   main2 ::
     GHC.Types.Float
     -> Game.State
@@ -456,10 +456,10 @@ bdd135ca37e9ab70e098cb6687169ca7
 bf5b3f7c4535356d82191b87f56fde89
   main20 :: GHC.Base.String
   {- Unfolding: (Main.main_showl Config.boardData1) -}
-2669abb7cc22dba0e214dcbf8fa573c0
+431b415fa4f27437776a409683747342
   main21 :: [GHC.Types.Char]
-  {- Unfolding: (GHC.CString.unpackCString# "src/ulaz.txt"#) -}
-e5129131049ae6d0609afa8f37f0f028
+  {- Unfolding: (GHC.CString.unpackCString# "src/ulaz2.txt"#) -}
+960086d315245adc51cd4c9180d61be9
   main22 ::
     GHC.Prim.State# GHC.Prim.RealWorld
     -> (# GHC.Prim.State# GHC.Prim.RealWorld, () #)
@@ -467,14 +467,14 @@ e5129131049ae6d0609afa8f37f0f028
      Unfolding: (GHC.TopHandler.runMainIO1
                    @ ()
                    Main.main1 `cast` (Sym (GHC.Types.N:IO[0] <()>_R))) -}
-df7b69aaeee620746c186959b53fe36b
+14dbd9f1e1fe08c15f1baf090af3af67
   main3 :: [GHC.Types.Float -> Game.State -> Game.State]
   {- Strictness: m2,
      Unfolding: (GHC.Types.:
                    @ (GHC.Types.Float -> Game.State -> Game.State)
                    Main.main4
                    (GHC.Types.[] @ (GHC.Types.Float -> Game.State -> Game.State))) -}
-4e1c0dbafeeb3e1c6a00785ad7456f77
+057f85ab76b9b1fcfcb56e105d3febf6
   main4 :: GHC.Types.Float -> Game.State -> Game.State
   {- Arity: 2, Strictness: <L,A><S(LSLLLL),1*U(U,U,U,U,U,U)>m,
      Inline: INLINE[0],
@@ -484,14 +484,21 @@ df7b69aaeee620746c186959b53fe36b
                  case ww2 of wild {
                    DEFAULT -> Game.State ww1 wild ww3 ww4 ww5 ww6
                    Game.ModeAnimate
-                   -> Game.State
-                        ww1
-                        Game.ModeAnimate
-                        ww3
-                        ww4
-                        (case Game.$wzameni ww5 ww6 of ww7 { (#,#) ww8 ww9 -> ww8 })
-                        (case Game.$wzameni ww5 ww6 of ww7 { (#,#) ww8 ww9 ->
-                         ww9 }) } }) -}
+                   -> case Game.$wzameni ww5 ww6 of ww7 { (#,#) ww8 ww9 ->
+                      case GHC.List.elem
+                             @ GHC.Types.Char
+                             GHC.Classes.$fEqChar
+                             Game.imaUpitnika1
+                             (Game.imaUpitnika_go ww9) of wild1 {
+                        GHC.Types.False -> Game.State ww1 Game.ModeEnd ww3 ww4 ww5 ww6
+                        GHC.Types.True
+                        -> Game.State
+                             ww1
+                             Game.ModeAnimate
+                             ww3
+                             ww4
+                             (case Game.$wzameni ww5 ww6 of ww10 { (#,#) ww11 ww12 -> ww11 })
+                             ww9 } } } }) -}
 b37ddbd050ae996dbd7523dd149bc562
   main5 ::
     Graphics.Gloss.Internals.Interface.Event.Event
@@ -503,7 +510,7 @@ b37ddbd050ae996dbd7523dd149bc562
                    (world1 :: Game.State)[OneShot]
                    (s :: GHC.Prim.State# GHC.Prim.RealWorld)[OneShot] ->
                  (# s, Game.handleEvent event world1 #)) -}
-2b06828e91a7ab6decfaffddb5441fb0
+1211a4c968ebf69158f9e933f1dd414f
   main6 ::
     Game.State
     -> GHC.Prim.State# GHC.Prim.RealWorld
@@ -516,9 +523,9 @@ b37ddbd050ae996dbd7523dd149bc562
 a3901bd6eee456c6bea66d3df584f850
   main7 :: GHC.Types.Float
   {- HasNoCafRefs, Unfolding: (GHC.Types.F# 1.0#) -}
-5885992df8f56de37d2dfda54e5421bf
+f0a498477f514b35fd2231779b894484
   main8 :: GHC.Types.Int
-  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 30#) -}
+  {- HasNoCafRefs, Unfolding: (GHC.Types.I# 1#) -}
 fd119b4b2004b7c230cd0a076488edfd
   main9 :: Graphics.Gloss.Data.Display.Display
   {- Unfolding: (Graphics.Gloss.Data.Display.InWindow
@@ -532,7 +539,7 @@ dc345e263a34d5a5c1a24bae697b9140
 82972a309dfe042f55e1f06e8f6360d8
   main_showl :: [[GHC.Types.Char]] -> GHC.Base.String
   {- Arity: 1, Strictness: <S,1*U> -}
-5e6dda3e01a17932f51e94e02416e9cb
+6bbefe9ecbb4159c2590ffe367a6a882
   render ::
     Game.State -> Graphics.Gloss.Internals.Data.Picture.Picture
   {- Arity: 1,
@@ -542,8 +549,21 @@ dc345e263a34d5a5c1a24bae697b9140
                 (\ (w :: Game.State) ->
                  case w of ww { Game.State ww1 ww2 ww3 ww4 ww5 ww6 ->
                  Main.$wrender ww1 ww2 ww3 ww4 ww5 }) -}
-70f3b3f1a491036090e419b3de4adf05
+f1002f3d4b77a59e93d6927eab4099ed
   render1 :: [GHC.Types.Int] -> GHC.Base.String
+  {- Arity: 1,
+     Unfolding: (\ (x :: [GHC.Types.Int]) ->
+                 case GHC.List.$w!!
+                        @ GHC.Types.Int
+                        x
+                        2# of ww2 { GHC.Types.I# ww3 ->
+                 case GHC.Show.$wshowSignedInt
+                        0#
+                        ww3
+                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
+                 GHC.Types.: @ GHC.Types.Char ww5 ww6 } }) -}
+609581b04643bc552fdab2ca6d721ff5
+  render2 :: [GHC.Types.Int] -> GHC.Base.String
   {- Arity: 1,
      Unfolding: (\ (x :: [GHC.Types.Int]) ->
                  case GHC.List.$w!!
@@ -555,27 +575,14 @@ dc345e263a34d5a5c1a24bae697b9140
                         ww3
                         (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
                  GHC.Types.: @ GHC.Types.Char ww5 ww6 } }) -}
-6f4f785cea6d0209988c92af6f463883
-  render2 :: [GHC.Types.Int] -> GHC.Base.String
-  {- Arity: 1,
-     Unfolding: (\ (x :: [GHC.Types.Int]) ->
-                 case GHC.List.$w!!
-                        @ GHC.Types.Int
-                        x
-                        1# of ww2 { GHC.Types.I# ww3 ->
-                 case GHC.Show.$wshowSignedInt
-                        0#
-                        ww3
-                        (GHC.Types.[] @ GHC.Types.Char) of ww4 { (#,#) ww5 ww6 ->
-                 GHC.Types.: @ GHC.Types.Char ww5 ww6 } }) -}
-04c6c59b128f53df47043ddda1528916
+aa0036baceadd3ba75df71198b178c5b
   render3 :: [GHC.Types.Int] -> GHC.Base.String
   {- Arity: 1,
      Unfolding: (\ (x :: [GHC.Types.Int]) ->
                  case GHC.List.$w!!
                         @ GHC.Types.Int
                         x
-                        2# of ww2 { GHC.Types.I# ww3 ->
+                        1# of ww2 { GHC.Types.I# ww3 ->
                  case GHC.Show.$wshowSignedInt
                         0#
                         ww3

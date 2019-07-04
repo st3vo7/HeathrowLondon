@@ -1,5 +1,34 @@
 module ShortestPath where
 
+-- srb:
+-- sam grafovski problem HeathrowToLondon se može pronaći u knjizi
+-- 'Learn you a Haskell for Great Good!' autora Mirana Lipovače
+-- (https://nostarch.com/lyah.htm)
+-- kao i u elektronskom formatu na linku 
+-- http://learnyouahaskell.com/functionally-solving-problems#heathrow-to-london
+
+-- Kod ovog fajla preuzet sa https://github.com/Robertcdelfin/CS2650_Project3_HeathrowToLondon
+-- i predstavlja algoritamsku okosnicu rešenja ovog problema
+-- dok je akcenat izrade ovog projekta stavljen na grafičku reprezentaciju pomenutog problema.
+
+-- eng:
+-- Simple graph problem HeathrowToLondon, on itself, can be found in book
+-- 'Learn you a Haskell for Great Good!' from author Miran Lipovaca
+-- (https://nostarch.com/lyah.htm)
+-- and also as e-book on
+-- http://learnyouahaskell.com/functionally-solving-problems#heathrow-to-london
+
+-- Code in this file was downloaded from https://github.com/Robertcdelfin/CS2650_Project3_HeathrowToLondon
+-- and it represents backbone of solution to this problem,
+-- whilst essence of this project is based on graphical representation of mentioned problem.
+
+
+
+
+
+
+
+
 --sekcija predstavlja  deo puta A, deo puta B paralelnog sa A i deo puta C koji povezuje A i B
 data Section = Section { getA :: Int, getB :: Int, getC :: Int } deriving (Show)
 

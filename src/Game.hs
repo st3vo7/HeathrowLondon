@@ -42,11 +42,19 @@ handleEvent _ state = state
 --ostaje uraditi f-ju update
 
 update :: Float -> State -> State
-update seconds oldState = oldState { pocetna_tabla = fst (zameni (pocetna_tabla oldState) (krajnja_tabla oldState)),
-                                     krajnja_tabla = snd (zameni (pocetna_tabla oldState) (krajnja_tabla oldState))
-                                   }
+update seconds oldState = 
+    let newState = oldState { pocetna_tabla = fst (zameni (pocetna_tabla oldState) (krajnja_tabla oldState)),
+                              krajnja_tabla = snd (zameni (pocetna_tabla oldState) (krajnja_tabla oldState))
+                            }
+    in if nemaUpitnika newState then oldState { mode = ModeEnd }
+                                else newState
 
 
+nemaUpitnika :: State -> Bool
+nemaUpitnika stanje = if not (imaUpitnika stanje) then True else False
+
+imaUpitnika :: State -> Bool
+imaUpitnika stanje = '?' `elem`  (concat (krajnja_tabla stanje))
                                                   
 --prvo pojavljivanje karaktera zipovano sa indeksima (lista, indeks_pojavljivanja)
 charAtPosition::[[Char]] -> Char -> (Int, Int)
