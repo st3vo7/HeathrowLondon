@@ -38,8 +38,7 @@ fieldPicture BlankF = Pictures.blank
 fieldPicture White = Pictures.whiteB
 fieldPicture RedRoadH = Pictures.redRoadH
 fieldPicture RedRoadV = Pictures.redRoadV
---------------------------------------------------------------------------------------------------------------
---tek kad proradi png od gloss gejma
+
 
 --polje u sliku mapira
 --tj jedan niz (horizontalno) polja

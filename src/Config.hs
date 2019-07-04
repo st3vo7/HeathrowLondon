@@ -18,8 +18,7 @@ boardOffsetVertical   = - blockSize / 2.0 * (fromIntegral boardHeight)
 boardOffsetHorizontal = - blockSize / 2.0 * (fromIntegral boardWidth)
 
 
-boardData = [
-			 "####o####o####o####o",
+boardData = ["####o####o####o####o",
              "____*____*____*____*",
              "____*____*____*____*",
              "____-____-____-____-",

@@ -12,15 +12,15 @@ module ShortestPath where
 -- dok je akcenat izrade ovog projekta stavljen na grafičku reprezentaciju pomenutog problema.
 
 -- eng:
--- Simple graph problem HeathrowToLondon, on itself, can be found in book
--- 'Learn you a Haskell for Great Good!' from author Miran Lipovaca
+-- The simple graph problem HeathrowToLondon itself can be found in the book
+-- 'Learn you a Haskell for Great Good!' authored by Miran Lipovaca
 -- (https://nostarch.com/lyah.htm)
--- and also as e-book on
+-- and also as an e-book on
 -- http://learnyouahaskell.com/functionally-solving-problems#heathrow-to-london
 
 -- Code in this file was downloaded from https://github.com/Robertcdelfin/CS2650_Project3_HeathrowToLondon
--- and it represents backbone of solution to this problem,
--- whilst essence of this project is based on graphical representation of mentioned problem.
+-- and it represents the backbone of solution to this problem,
+-- whilst the essence of this project is based on the graphical representation of the mentioned problem.
 
 
 
