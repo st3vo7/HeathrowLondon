@@ -8,7 +8,7 @@ Problem is based on a Heathrow to London problem, defined and described in [Lear
 ![Image1](https://github.com/st3vo7/HeathrowLondon/blob/master/data/simulacija/0.png)
 
 ### Middle of the game
-![Image1](https://github.com/st3vo7/HeathrowLondon/blob/master/data/simulacija/3.png)
+![Image2](https://github.com/st3vo7/HeathrowLondon/blob/master/data/simulacija/3.png)
 
 ### End of the game
-![Image1](https://github.com/st3vo7/HeathrowLondon/blob/master/data/simulacija/5.png)
+![Image3](https://github.com/st3vo7/HeathrowLondon/blob/master/data/simulacija/5.png)
